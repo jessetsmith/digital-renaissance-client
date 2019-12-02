@@ -1,13 +1,14 @@
-<hr />
-<h2>Login</h2>
-<hr />
-        <form (ngSubmit)="onSubmit()">
-            <div class="form-group">
-                <label for="email">E-Mail</label>
-                <input type="text" formControlName="email" class="form-control" />
-            </div>
-            <div class="form-group">
-                <label for="password">Password</label>
-                <input type="password" min="8" formControlName="password" class="form-control" />
-            </div>
-        </form>
+<div class='loginForm'>
+   <div>
+        <mat-form-field (ngSubmit)="onSubmit()">
+            <h1>Login</h1>
+            <label for="email">E-Mail</label>
+            <input type="text" formControlName="email" class="form-control" />
+        
+            <label for="password">Password</label>
+            <input type="password" min="8" formControlName="password" class="form-control" />
+            <button mat-button class='login'>Login</button>
+            <!-- <button mat-button (click)="onNoClick()" class='cancel'>Cancel</button> -->
+        </mat-form-field>
+    </div>
+</div>
