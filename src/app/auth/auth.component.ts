@@ -1,4 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+
+export interface DialogData {
+  email: string;
+  password: string;
+}
 
 @Component({
   selector: 'app-auth',
@@ -7,7 +13,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AuthComponent implements OnInit {
 
-  constructor() { }
+  // constructor(
+  //   public dialogRef: MatDialogRef<AuthComponent>,
+  //   @Inject(MAT_DIALOG_DATA) public data: DialogData) {}
+
+  //   onNoClick(): void {
+  //     this.dialogRef.close();
+  //   }
 
   ngOnInit() {
   }

@@ -1,7 +1,6 @@
-<hr />
-<h2>Sign Up</h2>
-<hr />
-        <form (ngSubmit)="onSubmit()">
+<div class='signupForm'>
+        <mat-form-field (ngSubmit)="onSubmit()">
+            <h2>Sign Up</h2>
             <div class="form-group">
                 <label for="firstName">First Name</label>
                 <input type="text" formControlName="firstName" class="form-control" />
@@ -18,4 +17,7 @@
                 <label for="password">Password</label>
                 <input type="password" min="8" formControlName="password" class="form-control" />
             </div>
-        </form>
+            <button mat-button class='login'>Login</button>
+            <!-- <button mat-button (click)="onNoClick()" class='cancel'>Cancel</button> -->
+        </mat-form-field>
+</div>
