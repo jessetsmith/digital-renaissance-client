@@ -1,1 +1,13 @@
-<p>login works!</p>
+<hr />
+<h2>Login</h2>
+<hr />
+        <form (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <label for="email">E-Mail</label>
+                <input type="text" formControlName="email" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" min="8" formControlName="password" class="form-control" />
+            </div>
+        </form>
