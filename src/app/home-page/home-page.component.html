@@ -1,1 +1,24 @@
-<p>home-page works!</p>
+<header>
+    <div class='container'>
+        <a routerLink='/' class='logo'>Digital Renaissance</a>
+        <nav>
+
+            <ul>
+                <li><a routerLink='/'>Home</a></li>
+                <li><a routerLink='/about'>About</a></li>
+                <li><a routerLink='/artists'>Artists</a></li>
+                <button mat-button class='authButton'>Login/Signup</button>
+
+            </ul>
+        </nav>
+        <div class='auth'>
+        </div>
+    </div>
+
+</header>
+
+<section>
+    <router-outlet></router-outlet>
+</section>
+
+<app-footer></app-footer>
