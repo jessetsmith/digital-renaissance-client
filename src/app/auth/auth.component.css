@@ -1,6 +1,6 @@
 .authPage {
-    background-color: white;
-    opacity: .9;
+    background-color: #bda3a5;
+    /* opacity: .9; */
     height: 97.5%;
     justify-self: center;
     display: flex;
@@ -9,4 +9,3 @@
     justify-content: space-evenly;
     align-content: center;
 }
-

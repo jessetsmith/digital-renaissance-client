@@ -1,0 +1,49 @@
+.artFind {
+    background-image: url("../../assets/findArtNew.jpg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    height: 50vh;
+    width: 24vw;
+}
+
+.artFind:hover{
+    background-image: url("../../assets/findArtNewHoverHover.jpg");
+    cursor: pointer;
+    
+}
+
+.artShare {
+    background-image: url("../../assets/shareArtNew.jpg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    height: 50vh;
+    width: 24vw;
+}
+
+.artShare:hover{
+    background-image: url("../../assets/shareArtHover.jpg");
+    cursor: pointer;
+}
+
+.banner {
+    height: 20vh;
+    width: 60vw;
+}
+
+.pics {
+    justify-self: center;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    justify-content: space-evenly;
+    align-content: center;
+}
+
+.bg {
+    background-color: #bda3a5;
+}
+
+h2 {
+    color: #00387b;
+    font-weight: bold;
+}

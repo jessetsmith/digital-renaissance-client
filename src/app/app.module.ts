@@ -11,6 +11,8 @@ import { LoginComponent } from './login/login.component';
 import { AuthComponent } from './auth/auth.component';
 import { FooterComponent } from './footer/footer.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ArtistsComponent } from './artists/artists.component';
+import { AboutComponent } from './about/about.component';
 
 
 @NgModule({
@@ -20,7 +22,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     SignupComponent,
     LoginComponent,
     AuthComponent,
-    FooterComponent
+    FooterComponent,
+    ArtistsComponent,
+    AboutComponent
 
   ],
   imports: [
