@@ -1,5 +1,5 @@
 .authPage {
-    background-color: white;
+    background-color: #bda3a5;
     opacity: .9;
     height: 97.5%;
     justify-self: center;
@@ -9,4 +9,3 @@
     justify-content: space-evenly;
     align-content: center;
 }
-
