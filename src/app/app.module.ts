@@ -13,6 +13,7 @@ import { FooterComponent } from './footer/footer.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ArtistsComponent } from './artists/artists.component';
 import { AboutComponent } from './about/about.component';
+import { GetArtistsComponent } from './get-artists/get-artists.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { AboutComponent } from './about/about.component';
     AuthComponent,
     FooterComponent,
     ArtistsComponent,
-    AboutComponent
+    AboutComponent,
+    GetArtistsComponent
 
   ],
   imports: [

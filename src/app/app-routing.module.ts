@@ -5,6 +5,7 @@ import { SignupComponent } from './signup/signup.component';
 import { AuthComponent } from './auth/auth.component';
 import { ArtistsComponent } from './artists/artists.component';
 import { AboutComponent } from './about/about.component';
+import { GetArtistsComponent } from './get-artists/get-artists.component';
 
 
 const routes: Routes = [
@@ -12,7 +13,8 @@ const routes: Routes = [
   {path: 'signup', component: SignupComponent},
   {path: 'auth', component: AuthComponent},
   {path: 'artists', component: ArtistsComponent},
-  {path: 'about', component: AboutComponent}
+  {path: 'about', component: AboutComponent},
+  {path: 'get-artists', component: GetArtistsComponent}
 ];
 
 @NgModule({

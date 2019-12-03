@@ -9,7 +9,8 @@
 .artFind:hover{
     background-image: url("../../assets/findArtNewHoverHover.jpg");
     cursor: pointer;
-    
+    transform: scale(1.05, 1.05);
+    box-shadow: #193153 2px 2px 2px;
 }
 
 .artShare {
@@ -23,6 +24,8 @@
 .artShare:hover{
     background-image: url("../../assets/shareArtHover.jpg");
     cursor: pointer;
+    transform: scale(1.05, 1.05);
+    box-shadow: #193153 2px 2px 2px;
 }
 
 .banner {
@@ -44,6 +47,6 @@
 }
 
 h2 {
-    color: #00387b;
+    color: white;
     font-weight: bold;
 }
