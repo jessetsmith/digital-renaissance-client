@@ -6,7 +6,7 @@ import { AuthComponent } from './auth/auth.component';
 import { ArtistsComponent } from './artists/artists.component';
 import { AboutComponent } from './about/about.component';
 import { GetArtistsComponent } from './get-artists/get-artists.component';
-
+import { AdminComponent } from './admin/admin.component';
 
 const routes: Routes = [
   {path: 'login', component: LoginComponent},
@@ -14,7 +14,8 @@ const routes: Routes = [
   {path: 'auth', component: AuthComponent},
   {path: 'artists', component: ArtistsComponent},
   {path: 'about', component: AboutComponent},
-  {path: 'get-artists', component: GetArtistsComponent}
+  {path: 'get-artists', component: GetArtistsComponent},
+  {path: 'admin', component: AdminComponent},
 ];
 
 @NgModule({

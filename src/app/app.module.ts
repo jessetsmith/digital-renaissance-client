@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule }    from '@angular/common/http';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatDialogModule, MatCardModule, MatIconModule, MatToolbarModule, MatButtonModule, MatFormFieldModule, MatInputModule } from '@angular/material';
 
@@ -14,6 +15,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ArtistsComponent } from './artists/artists.component';
 import { AboutComponent } from './about/about.component';
 import { GetArtistsComponent } from './get-artists/get-artists.component';
+import { AdminComponent } from './admin/admin.component';
+import { ArtistComponent } from './artist/artist.component';
+
+import { ArtistService } from '../artist.service';
 
 
 @NgModule({
@@ -26,7 +31,9 @@ import { GetArtistsComponent } from './get-artists/get-artists.component';
     FooterComponent,
     ArtistsComponent,
     AboutComponent,
-    GetArtistsComponent
+    GetArtistsComponent,
+    AdminComponent,
+    ArtistComponent
 
   ],
   imports: [
@@ -42,7 +49,8 @@ import { GetArtistsComponent } from './get-artists/get-artists.component';
     MatButtonModule,
     MatFormFieldModule,
     MatInputModule,
-    MatDialogModule
+    MatDialogModule,
+    HttpClientModule
   ],
   entryComponents: [LoginComponent],
   providers: [],

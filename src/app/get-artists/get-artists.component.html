@@ -1,3 +1,7 @@
 <div class="bg">
-    
+    <div *ngFor='let artist of artists'>
+        <h1>Name: {{artist.firstName}} {{artist.lastName}}</h1>
+        <p>Email: {{artist.email}}</p>
+        <p>Role: {{artist.role}}</p>
+    </div>
 </div>
