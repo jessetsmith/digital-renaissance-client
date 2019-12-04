@@ -19,6 +19,8 @@ import { AdminComponent } from './admin/admin.component';
 import { ArtistComponent } from './artist/artist.component';
 
 import { ArtistService } from '../artist.service';
+import { GetSkillsComponent } from './get-skills/get-skills.component';
+
 
 
 @NgModule({
@@ -33,7 +35,8 @@ import { ArtistService } from '../artist.service';
     AboutComponent,
     GetArtistsComponent,
     AdminComponent,
-    ArtistComponent
+    ArtistComponent,
+    GetSkillsComponent
 
   ],
   imports: [
