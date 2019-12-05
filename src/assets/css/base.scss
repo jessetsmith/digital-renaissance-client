@@ -1,0 +1,17 @@
+/*--------------------
+       BASICS
+--------------------*/
+
+body {
+    min-width: 320px;
+  }
+  
+  /*-- Cursor --*/
+  
+  a,
+  input[type=button],
+  input[type=submit],
+  button {
+    cursor: pointer;
+  }
+  
