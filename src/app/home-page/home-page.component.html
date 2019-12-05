@@ -4,23 +4,22 @@
         <nav>
 
             <ul>
-                <li><a routerLink='/'>Home</a></li>
-                <li><a routerLink='/about'>About</a></li>
-                <li><a routerLink='/artists'>Artists</a></li>
-                <!-- <button mat-button routerLink='/auth' class='authButton'>Login/Signup</button> -->
-                <div class="header-page-authStatus">
-                        <span *ngIf="auth.loggingIn">Logging in...</span>
-                        <ng-template [ngIf]="!auth.loggingIn">
-                          <a *ngIf="!auth.loggedIn" (click)="auth.login()">Log In</a>
-                          <span *ngIf="auth.loggedIn && auth.userProfile">
-                            {{ auth.userProfile.name }}
-                            <span class="divider">|</span>
-                            <a (click)="auth.logout()">Log Out</a>
-                          </span>
-                        </ng-template>
-                      </div>
-
+                <li><button mat-button routerLink='/' class='authButton'>Home</button></li>
+                <li><button mat-button routerLink='/about' class='authButton'>About</button></li>
+                <li><button mat-button routerLink='/artists' class='authButton'>Artists</button></li>
+                <button mat-button routerLink='/admin' class='authButton'>Admin</button>
             </ul>
+            <div class="header-page-authStatus">
+                    <span *ngIf="auth.loggingIn">Logging in...</span>
+                    <ng-template [ngIf]="!auth.loggingIn">
+                      <a *ngIf="!auth.loggedIn" (click)="auth.login()">Log In</a>
+                      <span *ngIf="auth.loggedIn && auth.userProfile">
+                        {{ auth.userProfile.name }}
+                        <span class="divider">|</span>
+                        <a (click)="auth.logout()">Log Out</a>
+                      </span>
+                    </ng-template>
+                  </div>
         </nav>
         <div class='auth'>
         </div>
@@ -32,4 +31,4 @@
     <router-outlet></router-outlet>
 </section>
 
-<app-footer></app-footer>
+<!-- <app-footer></app-footer> -->
