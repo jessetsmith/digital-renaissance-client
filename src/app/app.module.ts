@@ -19,7 +19,7 @@ import { AboutComponent } from './about/about.component';
 import { GetArtistsComponent } from './get-artists/get-artists.component';
 import { AdminComponent } from './admin/admin.component';
 import { ArtistComponent } from './artist/artist.component';
-
+import { GetSkillsComponent } from './get-skills/get-skills.component';
 import { ArtistsService } from '../service/artists.service';
 import { ArtistService } from '../service/artist.service';
 
@@ -41,6 +41,7 @@ import { CreateSkillComponent } from './create-skill/create-skill.component';
     GetArtistsComponent,
     AdminComponent,
     ArtistComponent,
+    GetSkillsComponent
     CreateSkillComponent
 
   ],
