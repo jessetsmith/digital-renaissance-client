@@ -18,7 +18,6 @@ import { GetArtistsComponent } from './get-artists/get-artists.component';
 import { AdminComponent } from './admin/admin.component';
 import { ArtistComponent } from './artist/artist.component';
 
-import { ArtistService } from '../artist.service';
 import { GetSkillsComponent } from './get-skills/get-skills.component';
 
 
