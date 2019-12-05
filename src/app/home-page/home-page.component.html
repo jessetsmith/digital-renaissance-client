@@ -7,20 +7,22 @@
                 <li><button mat-button routerLink='/' class='authButton'>Home</button></li>
                 <li><button mat-button routerLink='/about' class='authButton'>About</button></li>
                 <li><button mat-button routerLink='/artists' class='authButton'>Artists</button></li>
-                <button mat-button routerLink='/admin' class='authButton'>Admin</button>
+                <button mat-button routerLink='/admin' class='adminButton'>Admin</button>
+                
             </ul>
-            <div class="header-page-authStatus">
-                    <span *ngIf="auth.loggingIn">Logging in...</span>
-                    <ng-template [ngIf]="!auth.loggingIn">
-                      <a *ngIf="!auth.loggedIn" (click)="auth.login()">Log In</a>
-                      <span *ngIf="auth.loggedIn && auth.userProfile">
-                        {{ auth.userProfile.name }}
-                        <span class="divider">|</span>
-                        <a (click)="auth.logout()">Log Out</a>
-                      </span>
-                    </ng-template>
-                  </div>
+           
         </nav>
+        <div class="header-page-authStatus">
+                <span *ngIf="auth.loggingIn">Logging in...</span>
+                <ng-template [ngIf]="!auth.loggingIn">
+                  <button mat-button *ngIf="!auth.loggedIn" class='authButton' (click)="auth.login()">Login/Register</button>
+                  <span *ngIf="auth.loggedIn && auth.userProfile">
+                    {{ auth.userProfile.name }}
+                    <span class="divider">|</span>
+                    <button mat-button class='authButton' (click)="auth.logout()">Log Out</button>
+                  </span>
+                </ng-template>
+              </div>
         <div class='auth'>
         </div>
     </div>
@@ -31,4 +33,4 @@
     <router-outlet></router-outlet>
 </section>
 
-<!-- <app-footer></app-footer> -->
+<app-footer></app-footer>

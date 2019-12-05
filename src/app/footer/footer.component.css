@@ -1,9 +1,10 @@
 footer {
     background: #b87b7d;
     padding: 0;
-    margin-top:-2em;
+    /* margin-top:-2em; */
     height: 2em;
     color: white;
+    position: fixed;
 
 }
 
