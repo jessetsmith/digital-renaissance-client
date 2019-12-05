@@ -19,6 +19,10 @@ import { AboutComponent } from './about/about.component';
 import { GetArtistsComponent } from './get-artists/get-artists.component';
 import { AdminComponent } from './admin/admin.component';
 import { ArtistComponent } from './artist/artist.component';
+
+import { ArtistsService } from '../service/artists.service';
+import { ArtistService } from '../service/artist.service';
+
 import { ArtistService } from '../artist.service';
 import { CreateSkillComponent } from './create-skill/create-skill.component';
 
@@ -57,7 +61,9 @@ import { CreateSkillComponent } from './create-skill/create-skill.component';
     HttpClientModule
   ],
   entryComponents: [LoginComponent],
-  providers: [AuthService],
+
+  providers: [AuthService, ArtistsService, ArtistService, ],
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }
