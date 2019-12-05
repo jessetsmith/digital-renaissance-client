@@ -18,7 +18,8 @@ import { GetArtistsComponent } from './get-artists/get-artists.component';
 import { AdminComponent } from './admin/admin.component';
 import { ArtistComponent } from './artist/artist.component';
 
-import { ArtistService } from '../artist.service';
+import { ArtistsService } from '../service/artists.service';
+import { ArtistService } from '../service/artist.service';
 
 
 @NgModule({
@@ -53,7 +54,7 @@ import { ArtistService } from '../artist.service';
     HttpClientModule
   ],
   entryComponents: [LoginComponent],
-  providers: [],
+  providers: [ArtistsService, ArtistService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
