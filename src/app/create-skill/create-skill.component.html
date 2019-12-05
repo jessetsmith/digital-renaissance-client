@@ -1,0 +1,22 @@
+<div class="bg">
+<br>
+<br>
+<h1>Create Skill Profile</h1>
+<div class="formDiv">
+    <img class="addSkill">
+</div>
+<div class="formDiv">
+    <mat-form-field (ngSubmit)="onSubmit()">
+        <label for="skillTitle">Skill Title:</label>
+        <input type="text" formControlName="skillTitle" class="form-control" />
+        <label for="skillDescription">Skill Description:</label>
+        <input type="text" formControlName="skillDescription" class="form-control" />
+        <label for="skillPrice">Skill Price:</label>
+        <input type="text" formControlName="skillPrice" class="form-control" />
+    </mat-form-field>
+</div>
+<div class="formDiv">
+    <button mat-button class='submit'>Submit</button>
+</div>
+<br>
+</div>
