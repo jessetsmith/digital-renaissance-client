@@ -1,10 +1,10 @@
-.bg {
+:host{
+    display: block;
+}
+.container.bg {
     background-color: #204a82;
-    height: 97.5%;
-    justify-self: center;
-    display: flex;
-    flex-direction: row;
-    text-align: center;
-    justify-content: space-evenly;
-    align-content: center;
+}
+
+h1{
+    justify-content: center;
 }

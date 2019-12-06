@@ -1,10 +1,32 @@
 <div class="bg">
-    <div *ngFor='let artist of artists'>
-        <h1>Name: {{artist.firstName}} {{artist.lastName}}</h1>
-        <p>Email: {{artist.email}}</p>
-        <p>Role: {{artist.role}}</p>
-        <p>{{artist.id}}</p>
-        <button mat-button [routerLink] = "['/artist', artist.id]" class='authButton'>See more about</button>
 
+
+<div class="container bg" >
+        <h1> All Artists </h1>
+</div>
+<div>       
+    <div class="card-display">
+        <mat-card *ngFor='let artist of artists'>
+            <div class="profile-info">
+                <div>
+                        Add Iamge here
+                </div>
+                <div>
+                        <h3>{{artist.firstName}} {{artist.lastName}}</h3>
+                        <p> {{artist.email}} </p>
+                        <span><h3>Role:</h3> <p>{{artist.role}}</p></span>
+                        <p>{{artist.id}}</p>
+                </div>
+            </div>
+            
+            <div>
+                <button mat-button [routerLink] = "['/artist', artist.id]" class='authButton'>See more about</button>
+            </div>
+           
+
+            
+        </mat-card>
     </div>
+    
+</div>
 </div>

@@ -1,3 +1,31 @@
-.bg {
-    background-color: #bda3a5;
+.bg{
+    background-color: #204a82;
 }
+h1{
+    display: block;
+}
+.container{
+    display: flex;
+    justify-content: center;
+}
+.card-display {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+}
+
+.mat-card{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin: 1rem;
+}
+
+.profile-info{
+    display: flex;
+    
+}
+
+
