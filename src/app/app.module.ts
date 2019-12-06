@@ -21,8 +21,10 @@ import { AdminComponent } from './admin/admin.component';
 import { ArtistComponent } from './artist/artist.component';
 import { GetSkillsComponent } from './get-skills/get-skills.component';
 import { ArtistsService } from '../service/artists.service';
+import { SkillService } from './skill.service';
 import { ArtistService } from '../service/artist.service';
 import { CreateSkillComponent } from './create-skill/create-skill.component';
+import { OneSkillComponent } from './one-skill/one-skill.component';
 
 
 @NgModule({
@@ -40,7 +42,8 @@ import { CreateSkillComponent } from './create-skill/create-skill.component';
     AdminComponent,
     ArtistComponent,
     GetSkillsComponent,
-    CreateSkillComponent
+    CreateSkillComponent,
+    OneSkillComponent
 
   ],
   imports: [
@@ -61,7 +64,7 @@ import { CreateSkillComponent } from './create-skill/create-skill.component';
   ],
   entryComponents: [LoginComponent],
 
-  providers: [AuthService, ArtistsService, ArtistService, ],
+  providers: [AuthService, ArtistsService, ArtistService, SkillService],
 
   bootstrap: [AppComponent]
 })

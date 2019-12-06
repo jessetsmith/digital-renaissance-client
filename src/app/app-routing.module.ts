@@ -9,6 +9,7 @@ import { ArtistsComponent } from './artists/artists.component';
 import { AboutComponent } from './about/about.component';
 import { GetArtistsComponent } from './get-artists/get-artists.component';
 import { GetSkillsComponent } from './get-skills/get-skills.component';
+import { OneSkillComponent } from './one-skill/one-skill.component';
 import { ArtistComponent } from './artist/artist.component';
 import { AdminComponent } from './admin/admin.component';
 import { CreateSkillComponent } from './create-skill/create-skill.component';
@@ -27,7 +28,8 @@ const routes: Routes = [
   {path: 'get-skills', component: GetSkillsComponent},
   {path: 'artist/:id', component: ArtistComponent},
   {path: 'admin', component: AdminComponent},
-  {path: 'create-skill', component: CreateSkillComponent}
+  {path: 'create-skill', component: CreateSkillComponent},
+  {path: 'skill/:id', component: OneSkillComponent},
 ];
 
 @NgModule({
