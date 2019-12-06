@@ -14,11 +14,8 @@ export class ArtistComponent implements OnInit {
 artist: any = {};
 
 
-
-
   constructor( private artistService: ArtistService, 
-    private route: ActivatedRoute,
-    private location: Location
+    private route: ActivatedRoute
     ) { }
 
   ngOnInit() {

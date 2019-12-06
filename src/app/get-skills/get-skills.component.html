@@ -1,7 +1,5 @@
-<div class="bannerHeading">Find the Right Artist for You!</div>
+<div class="bannerHeading">Find the Right Artist for You</div>
     <div class="banner">
-            <!-- <div class="bannerText" *ngFor='let artist of artists'>
-                <h1>{{artist.firstName}} {{artist.lastName}}</h1> -->
         <div class="bannerText" *ngFor='let skill of skills'>
             <h1>{{skill.artist.firstName}}</h1>
             <div class="bannerItems">
@@ -10,6 +8,8 @@
                 <p>Image: {{skill.image}}</p>
                 <p>Price: ${{skill.price}}</p>
                 <p>Description: {{skill.description}}</p>
+                <!-- <p>Rating: {{skill.rating}}</p> -->
+                <button class= mat-button [routerLink] = "['/skill', skill.id]">Book Me.</button>
             </div>
         </div>
     </div>

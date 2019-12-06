@@ -1,0 +1,19 @@
+<mat-card class="oneSkill">
+    <mat-card-header>
+        <div mat-card-avatar></div>
+                <mat-card-title>{{skill.artist.firstName}}</mat-card-title>
+                <mat-card-subtitle>{{skill.description}}</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src="./assets/" alt="Photo of Artist Work">
+        <mat-card-content>
+          <p>{{skill.description}}</p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button>Confirm</button>
+        </mat-card-actions>
+    </mat-card>
+
+<!--need to make an includes in /skill/:id to make this work for their name as well-->
+
+<!-- <button mat-button [routerLink] = "['/artist', artist.id]"> Confirm Booking</button> -->
+<!-- This button will need to be linked to formspree to send them an email once they book. We can also play around with adding a message button to contact the artist? -->
