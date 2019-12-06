@@ -1,2 +1,3 @@
 {{artist.firstName}}
-<button mat-button [routerLink] = "['/artist', artist.id]"> Delete Artist Account</button>
+{{artist.id}}
+<button mat-button (click)="deleteArtist(artist.id)"> Delete Artist Account</button>
