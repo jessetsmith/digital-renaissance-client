@@ -1,8 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from "@angular/forms";
+import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule }    from '@angular/common/http';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatDialogModule, MatCardModule, MatIconModule, MatToolbarModule, MatButtonModule, MatFormFieldModule, MatInputModule } from '@angular/material';
+
 import { AuthService } from './auth/auth.service';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -25,6 +28,7 @@ import { SkillService } from './skill.service';
 import { ArtistService } from '../service/artist.service';
 import { CreateSkillComponent } from './create-skill/create-skill.component';
 import { OneSkillComponent } from './one-skill/one-skill.component';
+
 
 
 @NgModule({
@@ -60,7 +64,9 @@ import { OneSkillComponent } from './one-skill/one-skill.component';
     MatFormFieldModule,
     MatInputModule,
     MatDialogModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   entryComponents: [LoginComponent],
 
