@@ -44,6 +44,7 @@ private createArtistUrl = 'http://localhost:3000/artist/register'
     })
   }
 
+
   // updateArtist (artistId){
   //   console.log(this.artistUrl)
   //   return this.http.put<Artist[]>(this.artistUrl + '/delete' + `/${artistId}`).subscribe(()=> {
