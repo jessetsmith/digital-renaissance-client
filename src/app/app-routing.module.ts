@@ -8,7 +8,11 @@ import { CallbackComponent } from './callback/callback/callback.component';
 import { ArtistsComponent } from './artists/artists.component';
 import { AboutComponent } from './about/about.component';
 import { GetArtistsComponent } from './get-artists/get-artists.component';
+import { GetSkillsComponent } from './get-skills/get-skills.component';
+import { OneSkillComponent } from './one-skill/one-skill.component';
+import { ArtistComponent } from './artist/artist.component';
 import { AdminComponent } from './admin/admin.component';
+import { CreateSkillComponent } from './create-skill/create-skill.component';
 
 const routes: Routes = [
   {path: 'login', component: LoginComponent},
@@ -21,7 +25,11 @@ const routes: Routes = [
   {path: 'artists', component: ArtistsComponent},
   {path: 'about', component: AboutComponent},
   {path: 'get-artists', component: GetArtistsComponent},
+  {path: 'get-skills', component: GetSkillsComponent},
+  {path: 'artist/:id', component: ArtistComponent},
   {path: 'admin', component: AdminComponent},
+  {path: 'create-skill', component: CreateSkillComponent},
+  {path: 'skill/:id', component: OneSkillComponent},
 ];
 
 @NgModule({

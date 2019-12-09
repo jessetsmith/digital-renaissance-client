@@ -50,3 +50,19 @@ h2 {
     color: white;
     font-weight: bold;
 }
+
+.findSkillsButton{
+    font-size: 150%;
+    font-weight: bold;
+    background-color:transparent;
+    border:none;
+    color: white;
+}
+
+.findSkillsButton:hover{
+    font-size: 150%;
+    font-weight: bold;
+    background-color:transparent;
+    border:none;
+    color: black;
+}

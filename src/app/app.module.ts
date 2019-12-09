@@ -1,8 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from "@angular/forms";
+import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule }    from '@angular/common/http';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatDialogModule, MatCardModule, MatIconModule, MatToolbarModule, MatButtonModule, MatFormFieldModule, MatInputModule } from '@angular/material';
+
 import { AuthService } from './auth/auth.service';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -19,7 +22,13 @@ import { AboutComponent } from './about/about.component';
 import { GetArtistsComponent } from './get-artists/get-artists.component';
 import { AdminComponent } from './admin/admin.component';
 import { ArtistComponent } from './artist/artist.component';
-import { ArtistService } from '../artist.service';
+import { GetSkillsComponent } from './get-skills/get-skills.component';
+import { ArtistsService } from '../service/artists.service';
+import { SkillService } from './skill.service';
+import { ArtistService } from '../service/artist.service';
+import { CreateSkillComponent } from './create-skill/create-skill.component';
+import { OneSkillComponent } from './one-skill/one-skill.component';
+
 
 
 @NgModule({
@@ -35,7 +44,10 @@ import { ArtistService } from '../artist.service';
     AboutComponent,
     GetArtistsComponent,
     AdminComponent,
-    ArtistComponent
+    ArtistComponent,
+    GetSkillsComponent,
+    CreateSkillComponent,
+    OneSkillComponent
 
   ],
   imports: [
@@ -52,10 +64,14 @@ import { ArtistService } from '../artist.service';
     MatFormFieldModule,
     MatInputModule,
     MatDialogModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   entryComponents: [LoginComponent],
-  providers: [AuthService],
+
+  providers: [AuthService, ArtistsService, ArtistService, SkillService],
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }

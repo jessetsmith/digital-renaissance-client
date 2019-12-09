@@ -1,14 +1,19 @@
 <div class='loginForm'>
    <div>
-        <mat-form-field (ngSubmit)="onSubmit()">
-            <h1>Login</h1>
-            <label for="email">E-Mail</label>
-            <input type="text" formControlName="email" class="form-control" />
+       <form  #loginInForm="ngForm">
+            <mat-form-field >
+                    <h1>Login</h1>
+                    <label for="email">E-Mail</label>
+                    <input type="text" 
+                    formControlName="email" 
+                    class="form-control" />
+                
+                    <label for="password">Password</label>
+                    <input type="password" min="8" formControlName="password" class="form-control" />
+                    <button mat-button class='login'>Login</button>
+                    <!-- <button mat-button (click)="onNoClick()" class='cancel'>Cancel</button> -->
+                </mat-form-field>
+       </form>
         
-            <label for="password">Password</label>
-            <input type="password" min="8" formControlName="password" class="form-control" />
-            <button mat-button class='login'>Login</button>
-            <!-- <button mat-button (click)="onNoClick()" class='cancel'>Cancel</button> -->
-        </mat-form-field>
     </div>
 </div>
