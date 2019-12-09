@@ -19,9 +19,16 @@ private artistUrl = 'http://dr-server.herokuapp.com/artist';
 
   constructor(private http: HttpClient) { }
 
+
+
   createArtist(firstName: string, lastName: string, password: string, email: string, role: string){
     const artist: Artist = { firstName: firstName, lastName: lastName,  password: password, email: email, role: role}
     return this.http.post<any>(this.artistUrl+ '/register', artist)
+  }
+
+  loginArtist(password: string, email: string){
+    const artist = { password: password, email: email }
+    return this.http.post<any>(this.artistUrl+ '/login', artist)
   }
 
   getArtists (): Observable<Artist[]>{
