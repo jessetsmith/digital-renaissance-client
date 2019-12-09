@@ -1,4 +1,4 @@
-<div class='loginForm'>
+<!-- <div class='loginForm'>
    <div>
        <form  #loginInForm="ngForm">
             <mat-form-field >
@@ -11,9 +11,46 @@
                     <label for="password">Password</label>
                     <input type="password" min="8" formControlName="password" class="form-control" />
                     <button mat-button class='login'>Login</button>
-                    <!-- <button mat-button (click)="onNoClick()" class='cancel'>Cancel</button> -->
                 </mat-form-field>
        </form>
         
     </div>
-</div>
+</div> -->
+
+
+<mat-card>
+        <form (submit)="onLogin(loginForm)" #loginForm="ngForm">
+            <div>
+                <mat-form-field>
+                    <input
+                        matInput
+                        type="text"
+                        name="email"
+                        ngModel
+                        required
+                        minlength="3"
+                        placeholder="Email"
+                        #email="ngModel">
+                    <mat-error *ngIf="email.invalid">Please enter an email.</mat-error>
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field>
+                    <input
+                        matInput
+                        type="text"
+                        name="password"
+                        ngModel
+                        required
+                        minlength="3"
+                        placeholder="Password"
+                        #email="ngModel">
+                    <mat-error *ngIf="email.invalid">Please enter a password.</mat-error>
+                </mat-form-field>
+                </div>
+                <button
+            mat-raised-button
+            color="accent"
+            type="submit">LOGIN</button>
+         </form>
+</mat-card>
