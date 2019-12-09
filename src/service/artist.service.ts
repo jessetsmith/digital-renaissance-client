@@ -9,21 +9,46 @@ import { catchError, map, tap } from 'rxjs/operators';
 })
 export class ArtistService {
 //HEROKU URL
-private artistUrl = 'http://dr-server.herokuapp.com/artist'
+// private artistUrl = 'http://dr-server.herokuapp.com/artist'
 
-//LOCAL URL
-// private artistUrl = 'http://localhost:3000/artist/getartists'
+// LOCAL URL
+private artistsUrl = 'http://localhost:3000/artist/getartists'
+private artistUrl = 'http://localhost:3000/artist'
+private createArtistUrl = 'http://localhost:3000/artist/register'
+
 
   constructor(private http: HttpClient) { }
+
+  createArtist(firstName: string, lastName: string, password: string, email: string, role: string){
+    const artist: Artist = { firstName: firstName, lastName: lastName,  password: password, email: email, role: role}
+    return this.http.post<any>(this.createArtistUrl, artist)
+  }
+
+  getArtists (): Observable<Artist[]>{
+    console.log(this.artistsUrl)
+    return this.http.get<Artist[]>(this.artistsUrl)
+    .pipe(map(id => id))
+  }
 
   getArtist (artistId): Observable<Artist[]>{
     console.log(this.artistUrl)
     return this.http.get<Artist[]>(this.artistUrl + `/${artistId}`)
   }
 
-  deleteArtist (artistId): Observable<Artist[]>{
+  deleteArtist (artistId){
     console.log(this.artistUrl)
-    return this.http.get<Artist[]>(this.artistUrl + '/delete' + `/${artistId}`)
+    return this.http.delete<Artist[]>(this.artistUrl + '/delete' + `/${artistId}`).subscribe(()=> {
+      console.log("Deleted")
+      this.getArtists();
+      
+    })
   }
+
+  // updateArtist (artistId){
+  //   console.log(this.artistUrl)
+  //   return this.http.put<Artist[]>(this.artistUrl + '/delete' + `/${artistId}`).subscribe(()=> {
+  //     console.log("Updated")
+  //   })
+  // }
 
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Artist } from '../../models/artist';
 import { ArtistService } from '../../service/artist.service';
+
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 
@@ -12,26 +13,34 @@ import { Location } from '@angular/common';
 })
 export class ArtistComponent implements OnInit {
 artist: any = {};
+artists: Artist[]; 
 
 
   constructor( private artistService: ArtistService, 
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
     ) { }
 
   ngOnInit() {
-    this.getArtist();
+    this.onGetArtist();
   }
 
-  getArtist(): void {
+  getArtists(): void {
+    this.artistService.getArtists()
+      .subscribe(artists => this.artists = artists);
+  }
+
+  onGetArtist(): void {
     const id = +this.route.snapshot.paramMap.get('id');
     this.artistService.getArtist(id)
       .subscribe(artist => this.artist = artist);
   }
 
-  deleteArtist(id): void {
-    
-    this.artistService.deleteArtist(id)
-      .subscribe(artist => this.artist = artist);
+  onDeleteArtist(id): void {
+    this.artistService.deleteArtist(id);
+    this.getArtists();
   }
 
+  // onUpdateArtist(id): void {
+  //   this.artistService.updateArtist(id);
+  // }
 }
