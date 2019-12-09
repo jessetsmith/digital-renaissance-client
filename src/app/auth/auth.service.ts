@@ -5,12 +5,14 @@ import { AUTH_CONFIG } from './auth.config';
 import * as auth0 from 'auth0-js';
 import { ENV } from '../core/env.config';
 
+
 @Injectable()
 export class AuthService {
   // Create Auth0 web auth instance
   private _auth0 = new auth0.WebAuth({
     clientID: AUTH_CONFIG.CLIENT_ID,
     domain: AUTH_CONFIG.CLIENT_DOMAIN,
+    secret: AUTH_CONFIG.CLIENT_SECRET,
     responseType: 'token',
     redirectUri: AUTH_CONFIG.REDIRECT,
     audience: AUTH_CONFIG.AUDIENCE,
@@ -23,7 +25,9 @@ export class AuthService {
   loggedIn: boolean;
   loggedIn$ = new BehaviorSubject<boolean>(this.loggedIn);
   loggingIn: boolean;
+  isAdmin: boolean;
 
+  
   constructor(private router: Router) {
     // If app auth token is not expired, request new token
     if (JSON.parse(localStorage.getItem('expires_at')) > Date.now()) {
@@ -48,11 +52,13 @@ export class AuthService {
       if (authResult && authResult.accessToken) {
         window.location.hash = '';
         this._getProfile(authResult);
+        console.log(authResult);
       } else if (err) {
         console.error(`Error authenticating: ${err.error}`);
       }
       this.router.navigate(['/']);
     });
+    
   }
 
   private _getProfile(authResult) {
@@ -60,11 +66,18 @@ export class AuthService {
     // Use access token to retrieve user's profile and set session
     this._auth0.client.userInfo(authResult.accessToken, (err, profile) => {
       if (profile) {
+        this.isAdmin = this._checkAdmin(profile);
         this._setSession(authResult, profile);
       } else if (err) {
         console.warn(`Error retrieving profile: ${err.error}`);
       }
     });
+  }
+
+  private _checkAdmin(profile) {
+    // Check if the user has admin role
+    const roles = profile[AUTH_CONFIG.NAMESPACE] || [];
+    return roles.indexOf('admin') > -1;
   }
 
   private _setSession(authResult, profile?) {
@@ -73,6 +86,7 @@ export class AuthService {
     localStorage.setItem('expires_at', JSON.stringify(this.expiresAt));
     this.accessToken = authResult.accessToken;
     this.userProfile = profile;
+    console.log(profile);
     // Update login status in loggedIn$ stream
     this.setLoggedIn(true);
     this.loggingIn = false;
@@ -108,5 +122,18 @@ export class AuthService {
       }
     });
   }
+
+  // getAccessToken(req, res, next) {
+  //   var AuthenticationClient = require('auth0').AuthenticationClient;
+  //   var auth0 = new AuthenticationClient({
+  //   clientID: AUTH_CONFIG.CLIENT_ID,
+  //   domain: AUTH_CONFIG.CLIENT_DOMAIN,
+  //   secret: AUTH_CONFIG.CLIENT_SECRET,
+  //   });
+  //   auth0.clientCredentialsGrant(
+  //     audience: `https://${AUTH_CONFIG.CLIENT_DOMAIN}/api/v2`,
+  //     scope: 'read:users'
+  //   )
+  // }
 
 }

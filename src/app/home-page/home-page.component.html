@@ -12,6 +12,17 @@
             </ul>
            
         </nav>
+        <!-- <div class="header-page-authStatus">
+                <span *ngIf="auth.loggingIn">Logging in...</span>
+                <ng-template [ngIf]="!auth.loggingIn">
+                  <button mat-button routerLink='/auth' class='authButton'>Login/Register</button>
+                  <span *ngIf="auth.loggedIn && auth.userProfile">
+                    {{ auth.userProfile.name }}
+                    <span class="divider">|</span>
+                    <button mat-button class='authButton' (click)="auth.logout()">Log Out</button>
+                  </span>
+                </ng-template>
+              </div> -->
         <div class="header-page-authStatus">
                 <span *ngIf="auth.loggingIn">Logging in...</span>
                 <ng-template [ngIf]="!auth.loggingIn">
