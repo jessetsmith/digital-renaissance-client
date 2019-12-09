@@ -9,24 +9,24 @@ import { catchError, map, tap } from 'rxjs/operators';
 })
 export class ArtistService {
 //HEROKU URL
-// private artistUrl = 'http://dr-server.herokuapp.com/artist'
+private artistUrl = 'http://dr-server.herokuapp.com/artist';
 
 // LOCAL URL
-private artistsUrl = 'http://localhost:3000/artist/getartists'
-private artistUrl = 'http://localhost:3000/artist'
-private createArtistUrl = 'http://localhost:3000/artist/register'
+// private artistsUrl = 'http://localhost:3000/artist/
+// private artistUrl = 'http://dr-server.herokuapp.com/artist'
+
 
 
   constructor(private http: HttpClient) { }
 
   createArtist(firstName: string, lastName: string, password: string, email: string, role: string){
     const artist: Artist = { firstName: firstName, lastName: lastName,  password: password, email: email, role: role}
-    return this.http.post<any>(this.createArtistUrl, artist)
+    return this.http.post<any>(this.artistUrl+ '/register', artist)
   }
 
   getArtists (): Observable<Artist[]>{
-    console.log(this.artistsUrl)
-    return this.http.get<Artist[]>(this.artistsUrl)
+    console.log(this.artistUrl)
+    return this.http.get<Artist[]>(this.artistUrl + '/getartists')
     .pipe(map(id => id))
   }
 
