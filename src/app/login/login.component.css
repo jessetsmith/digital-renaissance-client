@@ -1,9 +1,22 @@
 /* Bordered form */
 mat-form-field {
+  text-align: center;
+  
+
+}
+
+.loginForm {
     text-align: center;
+    display: flex;
+    justify-content: center;
 
   }
   
+  mat-card {
+    width: 15em;
+    margin-top: 5em;
+
+  }
   
 
   /* Full-width inputs */
@@ -12,21 +25,39 @@ mat-form-field {
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
-    border: 1px solid #ccc;
+    /* border: 1px solid #ccc; */
     box-sizing: border-box;
+  }
+
+  .loginButton {
+    width: 80%;
   }
   
   /* Set a style for all buttons */
   button {
-    background-color: #204a82;
+    background-color: #193153;
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
     border: none;
     cursor: pointer;
-    width: 100%;
+    width: 70%;
+    height: 4.5em;
+    text-align: center;
+    align-items: center;
   }
 
+  .toggle {
+    width: 40%;
+
+  }
+
+  a {
+    margin-top: 2em;
+    text-decoration: none;
+    color: black;
+    
+  }
   /* Add a hover effect for buttons */
   button:hover {
     opacity: 0.8;

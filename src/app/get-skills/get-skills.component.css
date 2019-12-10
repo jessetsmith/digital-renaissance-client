@@ -19,6 +19,8 @@
 .bannerText{
     border: 3px solid black;
     display:flex;
+    background-color: white;
+
 }
 
 .bannerItems{

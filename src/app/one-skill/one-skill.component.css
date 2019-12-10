@@ -1,7 +1,11 @@
+.skillCard {
+    background-color: white;
 
+}
 
 mat-card {
     text-align: center;
+    background-color: white;
 
     
 }
