@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-
 import { ArtistService } from '../../service/artist.service';
-
 
 
 @Component({
@@ -10,29 +8,16 @@ import { ArtistService } from '../../service/artist.service';
   templateUrl: './signup.component.html',
   styleUrls: ['./signup.component.css']
 })
-export class SignupComponent implements OnInit {
+export class SignupComponent{
  firstName= "";
  lastName= "";
  role= "";
  email= "";
  password= "";
 
-//  newArtist = new Artist (
-//    this.firstName, 
-//    this.lastName, 
-//    this.password,
-//    this.email,
-//    this.role
-//  )
-  
-  
-
   constructor(
     private artistService: ArtistService
     ) { }
-
-  ngOnInit() {
-  }
 
   onSignUp(form: NgForm) {
     if (form.invalid) {
