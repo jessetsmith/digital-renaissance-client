@@ -24,9 +24,6 @@ password="";
       return;
     }
     this.artistService.loginArtist(form.value.password, form.value.email)
-    .subscribe(
-      data => console.log("success", data)
-    )
     form.resetForm();
   }
 

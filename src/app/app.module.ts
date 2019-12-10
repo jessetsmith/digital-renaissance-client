@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from "@angular/forms";
-import { HttpClientModule }    from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS }    from '@angular/common/http';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatDialogModule, MatCardModule, MatIconModule, MatToolbarModule, MatButtonModule, MatFormFieldModule, MatInputModule } from '@angular/material';
 import { AuthService } from './auth/auth.service';
@@ -28,6 +28,7 @@ import { OneSkillComponent } from './one-skill/one-skill.component';
 import {MatSelectModule} from '@angular/material/select';
 import { Feedback } from 'src/models/feedback';
 import { FeedbackComponent } from './feedback/feedback.component';
+import {AuthInterceptor } from './auth-interceptor';
 
 
 
@@ -71,8 +72,10 @@ import { FeedbackComponent } from './feedback/feedback.component';
   ],
   entryComponents: [LoginComponent],
 
-  providers: [AuthService, ArtistsService, ArtistService, SkillService],
+  providers: [AuthService, ArtistsService, ArtistService, SkillService ],
 
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+// {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true}

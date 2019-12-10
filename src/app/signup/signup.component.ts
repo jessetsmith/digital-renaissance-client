@@ -9,6 +9,7 @@ import { ArtistService } from '../../service/artist.service';
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent{
+ 
  firstName= "";
  lastName= "";
  role= "";
