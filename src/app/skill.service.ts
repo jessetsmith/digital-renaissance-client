@@ -9,29 +9,32 @@ import { catchError, map, tap } from 'rxjs/operators';
 })
 export class SkillService {
 
-  private skillsUrl = 'http://dr-server.herokuapp.com/skill/getall';
+  private skillUrl = "http://dr-server.herokuapp.com/skill";
 
-  private oneSkillUrl = "http://dr-server.herokuapp.com/skill"
+  // private skillsUrl = 'http://dr-server.herokuapp.com/skill/getall';
 
-  private createSkillUrl="http://dr-server.herokuapp.com/skill/create"
+  // private oneSkillUrl = "http://dr-server.herokuapp.com/skill"
+
+  // private createSkillUrl="http://dr-server.herokuapp.com/skill/create"
 
   // private createSkillUrl="http://localhost:3000/skill/create"
 
   constructor(private http: HttpClient) { }
 
   getSkills (): Observable<Skill[]>{
-    console.log(this.skillsUrl)
-    return this.http.get<Skill[]>(this.skillsUrl)
+    console.log(this.skillUrl + '/getall')
+    return this.http.get<Skill[]>(this.skillUrl + '/getall')
     .pipe(map(id => id))
   }
 
   getOneSkill (skillId): Observable<Skill[]>{
-    console.log(this.oneSkillUrl)
-    return this.http.get<Skill[]>(this.oneSkillUrl+`/${skillId}`)
+    console.log(this.skillUrl)
+    return this.http.get<Skill[]>(this.skillUrl+`/${skillId}`)
   }
 
-  createSkill(skill: Skill) {
-    return this.http.post<any>(this.createSkillUrl, skill)
+  createSkill(title: string, description: string, image: string, price: number, skillType: string, artistId: number ) {
+    const skill: Skill = { title: title, description: description, image: image, price: price, skillType: skillType, artistId: artistId }
+    return this.http.post<any>(this.skillUrl + '/create', skill)
 
   }
 

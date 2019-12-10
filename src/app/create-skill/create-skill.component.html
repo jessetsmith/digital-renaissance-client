@@ -1,6 +1,78 @@
-<div class="bg">
-        <h1>Create Skill Profile</h1>
-        <form #skillForm="ngForm" (ngSubmit)="onSubmit()" novalidate class="formDiv">
+<mat-card>
+    <form (submit)="onSubmit(skillForm)"
+            #skillForm="ngForm" novalidate>
+            <h1>Create Skill Profile</h1>
+            <div>
+                <mat-form-field>
+                    <mat-label>Artist Category</mat-label>
+                    <mat-select>
+                        <mat-option *ngFor="let typeOfArtist of typeOfArtists" [value]="typeOfArtist.value">
+                        {{typeOfArtist.value}}
+
+                        </mat-option>
+                    </mat-select>
+            </mat-form-field>
+        </div>
+
+    <div>
+        <mat-form-field>
+            <input
+                matInput
+                rows="4"
+                name = "title"
+                ngModel 
+                required
+                placeholder="Title"
+                #title="ngModel">
+                <mat-error *ngIf="title.invalid">Please enter a title for the type of artist you are.</mat-error>
+        </mat-form-field>
+    </div>
+    <div>
+        <mat-form-field>
+                <input
+                matInput
+                rows="4"
+                name = "image"
+                ngModel 
+                placeholder="Work Examples"
+                #title="ngModel">
+        </mat-form-field>
+    </div>
+    <div>
+            <mat-form-field>
+                    <input
+                    matInput
+                    rows="4"
+                    name = "description"
+                    required
+                    ngModel 
+                    placeholder="Description"
+                    #title="ngModel">
+                    <mat-error *ngIf="description.invalid">Please enter a description for the type of service you offer.</mat-error>
+            </mat-form-field>
+        </div>
+
+        <div>
+                <mat-form-field>
+                        <input
+                        matInput
+                        rows="4"
+                        name = "price"
+                        required
+                        ngModel 
+                        placeholder="Price"
+                        #title="ngModel">
+                        <mat-error *ngIf="price.invalid">Please enter a price for your service.</mat-error>
+                </mat-form-field>
+            </div>
+     <button
+    mat-raised-button
+    color="accent"
+    type="submit">Create Skill Profile</button>
+    </form>
+</mat-card>
+        
+        <!-- <form #skillForm="ngForm" (ngSubmit)="onSubmit()" novalidate class="formDiv">
 
             {{ skillForm.form.valid}}
 
@@ -43,6 +115,6 @@
 
                 <div class="alert alert-danger" *ngIf="price.touched &&!price.valid"> Price is required.</div>
         </div>
-            <button [disabled]="skillForm.form.invalid || skillTypeHasError" class="submit" type="submit">Submit</button> 
+            <button [disabled]="skillForm.form.invalid class="submit" type="submit">Submit</button> 
 </form>
-</div>
+</div> -->

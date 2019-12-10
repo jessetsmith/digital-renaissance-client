@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { Artist } from '../../models/artist';
 import { ArtistService } from '../../service/artist.service';
 
 
