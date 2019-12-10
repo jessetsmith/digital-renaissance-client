@@ -1,15 +1,20 @@
 
- <mat-card class="oneSkill">
-
-    <mat-card-header>
+<mat-card class="oneSkill">
+    <mat-card-header class='card-header'>
         <div mat-card-avatar></div>
                 <mat-card-title>{{oneSkill.artist.firstName}}</mat-card-title>
-                <mat-card-subtitle>{{oneSkill.description}}</mat-card-subtitle>
+                <mat-card-subtitle>{{oneSkill.title}}</mat-card-subtitle>
         </mat-card-header>
         <img mat-card-image src="./assets/" alt="Photo of Artist Work">
         <mat-card-content>
+            <h2>{{oneSkill.skillType}}</h2>
+          </mat-card-content>
+        <mat-card-content>
           <p>{{oneSkill.description}}</p>
         </mat-card-content>
+        <mat-card-content>
+            <h3>{{oneSkill.price}}</h3>
+          </mat-card-content>
         <mat-card-actions>
           <button mat-button>Confirm</button>
         </mat-card-actions>
