@@ -32,7 +32,7 @@ private artistUrl = 'http://dr-server.herokuapp.com/artist';
   }
 
   getArtists (): Observable<Artist[]>{
-    console.log(this.artistUrl)
+    console.log(this.artistUrl + '/getartists')
     return this.http.get<Artist[]>(this.artistUrl + '/getartists')
     .pipe(map(id => id))
   }
@@ -50,6 +50,7 @@ private artistUrl = 'http://dr-server.herokuapp.com/artist';
       
     })
   }
+
 
   // updateArtist (artistId){
   //   console.log(this.artistUrl)

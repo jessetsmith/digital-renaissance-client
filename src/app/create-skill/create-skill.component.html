@@ -1,22 +1,120 @@
-<div class="bg">
-<br>
-<br>
-<h1>Create Skill Profile</h1>
-<div class="formDiv">
-    <img class="addSkill">
-</div>
-<div class="formDiv">
-    <mat-form-field (ngSubmit)="onSubmit()">
-        <label for="skillTitle">Skill Title:</label>
-        <input type="text" formControlName="skillTitle" class="form-control" />
-        <label for="skillDescription">Skill Description:</label>
-        <input type="text" formControlName="skillDescription" class="form-control" />
-        <label for="skillPrice">Skill Price:</label>
-        <input type="text" formControlName="skillPrice" class="form-control" />
-    </mat-form-field>
-</div>
-<div class="formDiv">
-    <button mat-button class='submit'>Submit</button>
-</div>
-<br>
-</div>
+<mat-card>
+    <form (submit)="onSubmit(skillForm)"
+            #skillForm="ngForm" novalidate>
+            <h1>Create Skill Profile</h1>
+            <div>
+                <mat-form-field>
+                    <mat-label>Artist Category</mat-label>
+                    <mat-select>
+                        <mat-option *ngFor="let typeOfArtist of typeOfArtists" [value]="typeOfArtist.value">
+                        {{typeOfArtist.value}}
+
+                        </mat-option>
+                    </mat-select>
+            </mat-form-field>
+        </div>
+
+    <div>
+        <mat-form-field>
+            <input
+                matInput
+                rows="4"
+                name = "title"
+                ngModel 
+                required
+                placeholder="Title"
+                #title="ngModel">
+                <mat-error *ngIf="title.invalid">Please enter a title for the type of artist you are.</mat-error>
+        </mat-form-field>
+    </div>
+    <div>
+        <mat-form-field>
+                <input
+                matInput
+                rows="4"
+                name = "image"
+                ngModel 
+                placeholder="Work Examples"
+                #title="ngModel">
+        </mat-form-field>
+    </div>
+    <div>
+            <mat-form-field>
+                    <input
+                    matInput
+                    rows="4"
+                    name = "description"
+                    required
+                    ngModel 
+                    placeholder="Description"
+                    #title="ngModel">
+                    <mat-error *ngIf="description.invalid">Please enter a description for the type of service you offer.</mat-error>
+            </mat-form-field>
+        </div>
+
+        <div>
+                <mat-form-field>
+                        <input
+                        matInput
+                        rows="4"
+                        name = "price"
+                        required
+                        ngModel 
+                        placeholder="Price"
+                        #title="ngModel">
+                        <mat-error *ngIf="price.invalid">Please enter a price for your service.</mat-error>
+                </mat-form-field>
+            </div>
+     <button
+    mat-raised-button
+    color="accent"
+    type="submit">Create Skill Profile</button>
+    </form>
+</mat-card>
+        
+        <!-- <form #skillForm="ngForm" (ngSubmit)="onSubmit()" novalidate class="formDiv">
+
+            {{ skillForm.form.valid}}
+
+            <pre>{{ skillForm.value | json}}</pre>
+            <hr />
+            {{skillModel | json}}
+
+        <div class="form-group">
+            <select (blur)="validateskillType(skillType.value)" (change)="validateskillType(skillType.value)" class="custom-select" 
+            [(ngModel)]="skillModel.skillType" name="skillType" #skillType="ngModel" [class.is-invalid]="skillType.hasError && skillType.touched">
+                <option value='default'>Artist Category</option>
+                <option *ngFor="let typeOfArtist of typeOfArtists">{{typeOfArtist}}</option>
+            </select>
+            <small class="text-danger" [class.d-none]="!skillTypeHasError || skillType.untouched">Please choose your artist category.</small>
+        </div>
+        <div class="form-group">
+                <label for="title">Title</label>
+                    <input required 
+                    [(ngModel)]="skillModel.title" name="title" #title= "ngModel" type="text" class="form-control">
+
+                    <div class="alert alert-danger" *ngIf="title.touched &&!title.valid"> Title is required.</div>
+        </div>
+
+        <div class="form-group">
+                <label for="image">Work Examples</label>
+                    <input  
+                    [(ngModel)]="skillModel.image" name="image" #image= "ngModel" type="text" class="form-control">
+        </div>
+
+        <div class="form-group">
+                <label for="description">Description</label>
+                    <textarea [(ngModel)]="skillModel.description" name="description" #description= "ngModel" id="description" cols="30" rows="10" class="form-control"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="price">Price</label>
+                <input required 
+                [(ngModel)]="skillModel.price" name="price" 
+                #price= "ngModel"
+                id="price" class="form-control"> 
+
+                <div class="alert alert-danger" *ngIf="price.touched &&!price.valid"> Price is required.</div>
+        </div>
+            <button [disabled]="skillForm.form.invalid class="submit" type="submit">Submit</button> 
+</form>
+</div> -->
