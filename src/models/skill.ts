@@ -1,8 +1,11 @@
 export class Skill {
-    title: string;
-    description: string;
-    image: string;
-    price: Number;
-    skillType: string;
-    artistId: Number;
+    constructor(
+    public title: string,
+    public description: string,
+    public image: string,
+    public price: number,
+    public skillType: string,
+    public artistId: number,
+    )
+    {}
 }

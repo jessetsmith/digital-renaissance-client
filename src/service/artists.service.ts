@@ -8,9 +8,11 @@ import { catchError, map, tap } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class ArtistsService {
-  // private artistsUrlHeroku = 'http://dr-server.herokuapp.com/artist/getartists'
 
-  private artistsUrl = 'http://localhost:3000/artist/getartists'
+  private artistsUrl = 'http://dr-server.herokuapp.com/artist/getartists';
+
+  private createArtistUrl ='http://dr-server.herokuapp.com/artist/register'
+
   constructor(private http: HttpClient) { }
 
   getArtists (): Observable<Artist[]>{
@@ -18,5 +20,4 @@ export class ArtistsService {
     return this.http.get<Artist[]>(this.artistsUrl)
     .pipe(map(id => id))
   }
-
 }

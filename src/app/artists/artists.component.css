@@ -51,7 +51,7 @@ h2 {
     font-weight: bold;
 }
 
-.findSkillsButton{
+.findSkillsButton {
     font-size: 150%;
     font-weight: bold;
     background-color:transparent;
@@ -60,6 +60,22 @@ h2 {
 }
 
 .findSkillsButton:hover{
+    font-size: 150%;
+    font-weight: bold;
+    background-color:transparent;
+    border:none;
+    color: black;
+}
+
+.createSkillsButton {
+    font-size: 150%;
+    font-weight: bold;
+    background-color:transparent;
+    border:none;
+    color: white;
+}
+
+.createSkillsButton:hover{
     font-size: 150%;
     font-weight: bold;
     background-color:transparent;
