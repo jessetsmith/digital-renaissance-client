@@ -8,12 +8,13 @@
                 <li><button mat-button routerLink='/about' class='authButton'>About</button></li>
                 <li><button mat-button routerLink='/artists' class='authButton'>Artists</button></li>
                 <button mat-button routerLink='/admin' class='adminButton'>Admin</button>
-                <button mat-button routerLink='/auth' class='authButton'>Signup/Signin</button> 
             </ul>
          
         </nav>
-        <!-- <div class="header-page-authStatus">
-                <span *ngIf="auth.loggingIn">Logging in...</span>
+        <div class="header-page-authStatus">
+                <button mat-button routerLink='/login' class='authButton'>Register/Login</button> 
+
+                <!-- <span *ngIf="auth.loggingIn">Logging in...</span>
                 <ng-template [ngIf]="!auth.loggingIn">
                   <button mat-button *ngIf="!auth.loggedIn" class='authButton' (click)="auth.login()">Login/Register</button>
                   <span *ngIf="auth.loggedIn && auth.userProfile">
@@ -21,10 +22,10 @@
                     <span class="divider">|</span>
                     <button mat-button class='authButton' (click)="auth.logout()">Log Out</button>
                   </span>
-                </ng-template>
+                </ng-template> -->
               </div>
         <div class='auth'>
-        </div> -->
+        </div>
       
     </div>
 

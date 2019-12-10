@@ -10,9 +10,11 @@ section {
     background-image: url('../../assets/paint-phone-glasses.jpg');//Photo by Andrik Langfield on Unsplash
     background-size: 120%;
     background-position: top;
-    background-blend-mode: color;
+    background-attachment: fixed;
+    background-size: cover;
     background-repeat: no-repeat;
     padding:0;
+    background-color: #b87b7d;
 }
 
 .logo {

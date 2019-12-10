@@ -4,6 +4,29 @@ mat-form-field {
   
 
 }
+
+.signUpForm {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  
+}
+
+.toggleDiv {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  margin-top: .5em;
+  background-color:  #b87b7d;
+  height: 4.5em;
+
+}
+
+mat-card {
+  width: 15em;
+  margin-top: 2em;
+
+}
   
   
   /* Full-width inputs */
@@ -16,16 +39,23 @@ mat-form-field {
     box-sizing: border-box;
   }
   
+  .signupButton {
+    width: 80%;
+  }
   /* Set a style for all buttons */
   button {
-    background-color: #204a82;
+    background-color: #193153;
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
     border: none;
     cursor: pointer;
-    width: 100%;
+    width: 50%;
+    height: 4.5em;
+    text-align: center;
+    align-items: center;
   }
+
 
   /* Add a hover effect for buttons */
   button:hover {

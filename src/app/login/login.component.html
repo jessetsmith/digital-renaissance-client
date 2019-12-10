@@ -1,24 +1,5 @@
-<!-- <div class='loginForm'>
-   <div>
-       <form  #loginInForm="ngForm">
-            <mat-form-field >
-                    <h1>Login</h1>
-                    <label for="email">E-Mail</label>
-                    <input type="text" 
-                    formControlName="email" 
-                    class="form-control" />
-                
-                    <label for="password">Password</label>
-                    <input type="password" min="8" formControlName="password" class="form-control" />
-                    <button mat-button class='login'>Login</button>
-                </mat-form-field>
-       </form>
-        
-    </div>
-</div> -->
-
-
-<mat-card>
+<div class='loginForm'>
+  <mat-card>
         <form (submit)="onLogin(loginForm)" #loginForm="ngForm">
             <div>
                 <mat-form-field>
@@ -48,9 +29,20 @@
                     <mat-error *ngIf="email.invalid">Please enter a password.</mat-error>
                 </mat-form-field>
                 </div>
-                <button
-            mat-raised-button
-            color="accent"
+                <button 
+            mat-button
+            class='loginButton'
             type="submit">LOGIN</button>
          </form>
 </mat-card>
+
+</div> 
+
+<br/>
+
+<div class='loginForm'>
+        <button mat-button class='toggle' routerLink='/signup'>New artist? Register for an account here!</button>
+
+</div>
+
+

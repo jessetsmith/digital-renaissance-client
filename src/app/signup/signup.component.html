@@ -1,3 +1,4 @@
+<div class='signUpForm'>
 <mat-card>
         <form (submit)="onSignUp(signUpForm)" #signUpForm="ngForm">
             <div>
@@ -33,6 +34,7 @@
                 <input
                     matInput
                     rows="4"
+                    type='password'
                     name="password"
                     ngModel
                     required
@@ -45,6 +47,7 @@
                     <input
                       matInput
                       rows="4"
+                      type='email'
                       name="email"
                       ngModel
                       required
@@ -53,8 +56,15 @@
                     <mat-error *ngIf="email.invalid">Please enter an email.</mat-error>
                 </mat-form-field>
           <button
-            mat-raised-button
-            color="accent"
+            mat-button
+            class='signupButton'
             type="submit">SIGNUP</button>
         </form>
 </mat-card>
+</div>
+
+<div class='toggleDiv'>
+        <button mat-button class='toggle' routerLink='/login'>Already have a profile? Login here!</button>
+
+</div>
+

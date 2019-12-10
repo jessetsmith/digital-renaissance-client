@@ -1,9 +1,11 @@
-footer {
+.footer {
     background: #b87b7d;
     padding: 0;
     /* margin-top:-2em; */
-    height: 2em;
+    height: 3em;
     color: white;
+    /* position: sticky; */
+    margin-top: -2em;
     position: fixed;
 
 }
@@ -11,13 +13,16 @@ footer {
 ul {
     list-style-type: none;
     margin: 0; padding: 0;
+   
     
 }
 
 li {
     float: left;
+    margin-top: .5em;
    
 }
+
 
 a {
     padding: 1.5em;
