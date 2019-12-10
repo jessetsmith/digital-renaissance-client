@@ -1,15 +1,16 @@
+<div class='main'>
 <header>
     <div class='container'>
         <a routerLink='/' class='logo'>Digital Renaissance</a>
-        <nav>
+        <nav class='nav' id='nav'>
 
             <ul>
                 <li><button mat-button routerLink='/' class='authButton'>Home</button></li>
-                <li><button mat-button routerLink='/about' class='authButton'>About</button></li>
+                <!-- <li><button mat-button routerLink='/about' class='authButton'>About</button></li> -->
                 <li><button mat-button routerLink='/artists' class='authButton'>Artists</button></li>
                 <button mat-button routerLink='/admin' class='adminButton'>Admin</button>
             </ul>
-         
+    
         </nav>
         <div class="header-page-authStatus">
                 <button mat-button routerLink='/login' class='authButton'>Register/Login</button> 
@@ -34,5 +35,7 @@
 <section>
     <router-outlet></router-outlet>
 </section>
+
+</div>
 
 <app-footer></app-footer>

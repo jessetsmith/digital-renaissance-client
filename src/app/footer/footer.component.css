@@ -1,12 +1,12 @@
-.footer {
+mat-toolbar {
     background: #b87b7d;
     padding: 0;
     /* margin-top:-2em; */
     height: 3em;
     color: white;
     /* position: sticky; */
-    margin-top: -2em;
-    position: fixed;
+    /* margin-top: -2em; */
+    /* position: fixed; */
 
 }
 
