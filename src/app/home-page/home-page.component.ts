@@ -31,9 +31,10 @@ export class HomePageComponent implements OnInit {
   //     // this.email = result;
   //   });
   // }
-
+  
 
   ngOnInit() {
+    
   }
 
 }
