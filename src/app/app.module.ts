@@ -26,6 +26,8 @@ import { ArtistService } from '../service/artist.service';
 import { CreateSkillComponent } from './create-skill/create-skill.component';
 import { OneSkillComponent } from './one-skill/one-skill.component';
 import {MatSelectModule} from '@angular/material/select';
+import { Feedback } from 'src/models/feedback';
+import { FeedbackComponent } from './feedback/feedback.component';
 
 
 
@@ -45,7 +47,8 @@ import {MatSelectModule} from '@angular/material/select';
     ArtistComponent,
     GetSkillsComponent,
     CreateSkillComponent,
-    OneSkillComponent
+    OneSkillComponent,
+    FeedbackComponent
 
   ],
   imports: [
