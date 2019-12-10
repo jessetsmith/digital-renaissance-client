@@ -19,11 +19,11 @@ export class CreateSkillComponent {
   skillType="";
   artistId="";
 
- typeOfArtists: typeOfArtists[] = 
- [{value: 'Photographer', viewValue: 'Photographer'},
- {value: 'Musician', viewValue: 'Musician'},
- {value: 'Illustrator', viewValue: 'Illustrator'}
-];
+//  typeOfArtists: typeOfArtists[] = 
+//  [{value: 'Photographer', viewValue: 'Photographer'},
+//  {value: 'Musician', viewValue: 'Musician'},
+//  {value: 'Illustrator', viewValue: 'Illustrator'}
+// ];
  skillTypeHasError = true;
 
 // skillModel = new Skill('Destination Wedding Photographer', 'very great photographer', 'url', 100, 'default', 12);

@@ -15,11 +15,14 @@ private artistUrl = 'http://dr-server.herokuapp.com/artist';
 // private artistsUrl = 'http://localhost:3000/artist/
 // private artistUrl = 'http://dr-server.herokuapp.com/artist'
 
+private token: string;
 
 
   constructor(private http: HttpClient) { }
 
-
+  getToken() {
+    return this.token;
+  }
 
   createArtist(firstName: string, lastName: string, password: string, email: string, role: string){
     const artist: Artist = { firstName: firstName, lastName: lastName,  password: password, email: email, role: role}
@@ -28,7 +31,13 @@ private artistUrl = 'http://dr-server.herokuapp.com/artist';
 
   loginArtist(password: string, email: string){
     const artist = { password: password, email: email }
-    return this.http.post<any>(this.artistUrl+ '/login', artist)
+    this.http.post<any>(this.artistUrl+ '/login', artist)
+    .subscribe(response => {
+      const token = response.sessionToken;
+      this.token = token;
+      console.log(token)
+      this.saveAuthData(token)
+    })
   }
 
   getArtists (): Observable<Artist[]>{
@@ -59,4 +68,12 @@ private artistUrl = 'http://dr-server.herokuapp.com/artist';
   //   })
   // }
 
+
+  private saveAuthData(token: string){
+    localStorage.setItem('token', token);
+  }
+
+  private clearAuthData(){
+    localStorage.removeItem("token");
+  }
 }
