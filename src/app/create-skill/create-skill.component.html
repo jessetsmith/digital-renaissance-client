@@ -6,9 +6,8 @@
                 <mat-form-field>
                     <mat-label>Artist Category</mat-label>
                     <mat-select>
-                        <mat-option *ngFor="let typeOfArtist of typeOfArtists" [value]="typeOfArtist.value">
-                        {{typeOfArtist.value}}
-
+                        <mat-option *ngFor="let typeOfArtist of typeOfArtists" [value]="typeOfArtist">
+                        {{typeOfArtist}}
                         </mat-option>
                     </mat-select>
             </mat-form-field>

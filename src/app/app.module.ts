@@ -20,7 +20,7 @@ import { GetArtistsComponent } from './get-artists/get-artists.component';
 import { AdminComponent } from './admin/admin.component';
 import { ArtistComponent } from './artist/artist.component';
 import { GetSkillsComponent } from './get-skills/get-skills.component';
-import { ArtistsService } from '../service/artists.service';
+// import { ArtistsService } from '../service/artists.service';
 import { SkillService } from './skill.service';
 import { ArtistService } from '../service/artist.service';
 import { CreateSkillComponent } from './create-skill/create-skill.component';
@@ -76,7 +76,7 @@ import {AuthInterceptor } from './auth-interceptor';
   ],
   entryComponents: [LoginComponent],
 
-  providers: [AuthService, ArtistsService, ArtistService, SkillService ],
+  providers: [AuthService, ArtistService, SkillService ],
 
   bootstrap: [AppComponent]
 })

@@ -14,8 +14,13 @@
     
         </nav>
         <div class="header-page-authStatus">
+            <li *ngIf="artistIsAuthenticated">
+                <button mat-button class= 'authButton'>Logout</button>
+            </li>
+            <li *ngIf="!artistIsAuthenticated">
                 <button mat-button routerLink='/login' class='regButton'>Register/Login</button> 
-
+            </li>
+               
                 <!-- <span *ngIf="auth.loggingIn">Logging in...</span>
                 <ng-template [ngIf]="!auth.loggingIn">
                   <button mat-button *ngIf="!auth.loggedIn" class='authButton' (click)="auth.login()">Login/Register</button>
@@ -32,7 +37,8 @@
 </header>
 
 <section>
-    <router-outlet></router-outlet>
+    <router-outlet>
+    </router-outlet>
 </section>
 
 </div>
