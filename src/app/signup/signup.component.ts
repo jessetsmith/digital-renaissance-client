@@ -25,9 +25,6 @@ export class SignupComponent{
       return;
     }
     this.artistService.createArtist(form.value.firstName, form.value.lastName, form.value.password, form.value.email, form.value.role)
-    .subscribe(
-      data => console.log("success", data)
-    )
     form.resetForm();
   }
 }
