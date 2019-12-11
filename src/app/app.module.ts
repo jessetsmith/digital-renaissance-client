@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from "@angular/forms";
+import {MatTableModule} from '@angular/material/table';
 import { HttpClientModule, HTTP_INTERCEPTORS }    from '@angular/common/http';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatDialogModule, MatCardModule, MatIconModule, MatToolbarModule, MatButtonModule, MatFormFieldModule, MatInputModule } from '@angular/material';
@@ -21,7 +22,7 @@ import { AdminComponent } from './admin/admin.component';
 import { ArtistComponent } from './artist/artist.component';
 import { GetSkillsComponent } from './get-skills/get-skills.component';
 import { ArtistsService } from '../service/artists.service';
-import { SkillService } from './skill.service';
+import { SkillService } from '../service/skill.service';
 import { ArtistService } from '../service/artist.service';
 import { CreateSkillComponent } from './create-skill/create-skill.component';
 import { OneSkillComponent } from './one-skill/one-skill.component';
@@ -29,6 +30,7 @@ import {MatSelectModule} from '@angular/material/select';
 import { Feedback } from 'src/models/feedback';
 import { FeedbackComponent } from './feedback/feedback.component';
 import {AuthInterceptor } from './auth-interceptor';
+import { MyprofileComponent } from './myprofile/myprofile.component';
 
 
 
@@ -49,7 +51,8 @@ import {AuthInterceptor } from './auth-interceptor';
     GetSkillsComponent,
     CreateSkillComponent,
     OneSkillComponent,
-    FeedbackComponent
+    FeedbackComponent,
+    MyprofileComponent
 
   ],
   imports: [
@@ -68,7 +71,8 @@ import {AuthInterceptor } from './auth-interceptor';
     MatDialogModule,
     HttpClientModule,
     FormsModule,
-    MatSelectModule
+    MatSelectModule,
+    MatTableModule
   ],
   entryComponents: [LoginComponent],
 
