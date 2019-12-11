@@ -7,12 +7,14 @@ header {
 
 section {
     height: 100%;
+    width:100%;
     background-image: url('../../assets/paint-phone-glasses.jpg');//Photo by Andrik Langfield on Unsplash
     background-position: top;
     background-attachment: fixed;
     background-size: cover;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat center center fixed;
     padding:3em;
+    overflow:hidden;
     background-color: #b87b7d;
 }
 
