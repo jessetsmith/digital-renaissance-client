@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import {Artist} from '../models/artist';
-import { Observable, of } from 'rxjs';
+import { Observable, of, Subject } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
 import { Router } from "@angular/router";
 
@@ -13,6 +13,7 @@ export class ArtistService {
 private artistUrl = 'http://dr-server.herokuapp.com/artist';
 
 private token: string;
+private authStatusListener = new Subject<boolean>()
 
 
   constructor(
@@ -23,6 +24,10 @@ private token: string;
   getToken() {
     return this.token;
   }
+
+  getAuthStatusListener(){
+    return this.authStatusListener.asObservable();
+}
 
   createArtist(firstName: string, lastName: string, password: string, email: string, role: string){
     const artist: Artist = { firstName: firstName, lastName: lastName,  password: password, email: email, role: role}
@@ -44,6 +49,7 @@ private token: string;
       this.token = token;
       console.log(token)
       this.saveAuthData(token)
+      this.authStatusListener.next(true);
       this.router.navigate(["artists"])
     })
   }
