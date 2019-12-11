@@ -8,19 +8,26 @@ import { catchError, map, tap } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class FeedbackService {
-  // private feedbackUrl = 'http://dr-server.herokuapp.com/feedback/';
+  private feedbackUrl = 'http://dr-server.herokuapp.com/feedback';
 
-  private feedbackUrl = 'http://localhost:3000/feedback/';
+  // private feedbackUrl = 'http://localhost:3000/feedback/';
 
   constructor( private http: HttpClient ) { }
 
-  getFeedback (id): Observable<Feedback[]>{
-    console.log(this.feedbackUrl)
-    return this.http.get<Feedback[]>(this.feedbackUrl + `${id}`)
-    .pipe(map(id => id))
+ 
+
+  createFeedback(id,  rating: number, comment: string, type: string,  skillId: number ) {
+    
+    const feedback: Feedback = { rating: rating, comment: comment,  type: type, skillId: skillId }
+    const token = localStorage.getItem('token');
+    return this.http.post<any>(this.feedbackUrl + '/create' + `/${id}`, feedback, { headers: {'Authorization': token}})
 
   }
 
-
+  getFeedback(id){
+    this.http.get<Feedback[]>(this.feedbackUrl + `/${id}`)
+    .pipe(map(id => id))
+    .subscribe(data => console.log(data))
+  }
 
 }

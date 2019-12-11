@@ -1,6 +1,10 @@
 export class Feedback {
-    rating: number;
-    comment: string;
-    type: string;
-    artistId: Number;
+    constructor(
+        public rating: number,
+        public comment: string,
+        public type: string,
+        public skillId: number
+    ){}
+    
+   
 }
