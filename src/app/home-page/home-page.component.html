@@ -8,9 +8,7 @@
                 <li><button mat-button routerLink='/home' class='authButton'>Home</button></li>
                 <!-- <li><button mat-button routerLink='/about' class='authButton'>About</button></li> -->
                 <li><button mat-button routerLink='/artists' class='authButton'>Artists</button></li>
-                <li>
-                <button mat-button routerLink='/admin' class='adminButton'>Admin</button>
-              </li>
+                <li><button mat-button routerLink='/admin' class='authButton'>Admin</button></li>
 
             </ul>
     
@@ -20,10 +18,9 @@
                 <button mat-button class= 'authButton'>Logout</button>
             </li>
             <li *ngIf="!artistIsAuthenticated">
-                <button mat-button routerLink='/login' class='authButton'>Register/Login</button> 
+                <button mat-button routerLink='/login' class='regButton'>Register/Login</button> 
             </li>
                
-
                 <!-- <span *ngIf="auth.loggingIn">Logging in...</span>
                 <ng-template [ngIf]="!auth.loggingIn">
                   <button mat-button *ngIf="!auth.loggedIn" class='authButton' (click)="auth.login()">Login/Register</button>
