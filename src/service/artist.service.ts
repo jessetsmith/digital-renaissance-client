@@ -46,12 +46,11 @@ private authStatusListener = new Subject<boolean>()
     .subscribe(response => {
       const token = response.sessionToken;
       const artistInfo = response.artist;
-      this.token = token;
       this.artistInfo = artistInfo;
+      this.token = token;
       console.log(token);
       console.log(response);
       this.saveAuthData(token, artistInfo);
-      this.artistInfo = artistInfo;
       this.authStatusListener.next(true);
       this.router.navigate(["/artists"])
     })
@@ -71,7 +70,7 @@ private authStatusListener = new Subject<boolean>()
       this.token = token;
       console.log(response);
       console.log(token);
-      this.saveAuthData(token, artistInfo);
+      this.saveAuthData(token, artistInfo)
       this.artistInfo = artistInfo;
       console.log(token)
       console.log(response)

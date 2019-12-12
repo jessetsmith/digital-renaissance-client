@@ -11,14 +11,6 @@ export class SkillService {
 
   private skillUrl = "http://dr-server.herokuapp.com/skill";
 
-  // private skillsUrl = 'http://dr-server.herokuapp.com/skill/getall';
-
-  // private oneSkillUrl = "http://dr-server.herokuapp.com/skill"
-
-  // private createSkillUrl="http://dr-server.herokuapp.com/skill/create"
-
-  // private createSkillUrl="http://localhost:3000/skill/create"
-
   constructor(private http: HttpClient) { }
 
   getSkills (): Observable<Skill[]>{
