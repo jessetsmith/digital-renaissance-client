@@ -50,10 +50,15 @@ private authStatusListener = new Subject<boolean>()
       this.token = token;
       console.log(token);
       console.log(response);
-      this.saveAuthData(token, artistInfo)
+      this.saveAuthData(token, artistInfo);
       this.authStatusListener.next(true);
       this.router.navigate(["/artists"])
     })
+  }
+
+  setArtistProfile () {
+    this.artistProfile = this.artistInfo;
+    console.log(this.artistProfile);
   }
 
   loginArtist(password: string, email: string){

@@ -37,8 +37,7 @@ const routes: Routes = [
   {path: 'create-skill', component: CreateSkillComponent},
   {path: 'skill/getall',component: MyprofileComponent},
   {path: 'skill/:id', component: OneSkillComponent},
-  {path: '**', redirectTo: ''},
-
+  {path: '**', redirectTo: ''}
 ];
 
 @NgModule({
