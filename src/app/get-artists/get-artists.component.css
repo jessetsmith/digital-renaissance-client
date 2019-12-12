@@ -1,5 +1,7 @@
 .bg{
-    background-color: #204a82;
+    background-color: #3b6283;
+    min-height: 500px;
+
 }
 h1{
     display: block;

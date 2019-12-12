@@ -4,6 +4,9 @@ import {Artist} from '../models/artist';
 import { Observable, of, Subject } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
 import { Router } from "@angular/router";
+import { BehaviorSubject } from 'rxjs';
+
+
 
 @Injectable({
   providedIn: 'root'
@@ -15,11 +18,18 @@ private artistUrl = 'http://dr-server.herokuapp.com/artist';
 private token: string;
 private artistInfo = [];
 private authStatusListener = new Subject<boolean>()
+  artistProfile: any;
+  expiresAt: number;
+  // Create a stream of logged in status to communicate throughout app
+  loggedIn: boolean;
+  loggingIn: boolean;
+  isAdmin: boolean;
+  loggedIn$ = new BehaviorSubject<boolean>(this.loggedIn);
 
 
   constructor(
     private http: HttpClient,
-    private router: Router
+    private router: Router,
     ) { }
 
   getToken() {
@@ -36,9 +46,11 @@ private authStatusListener = new Subject<boolean>()
     .subscribe(response => {
       const token = response.sessionToken;
       this.token = token;
-      console.log(token)
+      console.log(token);
+      console.log(response);
       this.saveAuthData(token)
-      this.router.navigate(["artists"])
+      this.authStatusListener.next(true);
+      this.router.navigate(["/artists"])
     })
   }
 
@@ -49,12 +61,15 @@ private authStatusListener = new Subject<boolean>()
       const token = response.sessionToken;
       const artistInfo = response.artist;
       this.token = token;
+      console.log(response);
+      console.log(token);
+      this.saveAuthData(token)
       this.artistInfo = artistInfo;
       console.log(token)
       console.log(response)
       this.saveAuthData(token, response);
       this.authStatusListener.next(true);
-      this.router.navigate(["artists"])
+      this.router.navigate(["/artists"])
     })
   }
 
@@ -92,6 +107,47 @@ private authStatusListener = new Subject<boolean>()
     localStorage.setItem('artistInfo', JSON.stringify(artistInfo))
     // +localStorage.setItem('id', id )
   }
+
+
+  // private _getProfile(authResult, artistId) {
+  //   this.loggingIn = true;
+  //   // Use access token to retrieve user's profile and set session
+  //   this.http.get<Artist[]>(this.artistUrl + `/${artistId}`)(authResult.accessToken, (err, profile) => {
+  //     if (profile) {
+  //       this.isAdmin = this._checkAdmin(profile);
+  //       this._setSession(authResult, profile);
+  //     } else if (err) {
+  //       console.warn(`Error retrieving profile: ${err.error}`);
+  //     }
+  //   });
+  // }
+
+  // private _checkAdmin(profile) {
+  //   // Check if the user has admin role
+  //   const roles = profile[this.artistProfile.role] || [];
+  //   return roles.indexOf('admin') > -1;
+  // }
+
+
+  // setLoggedIn(value: boolean) {
+  //   // Update login status subject
+  //   this.loggedIn$.next(value);
+  //   this.loggedIn = value;
+  // }
+
+  // private _setSession(authResult, profile?) {
+  //   this.expiresAt = (authResult.expiresIn * 1000) + Date.now();
+  //   // Store expiration in local storage to access in constructor
+  //   localStorage.setItem('expires_at', JSON.stringify(this.expiresAt));
+  //   this.token = authResult.sessionToken;
+  //   this.artistProfile = profile;
+  //   console.log(profile);
+  //   this.setLoggedIn(true);
+  //   this.artistProfile(profile);
+  //   this.loggingIn = false;
+  //   this.router.navigate(['/artists']);
+
+  // }
 
   private clearAuthData(){
     localStorage.removeItem("token");

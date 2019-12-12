@@ -21,6 +21,8 @@
     color:white;
     text-align:center;
     padding:10px;
+    min-height: 500px;
+
 }
 
 .bannerText{
