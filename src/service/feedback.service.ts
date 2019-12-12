@@ -3,6 +3,7 @@ import { Feedback } from '../models/feedback';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
+import { Router } from "@angular/router";
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +13,7 @@ export class FeedbackService {
 
   // private feedbackUrl = 'http://localhost:3000/feedback/';
 
-  constructor( private http: HttpClient ) { }
+  constructor( private http: HttpClient, private router: Router ) { }
 
  
 
@@ -24,10 +25,18 @@ export class FeedbackService {
 
   }
 
-  getFeedback(id){
-    this.http.get<Feedback[]>(this.feedbackUrl + `/${id}`)
-    .pipe(map(id => id))
-    .subscribe(data => console.log(data))
+  getFeedback(id): Observable<Feedback[]>{
+    return this.http.get<Feedback[]>(this.feedbackUrl + `/${id}`)
+    .pipe(map(data => data))
+  }
+
+  deleteFeedback(id){
+    const token = localStorage.getItem('token');
+     return this.http.delete<Feedback[]>(this.feedbackUrl + '/delete' + `/${id}`, { headers: {'Authorization': token}})
+    .subscribe(()=> {
+      // this.getArtists();
+      
+    })
   }
 
 }

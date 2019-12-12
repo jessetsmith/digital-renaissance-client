@@ -35,20 +35,23 @@
      <button
     mat-raised-button
     color="accent"
-    type="submit">Create Skill Profile</button>
+    type="submit">ADD FEEDBACK</button>
     </form>
 </mat-card>
+<button (click)="onGetFeedback($event)">Show Skill Comments</button>
 <br>
    
- <!-- FEEDBACK -->
-<mat-card *ngFor='let arr of array' >
-    <div class="profile-info">
-    <div>
-           {{arr.age}}
-    </div>
-    <div>
-            
-    </div>
-    </div>
+<mat-card *ngFor='let fb of feedbacks'>
+    <mat-card-content>
+        <div>
+            <p>Rating: {{fb.rating}}</p>
+            <p>Comment: {{fb.comment}}</p>
+        </div>
+        <div>
+                <button mat-button (click)="onDeleteFeedback(fb.id)"> DELETE</button>
+        </div>
+        
+    </mat-card-content>
 </mat-card>
+
 

@@ -34,7 +34,8 @@ export class SkillService {
 
   createSkill(title: string, description: string, image: string, price: number, skillType: string, artistId: number ) {
     const skill: Skill = { title: title, description: description, image: image, price: price, skillType: skillType, artistId: artistId }
-    return this.http.post<any>(this.skillUrl + '/create', skill)
+    const token = localStorage.getItem('token');
+    return this.http.post<any>(this.skillUrl + '/create', skill, { headers: {'Authorization': token}})
 
   }
 
