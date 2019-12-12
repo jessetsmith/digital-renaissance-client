@@ -49,9 +49,14 @@
         </div>
         <div>
                 <button mat-button (click)="onDeleteFeedback(fb.id)"> DELETE</button>
+                <a [routerLink]="['feedback/edit-feedback/', fb.id]">UPDATE</a>
         </div>
         
     </mat-card-content>
 </mat-card>
+
+
+<app-edit-feedback></app-edit-feedback>
+
 
 

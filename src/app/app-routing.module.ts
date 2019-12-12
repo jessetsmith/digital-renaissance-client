@@ -14,6 +14,7 @@ import { ArtistComponent } from './artist/artist.component';
 import { AdminComponent } from './admin/admin.component';
 import { CreateSkillComponent } from './create-skill/create-skill.component';
 import { HomeComponent } from './home/home.component';
+import { EditFeedbackComponent } from './feedback/edit-feedback/edit-feedback.component';
 
 
 const routes: Routes = [
@@ -33,6 +34,7 @@ const routes: Routes = [
   {path: 'admin', component: AdminComponent},
   {path: 'create-skill', component: CreateSkillComponent},
   {path: 'skill/:id', component: OneSkillComponent},
+  {path: 'feedback/edit-feedback/:id', component: EditFeedbackComponent}
 ];
 
 @NgModule({

@@ -49,4 +49,9 @@ ratings = [1,2,3,4,5]
     this.onGetFeedback();
   }
 
+  onUpdateFeedback(id): void {
+    this.feedbackService.updateFeedback(id, this.feedbacks);
+    this.onGetFeedback();
+  }
+
 }

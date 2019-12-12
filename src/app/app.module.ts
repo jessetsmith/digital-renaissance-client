@@ -1,9 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { HttpClientModule, HTTP_INTERCEPTORS }    from '@angular/common/http';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatDialogModule, MatCardModule, MatIconModule, MatToolbarModule, MatButtonModule, MatFormFieldModule, MatInputModule } from '@angular/material';
+
 import { AuthService } from './auth/auth.service';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -31,6 +32,7 @@ import { HomeComponent } from './home/home.component';
 import { Feedback } from 'src/models/feedback';
 import { FeedbackComponent } from './feedback/feedback.component';
 import {AuthInterceptor } from './auth-interceptor';
+import { EditFeedbackComponent } from './feedback/edit-feedback/edit-feedback.component';
 
 
 
@@ -53,7 +55,8 @@ import {AuthInterceptor } from './auth-interceptor';
     CreateSkillComponent,
     OneSkillComponent,
     HomeComponent,
-    FeedbackComponent
+    FeedbackComponent,
+    EditFeedbackComponent
 
   ],
   imports: [
@@ -72,7 +75,8 @@ import {AuthInterceptor } from './auth-interceptor';
     MatDialogModule,
     HttpClientModule,
     FormsModule,
-    MatSelectModule
+    MatSelectModule,
+    ReactiveFormsModule
   ],
   entryComponents: [LoginComponent],
 

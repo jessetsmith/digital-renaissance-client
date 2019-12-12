@@ -39,4 +39,20 @@ export class FeedbackService {
     })
   }
 
+  updateFeedback (id, feedback){
+    const token = localStorage.getItem('token');
+     return this.http.put(this.feedbackUrl + '/delete' + `/${id}`, feedback, { headers: {'Authorization': token}}).pipe(
+       tap(_=> console.log(`updated feedback ${id}`))
+     )
+  }
+
+
+
+  // updateTodo (id, todo): Observable<any> {
+  //   const url = `${apiUrl}/update.php?id=${id}`;
+  //   return this.http.put(url, todo, httpOptions).pipe(
+  //     tap(_ => console.log(`updated todo id=${id}`))
+  //   );
+  // }
+
 }
