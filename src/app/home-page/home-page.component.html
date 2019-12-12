@@ -9,7 +9,7 @@
                 <!-- <li><button mat-button routerLink='/about' class='authButton'>About</button></li> -->
                 <li><button mat-button routerLink='/artists' class='authButton'>Artists</button></li>
                 <li>
-                <button mat-button routerLink='/admin' class='adminButton'>Admin</button>
+                <button mat-button routerLink='/admin' class='authButton'>Admin</button>
               </li>
               <button mat-button 
               [routerLink]="['/skill/getall']" class='authButton'>My Profile</button>
@@ -18,7 +18,7 @@
         </nav>
         <div class="header-page-authStatus">
                 <span *ngIf="artistIsAuthenticated">
-                        <!-- {{ artist.firstName}} -->
+                        {{ artistInfo.firstName}}
                         <span class="divider">|</span>
                         <button mat-button *ngIf="artistIsAuthenticated" class='regButton'>Logout</button>
                     </span>
