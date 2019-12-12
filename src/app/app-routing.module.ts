@@ -39,12 +39,9 @@ const routes: Routes = [
   component: CreateSkillComponent,
   // canActivate: [AuthGuard]
 },
-{path: '**', redirectTo: ''},
-  {path: 'skill/:id', component: OneSkillComponent},
-  {path: 'create-skill', component: CreateSkillComponent},
-  {path: 'skill/getall',component: MyprofileComponent},
-  {path: 'skill/:id', component: OneSkillComponent}
-
+{path: 'skill/getall',component: MyprofileComponent},
+{path: 'skill/:id', component: OneSkillComponent},
+  {path: '**', redirectTo: ''},
 ];
 
 @NgModule({
