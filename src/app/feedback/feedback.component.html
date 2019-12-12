@@ -1,11 +1,57 @@
-<p>feedback works!</p>
-{{feedback}}
-<div class="bannerHeading">Feedback</div>
-<div class="banner">
-    <div class="bannerText" *ngFor='let fb of feedback'>
-        <p>{{fb}}</p>
-  
+<br>
+<mat-card>
+    <form (submit)="onSubmit(feedbackForm)"
+            #feedbackForm="ngForm" novalidate>
+            <h1>Give your Feedback</h1>
+            <div>
+                <mat-form-field>
+                    <mat-label>Rating</mat-label>
+                    <p>Submit rating 1 - 5</p>
+                    <input
+                        matInput
+                        rows="4"
+                        name = "rating"
+                        ngModel 
+                        required
+                        placeholder="Rating"
+                        #rating="ngModel">
+                    
+            </mat-form-field>
+        </div>
 
+    <div>
+        <mat-form-field>
+            <input
+                matInput
+                rows="4"
+                name = "comment"
+                ngModel 
+                required
+                placeholder="Comment"
+                #comment="ngModel">
+                <mat-error *ngIf="comment.invalid">Please enter a comment for this artist's skill.</mat-error>
+        </mat-form-field>
     </div>
-</div>
+     <button
+    mat-raised-button
+    color="accent"
+    type="submit">ADD FEEDBACK</button>
+    </form>
+</mat-card>
+<button (click)="onGetFeedback($event)">Show Skill Comments</button>
+<br>
+   
+<mat-card *ngFor='let fb of feedbacks'>
+    <mat-card-content>
+        <div>
+            <p>Rating: {{fb.rating}}</p>
+            <p>Comment: {{fb.comment}}</p>
+        </div>
+        <div>
+                <button mat-button (click)="onDeleteFeedback(fb.id)"> DELETE</button>
+        </div>
+        
+    </mat-card-content>
+</mat-card>
+
 

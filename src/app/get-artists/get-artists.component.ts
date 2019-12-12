@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Artist } from '../../models/artist';
-import { ArtistsService } from '../../service/artists.service';
+// import { ArtistsService } from '../../service/artists.service';
+import { ArtistService } from '../../service/artist.service';
 
 @Component({
   selector: 'app-get-artists',
@@ -10,7 +11,7 @@ import { ArtistsService } from '../../service/artists.service';
 export class GetArtistsComponent implements OnInit {
 artists: Artist[]; 
 
-  constructor( private artistsService: ArtistsService) { }
+  constructor(private artistService: ArtistService) { }
 
 
   ngOnInit() {
@@ -18,8 +19,13 @@ artists: Artist[];
   }
 
   getArtists(): void {
-    this.artistsService.getArtists()
+    this.artistService.getArtists()
       .subscribe(artists => this.artists = artists);
+  }
+
+  onDeleteArtist(id): void {
+    this.artistService.deleteArtist(id);
+    this.getArtists();
   }
 
 }

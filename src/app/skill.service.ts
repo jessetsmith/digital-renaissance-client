@@ -32,10 +32,16 @@
 //     return this.http.get<Skill[]>(this.skillUrl+`/${skillId}`)
 //   }
 
+
 //   getSkillsForOneArtist (skillId): Observable<Skill[]>{
 //     console.log(this.skillUrl)
 //     return this.http.get<Skill[]>(this.skillUrl+`/${skillId}/getall`)
 //   }
+
+//   createSkill(title: string, description: string, image: string, price: number, skillType: string, artistId: number ) {
+//     const skill: Skill = { title: title, description: description, image: image, price: price, skillType: skillType, artistId: artistId }
+//     const token = localStorage.getItem('token');
+
 
 //   createSkill(title: string, description: string, image: string, price: number, skillType: string, artistId: number ) {
 //     const skill: Skill = { title: title, description: description, image: image, price: price, skillType: skillType, artistId: artistId }

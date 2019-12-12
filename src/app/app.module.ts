@@ -21,16 +21,23 @@ import { GetArtistsComponent } from './get-artists/get-artists.component';
 import { AdminComponent } from './admin/admin.component';
 import { ArtistComponent } from './artist/artist.component';
 import { GetSkillsComponent } from './get-skills/get-skills.component';
+
+// import { ArtistsService } from '../service/artists.service';
+// import { AuthGuardService } from '../service/auth-guard.service';
+//import { SkillService } from './skill.service';
 import { ArtistsService } from '../service/artists.service';
 import { SkillService } from '../service/skill.service';
 import { ArtistService } from '../service/artist.service';
 import { CreateSkillComponent } from './create-skill/create-skill.component';
 import { OneSkillComponent } from './one-skill/one-skill.component';
 import {MatSelectModule} from '@angular/material/select';
+import { JwtHelperService } from '@auth0/angular-jwt';
+import { HomeComponent } from './home/home.component';
 import { Feedback } from 'src/models/feedback';
 import { FeedbackComponent } from './feedback/feedback.component';
 import {AuthInterceptor } from './auth-interceptor';
 import { MyprofileComponent } from './myprofile/myprofile.component';
+
 
 
 
@@ -51,8 +58,9 @@ import { MyprofileComponent } from './myprofile/myprofile.component';
     GetSkillsComponent,
     CreateSkillComponent,
     OneSkillComponent,
-    FeedbackComponent,
-    MyprofileComponent
+    MyprofileComponent,
+    HomeComponent,
+    FeedbackComponent
 
   ],
   imports: [
@@ -73,10 +81,11 @@ import { MyprofileComponent } from './myprofile/myprofile.component';
     FormsModule,
     MatSelectModule,
     MatTableModule
+
   ],
   entryComponents: [LoginComponent],
 
-  providers: [AuthService, ArtistsService, ArtistService, SkillService ],
+  providers: [AuthService, ArtistService, SkillService, JwtHelperService ],
 
   bootstrap: [AppComponent]
 })

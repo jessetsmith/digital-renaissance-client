@@ -10,7 +10,7 @@ import { AuthService } from '../../auth/auth.service';
 export class CallbackComponent implements OnInit {
 
   constructor(private auth: AuthService) { 
-    auth.handleAuth();
+    // auth.handleAuth();
   }
 
   ngOnInit() {

@@ -17,10 +17,11 @@
                         <span><h3>Role:</h3> <p>{{artist.role}}</p></span>
                         <p>{{artist.id}}</p>
                 </div>
-            </div>
-            
-            <div>
-                <button mat-button [routerLink] = "['/artist', artist.id]" class='authButton'>See more about</button>
+                <div>
+                        <button mat-button [routerLink] = "['/artist', artist.id]" class='authButton'>See more about</button>
+                        <button mat-button (click)="onDeleteArtist(artist.id)"> DELETE</button>
+                        <button mat-button (click)="onUpdateArtist(artist.id)"> UPDATE</button>
+                    </div>
             </div>
            
 

@@ -13,6 +13,10 @@ import { ArtistComponent } from './artist/artist.component';
 import { AdminComponent } from './admin/admin.component';
 import { CreateSkillComponent } from './create-skill/create-skill.component';
 import { MyprofileComponent } from './myprofile/myprofile.component'
+import { HomeComponent } from './home/home.component';
+// import { AuthGuardService as  AuthGuard 
+// } from '../service/auth-guard.service';
+
 
 
 const routes: Routes = [
@@ -24,14 +28,23 @@ const routes: Routes = [
     component: CallbackComponent
   },
   {path: 'artists', component: ArtistsComponent},
+  {path: 'home', component: HomeComponent},
   {path: 'about', component: AboutComponent},
   {path: 'get-artists', component: GetArtistsComponent},
   {path: 'get-skills', component: GetSkillsComponent},
   {path: 'artist/:id', component: ArtistComponent},
   {path: 'admin', component: AdminComponent},
+
+  {path: 'create-skill', 
+  component: CreateSkillComponent,
+  // canActivate: [AuthGuard]
+},
+{path: '**', redirectTo: ''},
+  {path: 'skill/:id', component: OneSkillComponent},
   {path: 'create-skill', component: CreateSkillComponent},
   {path: 'skill/getall',component: MyprofileComponent},
   {path: 'skill/:id', component: OneSkillComponent}
+
 ];
 
 @NgModule({
