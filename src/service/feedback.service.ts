@@ -24,10 +24,18 @@ export class FeedbackService {
 
   }
 
-  getFeedback(id){
-    this.http.get<Feedback[]>(this.feedbackUrl + `/${id}`)
-    .pipe(map(id => id))
-    .subscribe(data => console.log(data))
+  getFeedback(id): Observable<Feedback[]>{
+    return this.http.get<Feedback[]>(this.feedbackUrl + `/${id}`)
+    .pipe(map(data => data))
   }
+
+  // deleteComment (id){
+  //   const token = localStorage.getItem('token');
+  //    return this.http.delete<Artist[]>(this.artistUrl + '/delete' + `/${artistId}`, { headers: {'Authorization': token}})
+  //   .subscribe(()=> {
+  //     // this.getArtists();
+  //     this.router.navigate(["admin"])
+  //   })
+  // }
 
 }
