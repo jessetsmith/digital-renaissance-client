@@ -32,9 +32,9 @@ export class SkillService {
     return this.http.get<Skill[]>(this.skillUrl+`/${skillId}`)
   }
 
-  getSkillsForOneArtist (skillId): Observable<Skill[]>{
+  getSkillsForOneArtist (artistId): Observable<Skill[]>{
     console.log(this.skillUrl)
-    return this.http.get<Skill[]>(this.skillUrl+`/${skillId}/getall`)
+    return this.http.get<Skill[]>(this.skillUrl+`/getall/${artistId}`)
   }
 
   createSkill(title: string, description: string, image: string, price: number, skillType: string, artistId: number ) {

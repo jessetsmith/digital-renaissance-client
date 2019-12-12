@@ -1,7 +1,22 @@
-<div class="bannerHeading">Your Profile</div>
+<div class="bannerHeading"> My Profile
+</div>
     <div class="banner">
         <div class="bannerText" *ngFor='let oneArtistSkill of oneArtistSkills'>
-            <h1>{{oneArtistSkill.title}}</h1>
+        <mat-card>
+            <h6> Profile #: {{oneArtistSkill.id}}</h6>
+            <h5> Artist Name: {{oneArtistSkill.artist.firstName}} {{oneArtistSkill.artist.lastName}}</h5>
+            <h5> 
+                    Artist E-mail:
+                    {{oneArtistSkill.artist.email}} </h5>
+            <h5> 
+                Category of Artist:
+                {{oneArtistSkill.skillType}} </h5>
+            <h5><i><u> Headline Title: {{oneArtistSkill.title}}</u></i></h5>
+            <h5> Description: {{oneArtistSkill.description}}</h5>
+            <h5>Price : ${{oneArtistSkill.price}}</h5>
+            <button>Update</button>
+            <button>Delete</button>
+        </mat-card>
         </div>
     </div>
 

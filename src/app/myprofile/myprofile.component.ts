@@ -9,23 +9,21 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./myprofile.component.css']
 })
 export class MyprofileComponent implements OnInit {
-  // oneArtistSkills: any = {}; 
+  private artistId: number;
   oneArtistSkills: Skill [];
 
   constructor(private skillService: SkillService, private route: ActivatedRoute) { }
+  // let artistId = this.getId();
 
   ngOnInit() {
     this.getSkillsForOneArtist();
   }
 
-  getCurrentId(): void {
-    return JSON.parse(localStorage.getItem('id'))
-  }
-
   getSkillsForOneArtist(): void {
-    // const id = +this.route.snapshot.paramMap.get('id');
-    const id = +localStorage.getItem('id')
-    this.skillService.getSkillsForOneArtist(id)
+    const id = JSON.parse(localStorage.getItem('artistInfo'));
+    const artistId = id.artist.id;
+    console.log(artistId)
+    this.skillService.getSkillsForOneArtist(artistId)
       .subscribe(oneArtistSkills => this.oneArtistSkills = oneArtistSkills)
   }
   
