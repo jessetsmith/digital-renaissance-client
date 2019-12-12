@@ -13,6 +13,8 @@ import { ArtistComponent } from './artist/artist.component';
 import { AdminComponent } from './admin/admin.component';
 import { CreateSkillComponent } from './create-skill/create-skill.component';
 import { MyprofileComponent } from './myprofile/myprofile.component'
+import { HomeComponent } from './home/home.component';
+
 
 
 const routes: Routes = [
@@ -24,6 +26,7 @@ const routes: Routes = [
     component: CallbackComponent
   },
   {path: 'artists', component: ArtistsComponent},
+  {path: 'home', component: HomeComponent},
   {path: 'about', component: AboutComponent},
   {path: 'get-artists', component: GetArtistsComponent},
   {path: 'get-skills', component: GetSkillsComponent},

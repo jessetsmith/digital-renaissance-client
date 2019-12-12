@@ -14,7 +14,7 @@ mat-form-field {
   
   mat-card {
     width: 15em;
-    margin-top: 5em;
+    margin-top: 2em;
 
   }
   
@@ -35,8 +35,8 @@ mat-form-field {
   
   /* Set a style for all buttons */
   button {
-    background-color: #193153;
-    color: white;
+    /* background-color: #193153; */
+    color: black;
     padding: 14px 20px;
     margin: 8px 0;
     border: none;
@@ -61,6 +61,8 @@ mat-form-field {
   /* Add a hover effect for buttons */
   button:hover {
     opacity: 0.8;
+    background-color:#193153;
+    color: white;
   }
 
   h2 {

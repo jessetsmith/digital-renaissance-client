@@ -1,8 +1,15 @@
 
 
-<!-- <button mat-button (click)="onUpdateArtist(artist.id)"> Update Artist Account</button> -->
-<button mat-button (click)="onDeleteArtist(artist.id)"> Delete Artist Account</button>
 
-{{artist.firstName}}
-{{artist.id}}
+<div>
+    <h3>{{artist.firstName}} {{artist.lastName}}</h3>
+    <p> {{artist.email}} </p>
+    <span><h3>Role:</h3> <p>{{artist.role}}</p></span>
+    <p>{{artist.id}}</p>
+</div>
+
+
+
+<button mat-button (click)="onUpdateArtist(artist.id)"> UPDATE</button>
+<button mat-button (click)="onDeleteArtist(artist.id)"> DELETE</button>
 <!-- Show all Skills below -->
