@@ -16,6 +16,7 @@ export class ArtistService {
 private artistUrl = 'http://dr-server.herokuapp.com/artist';
 
 private token: string;
+private artistInfo = [];
 private authStatusListener = new Subject<boolean>()
   artistProfile: any;
   expiresAt: number;
@@ -58,10 +59,15 @@ private authStatusListener = new Subject<boolean>()
     this.http.post<any>(this.artistUrl+ '/login', artist)
     .subscribe(response => {
       const token = response.sessionToken;
+      const artistInfo = response.artist;
       this.token = token;
       console.log(response);
       console.log(token);
       this.saveAuthData(token)
+      this.artistInfo = artistInfo;
+      console.log(token)
+      console.log(response)
+      this.saveAuthData(token, response);
       this.authStatusListener.next(true);
       this.router.navigate(["/artists"])
     })
@@ -87,7 +93,6 @@ private authStatusListener = new Subject<boolean>()
     })
   }
 
-
   updateArtist (artistId, firstName: string, lastName: string, password: string, email: string, role: string){
     const artist = { firstName: firstName, lastName: lastName,  password: password, email: email, role: role}
    
@@ -97,9 +102,10 @@ private authStatusListener = new Subject<boolean>()
     })
   }
 
-
-  private saveAuthData(token: string){
+  private saveAuthData(token: string, artistInfo: string){
     localStorage.setItem('token', token);
+    localStorage.setItem('artistInfo', JSON.stringify(artistInfo))
+    // +localStorage.setItem('id', id )
   }
 
 
