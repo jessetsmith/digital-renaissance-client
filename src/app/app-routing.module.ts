@@ -34,16 +34,10 @@ const routes: Routes = [
   {path: 'get-skills', component: GetSkillsComponent},
   {path: 'artist/:id', component: ArtistComponent},
   {path: 'admin', component: AdminComponent},
-
-  {path: 'create-skill', 
-  component: CreateSkillComponent,
-  // canActivate: [AuthGuard]
-},
-{path: '**', redirectTo: ''},
-  {path: 'skill/:id', component: OneSkillComponent},
   {path: 'create-skill', component: CreateSkillComponent},
   {path: 'skill/getall',component: MyprofileComponent},
-  {path: 'skill/:id', component: OneSkillComponent}
+  {path: 'skill/:id', component: OneSkillComponent},
+  {path: '**', redirectTo: ''},
 
 ];
 

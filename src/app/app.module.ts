@@ -25,13 +25,12 @@ import { GetSkillsComponent } from './get-skills/get-skills.component';
 // import { ArtistsService } from '../service/artists.service';
 // import { AuthGuardService } from '../service/auth-guard.service';
 //import { SkillService } from './skill.service';
-import { ArtistsService } from '../service/artists.service';
 import { SkillService } from '../service/skill.service';
 import { ArtistService } from '../service/artist.service';
 import { CreateSkillComponent } from './create-skill/create-skill.component';
 import { OneSkillComponent } from './one-skill/one-skill.component';
 import {MatSelectModule} from '@angular/material/select';
-import { JwtHelperService } from '@auth0/angular-jwt';
+// import { JwtHelperService } from '@auth0/angular-jwt';
 import { HomeComponent } from './home/home.component';
 import { Feedback } from 'src/models/feedback';
 import { FeedbackComponent } from './feedback/feedback.component';
@@ -85,7 +84,7 @@ import { MyprofileComponent } from './myprofile/myprofile.component';
   ],
   entryComponents: [LoginComponent],
 
-  providers: [AuthService, ArtistService, SkillService, JwtHelperService ],
+  providers: [AuthService, ArtistService, SkillService ],
 
   bootstrap: [AppComponent]
 })
