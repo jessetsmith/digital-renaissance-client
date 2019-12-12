@@ -43,8 +43,14 @@
    
 <mat-card *ngFor='let fb of feedbacks'>
     <mat-card-content>
-        <p>Rating: {{fb.rating}}</p>
-        <p>Comment: {{fb.comment}}</p>
+        <div>
+            <p>Rating: {{fb.rating}}</p>
+            <p>Comment: {{fb.comment}}</p>
+        </div>
+        <div>
+                <button mat-button (click)="onDeleteFeedback(fb.id)"> DELETE</button>
+        </div>
+        
     </mat-card-content>
 </mat-card>
 

@@ -17,7 +17,7 @@ ratings = [1,2,3,4,5]
   constructor(private feedbackService: FeedbackService, private route: ActivatedRoute) { }
 
   ngOnInit() {
-   
+    this.onGetFeedback();
   }
 
 
@@ -31,6 +31,7 @@ ratings = [1,2,3,4,5]
       .subscribe(
         data => console.log("Success!", data)
       )
+      this.onGetFeedback();
       form.resetForm();
   }
 
@@ -41,6 +42,11 @@ ratings = [1,2,3,4,5]
         this.feedbacks = feedbacks;
         console.log(feedbacks);
       })
+  }
+
+  onDeleteFeedback(id): void {
+    this.feedbackService.deleteFeedback(id);
+    this.onGetFeedback();
   }
 
 }
