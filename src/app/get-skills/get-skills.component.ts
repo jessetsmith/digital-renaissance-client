@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Skill } from '../../models/skill';
-import { SkillService } from '../skill.service';
+import { SkillService } from '../../service/skill.service';
 import { ActivatedRoute } from '@angular/router';
 
 
