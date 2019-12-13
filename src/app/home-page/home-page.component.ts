@@ -14,9 +14,15 @@ import { Subscription } from 'rxjs'
 export class HomePageComponent implements OnInit, OnDestroy {
   artistIsAuthenticated = false;
   private authListenerSubs: Subscription
+  private artistId: number;
+  artistName: string;
+  profile: any;
+  auth: any;
+
   
   constructor(private artistService: ArtistService) { }
 
+ 
 
   ngOnInit() {
     this.authListenerSubs = this.artistService.getAuthStatusListener()
@@ -25,12 +31,20 @@ export class HomePageComponent implements OnInit, OnDestroy {
           this.artistIsAuthenticated = isAuthenticated;
       }
     );
-    
+      // if (this.artistIsAuthenticated = true) {
+      //   this.profile = localStorage.getItem('artistInfo');
+      //   console.log(this.profile);
+      //   // this.artistName = this.profile.firstName;
+      //   // console.log(this.artistName);
+      // }
+
   }
 
   ngOnDestroy() {
     this.authListenerSubs.unsubscribe();
 
   }
+
+  
 
 }
