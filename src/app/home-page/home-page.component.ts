@@ -17,7 +17,6 @@ export class HomePageComponent implements OnInit, OnDestroy {
   
   constructor(private artistService: ArtistService) { }
 
- 
 
   ngOnInit() {
     this.authListenerSubs = this.artistService.getAuthStatusListener()

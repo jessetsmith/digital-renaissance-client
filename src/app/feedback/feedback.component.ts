@@ -20,8 +20,6 @@ ratings = [1,2,3,4,5]
     this.onGetFeedback();
   }
 
-
-
   onSubmit(form: NgForm) {
     if (form.invalid){
       return;

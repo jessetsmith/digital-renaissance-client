@@ -8,16 +8,10 @@ import { catchError, map, tap } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class SkillService {
-
+  
+  // token = localStorage.getItem('token');
   private skillUrl = "http://dr-server.herokuapp.com/skill";
-
-  // private skillsUrl = 'http://dr-server.herokuapp.com/skill/getall';
-
-  // private oneSkillUrl = "http://dr-server.herokuapp.com/skill"
-
-  // private createSkillUrl="http://dr-server.herokuapp.com/skill/create"
-
-  // private createSkillUrl="http://localhost:3000/skill/create"
+ 
 
   constructor(private http: HttpClient) { }
 
@@ -32,11 +26,23 @@ export class SkillService {
     return this.http.get<Skill[]>(this.skillUrl+`/${skillId}`)
   }
 
+
+  getSkillsForOneArtist (artistId): Observable<Skill[]>{
+    console.log(this.skillUrl)
+    return this.http.get<Skill[]>(this.skillUrl+`/getall/${artistId}`)
+  }
+
   createSkill(title: string, description: string, image: string, price: number, skillType: string, artistId: number ) {
     const skill: Skill = { title: title, description: description, image: image, price: price, skillType: skillType, artistId: artistId }
     const token = localStorage.getItem('token');
     return this.http.post<any>(this.skillUrl + '/create', skill, { headers: {'Authorization': token}})
+  }
 
+  deleteSkillProfile(deleteId, localToken):Observable<any>{
+    console.log(localToken);
+    console.log(deleteId);
+    console.log(this.skillUrl+`/delete/${deleteId}`)
+    return this.http.delete(this.skillUrl+`/delete/${deleteId}`,{ headers: new HttpHeaders( {'Authorization': localToken})})
   }
 
 }

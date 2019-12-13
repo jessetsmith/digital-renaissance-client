@@ -4,7 +4,6 @@ import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { AuthComponent } from './auth/auth.component';
 import { CallbackComponent } from './callback/callback/callback.component';
-
 import { ArtistsComponent } from './artists/artists.component';
 import { AboutComponent } from './about/about.component';
 import { GetArtistsComponent } from './get-artists/get-artists.component';
@@ -13,8 +12,12 @@ import { OneSkillComponent } from './one-skill/one-skill.component';
 import { ArtistComponent } from './artist/artist.component';
 import { AdminComponent } from './admin/admin.component';
 import { CreateSkillComponent } from './create-skill/create-skill.component';
+import { MyprofileComponent } from './myprofile/myprofile.component'
 import { HomeComponent } from './home/home.component';
 import { EditFeedbackComponent } from './feedback/edit-feedback/edit-feedback.component';
+// import { AuthGuardService as  AuthGuard 
+// } from '../service/auth-guard.service';
+
 
 
 const routes: Routes = [
@@ -33,8 +36,10 @@ const routes: Routes = [
   {path: 'artist/:id', component: ArtistComponent},
   {path: 'admin', component: AdminComponent},
   {path: 'create-skill', component: CreateSkillComponent},
+  {path: 'skill/getall',component: MyprofileComponent},
   {path: 'skill/:id', component: OneSkillComponent},
-  {path: 'feedback/edit-feedback/:id', component: EditFeedbackComponent}
+  {path: 'feedback/edit-feedback/:id', component: EditFeedbackComponent},
+  {path: '**', redirectTo: ''}
 ];
 
 @NgModule({
