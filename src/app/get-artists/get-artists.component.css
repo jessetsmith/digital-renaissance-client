@@ -1,6 +1,8 @@
 .bg{
     background-color: #3b6283;
+    background-size: 100%;
     min-height: 500px;
+    width: 100%;
 
 }
 h1{

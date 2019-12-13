@@ -14,8 +14,9 @@ import { AdminComponent } from './admin/admin.component';
 import { CreateSkillComponent } from './create-skill/create-skill.component';
 import { MyprofileComponent } from './myprofile/myprofile.component'
 import { HomeComponent } from './home/home.component';
-// import { AuthGuardService as  AuthGuard 
-// } from '../service/auth-guard.service';
+import { AuthGuardService as  AuthGuard 
+} from '../service/auth.guard';
+import { AdminGuard } from '../service/admin.guard';
 
 
 
@@ -33,8 +34,12 @@ const routes: Routes = [
   {path: 'get-artists', component: GetArtistsComponent},
   {path: 'get-skills', component: GetSkillsComponent},
   {path: 'artist/:id', component: ArtistComponent},
-  {path: 'admin', component: AdminComponent},
-  {path: 'create-skill', component: CreateSkillComponent},
+  {path: 'admin', component: AdminComponent,
+  canActivate: [AdminGuard] 
+ },
+  {path: 'create-skill', component: CreateSkillComponent,
+  canActivate: [AuthGuard] 
+},
   {path: 'skill/getall',component: MyprofileComponent},
   {path: 'skill/:id', component: OneSkillComponent},
   {path: '**', redirectTo: ''}
