@@ -34,7 +34,7 @@ import {MatSelectModule} from '@angular/material/select';
 import { HomeComponent } from './home/home.component';
 import { Feedback } from 'src/models/feedback';
 import { FeedbackComponent } from './feedback/feedback.component';
-import {AuthInterceptor } from './auth-interceptor';
+// import {AuthInterceptor } from './auth-interceptor';
 import { MyprofileComponent } from './myprofile/myprofile.component';
 
 
