@@ -8,8 +8,10 @@ import { catchError, map, tap } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class SkillService {
-
+  
+  // token = localStorage.getItem('token');
   private skillUrl = "http://dr-server.herokuapp.com/skill";
+ 
 
   constructor(private http: HttpClient) { }
 
@@ -34,6 +36,13 @@ export class SkillService {
     const skill: Skill = { title: title, description: description, image: image, price: price, skillType: skillType, artistId: artistId }
     const token = localStorage.getItem('token');
     return this.http.post<any>(this.skillUrl + '/create', skill, { headers: {'Authorization': token}})
-
   }
+
+  deleteSkillProfile(deleteId, localToken):Observable<any>{
+    console.log(localToken);
+    console.log(deleteId);
+    console.log(this.skillUrl+`/delete/${deleteId}`)
+    return this.http.delete(this.skillUrl+`/delete/${deleteId}`,{ headers: new HttpHeaders( {'Authorization': localToken})})
+  }
+
 }

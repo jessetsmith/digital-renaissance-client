@@ -17,11 +17,11 @@
     
         </nav>
         <div class="header-page-authStatus">
-                <span *ngIf="artistIsAuthenticated">
-                        <!-- {{profile.artist.firstName}} -->
-                        <span class="divider">|</span>
+                <!-- <span *ngIf="artistIsAuthenticated">
+                        {{ artistInfo.firstName}}
+                        <span class="divider">|</span> -->
                         <button mat-button *ngIf="artistIsAuthenticated" class='regButton'>Logout</button>
-                    </span>
+                   
                 <button mat-button *ngIf="!artistIsAuthenticated" routerLink='/login' class='regButton'>Register/Login</button> 
                 <!-- <span *ngIf="auth.loggingIn">Logging in...</span>
                 <ng-template [ngIf]="!auth.loggingIn">

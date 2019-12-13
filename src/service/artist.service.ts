@@ -13,8 +13,6 @@ import { Router } from "@angular/router";
 export class ArtistService {
 //HEROKU URL
 private artistUrl = 'http://dr-server.herokuapp.com/artist';
-artistIsAuthenticated = false;
-private authListenerSubs: Subscription;
 private token: string;
 private artistInfo = [];
 private authStatusListener = new Subject<boolean>()
