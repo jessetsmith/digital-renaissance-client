@@ -14,8 +14,19 @@
             <h5><i><u> Headline Title: {{oneArtistSkill.title}}</u></i></h5>
             <h5> Description: {{oneArtistSkill.description}}</h5>
             <h5>Price : ${{oneArtistSkill.price}}</h5>
-            <button>Update</button>
-            <button>Delete</button>
+            <button mat-stroked-button color="primary" (click)="onUpdateSkillProfile()">Update</button>
+
+            <!-- <span *ngIf="confirmDelete">
+                <span>Are you sure you want to delete?</span>
+                <button mat-stroked-button color="warn" (click)="onDeleteSkillProfile(oneArtistSkill.id)">Yes</button>
+                <button mat-stroked-button color="primary" (click)="confirmDelete=false">No</button>
+            </span>
+            <button mat-stroked-button color="warn" (click)="confirmDelete=true">Delete</button> -->
+
+
+
+
+            <button mat-stroked-button color="warn" (click)="onDeleteSkillProfile(oneArtistSkill.id)">Delete</button>
         </mat-card>
         </div>
     </div>
