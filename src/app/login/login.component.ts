@@ -18,7 +18,9 @@ password="";
 
   ngOnInit() {
   }
-
+  refresh () {
+    location.reload();
+  }
   onLogin(form: NgForm) {
     if (form.invalid) {
       return;
