@@ -22,5 +22,6 @@ mat-card{
     flex-direction: column;
     margin: 1em;
     padding: 1em;
+    min-width: 15em;
   
 }
