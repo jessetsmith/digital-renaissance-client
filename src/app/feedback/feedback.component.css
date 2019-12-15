@@ -1,0 +1,66 @@
+
+.feedback {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2em;
+}
+
+
+mat-card {
+    width: 45%;
+    text-align: center;
+}
+
+.rating {
+    margin-top: -.2em;
+}
+
+.feedbackButton {
+    margin-top: 2em;
+    background-color: lightgray;
+}
+
+button:hover {
+    opacity: 0.8;
+    background-color:#193153;
+    color: white;
+  }
+
+.button {
+    display: flex;
+    justify-content: center;
+
+}
+
+.showFeedback {
+    /* background-color: #193153; */
+    color: black;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 50%;
+    height: 4.5em;
+    text-align: center;
+    font-size: 14px;
+  }
+
+
+  /* Add a hover effect for buttons */
+  .showFeedback:hover {
+    opacity: 0.8;
+    background-color:#193153;
+    color: white;
+  }
+
+  .comments {
+      margin: 1em;
+      padding: .2em;
+  }
+
+  .deleteButton {
+    background-color: lightgray;
+
+  }

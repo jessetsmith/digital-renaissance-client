@@ -17,7 +17,7 @@ ratings = [1,2,3,4,5]
   constructor(private feedbackService: FeedbackService, private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.onGetFeedback();
+    // this.onGetFeedback();
   }
 
   onSubmit(form: NgForm) {

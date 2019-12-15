@@ -1,3 +1,4 @@
+<div class='feedback'>
 <br>
 <mat-card>
     <form (submit)="onSubmit(feedbackForm)"
@@ -5,11 +6,13 @@
             <h1>Give your Feedback</h1>
             <div>
                 <mat-form-field>
-                    <mat-label>Rating</mat-label>
+                    <mat-label class='rating'>Rating</mat-label>
+                    <br/>
                     <p>Submit rating 1 - 5</p>
                     <input
                         matInput
                         rows="4"
+                        type="number"
                         name = "rating"
                         ngModel 
                         required
@@ -33,25 +36,31 @@
         </mat-form-field>
     </div>
      <button
-    mat-raised-button
-    color="accent"
+    mat-button
+    class='feedbackButton'
     type="submit">ADD FEEDBACK</button>
     </form>
 </mat-card>
-<button (click)="onGetFeedback($event)">Show Skill Comments</button>
+</div>
+<div class='button'>
+<button class='showFeedback' (click)="onGetFeedback($event)">Show Comments</button>
+</div>
+<div class='feedback'>
+
 <br>
    
-<mat-card *ngFor='let fb of feedbacks'>
+<mat-card class='comments' *ngFor='let fb of feedbacks'>
     <mat-card-content>
         <div>
             <p>Rating: {{fb.rating}}</p>
             <p>Comment: {{fb.comment}}</p>
         </div>
         <div>
-                <button mat-button (click)="onDeleteFeedback(fb.id)"> DELETE</button>
+                <button mat-button class='deleteButton' (click)="onDeleteFeedback(fb.id)"> DELETE</button>
         </div>
         
     </mat-card-content>
 </mat-card>
+</div>
 
 
