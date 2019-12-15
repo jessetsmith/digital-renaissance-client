@@ -10,14 +10,14 @@
                 <!-- <li><button mat-button routerLink='/about' class='authButton'>About</button></li> -->
                 <li><button mat-button routerLink='/artists' class='authButton'>Artists</button></li>
                 <li><button mat-button [routerLink]="['/skill/getall']" class='authButton'>My Profile</button></li>
-                <li><button mat-button routerLink='/admin' class='authButton'>Admin</button></li>
+                <li><button mat-button *ngIf='isAdmin' routerLink='/admin' class='authButton'>Admin</button></li>
             </ul>
     
         </nav>
       </div>
         <div class="header-page-authStatus">
                 <span>
-                       <span><a class='name' routerLink='/skill/getall'>{{ artistName }}</a></span>
+                       <span><button mat-button class='regButton' id='name' routerLink='/skill/getall'>{{ artistName }}</button></span>
                         
                         <span class="divider">|</span>
                         <button mat-button *ngIf='loggedIn' class='regButton' (click)='logout()' (click)='refresh()'>Logout</button>    

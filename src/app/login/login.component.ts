@@ -19,7 +19,17 @@ password="";
   ngOnInit() {
   }
   refresh () {
-    location.reload();
+    this.resolveAfter3Seconds(30).then(reload => {
+      reload == location.reload();
+    })
+  }
+
+  resolveAfter3Seconds(x) {
+    return new Promise(resolve => {
+      setTimeout(() => {
+        resolve(x);
+      }, 3000);
+    });
   }
   onLogin(form: NgForm) {
     if (form.invalid) {
@@ -27,6 +37,7 @@ password="";
     }
     this.artistService.loginArtist(form.value.password, form.value.email)
     form.resetForm();
+    this.refresh();
   }
 
 }

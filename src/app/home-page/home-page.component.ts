@@ -23,7 +23,7 @@ export class HomePageComponent implements OnInit, OnDestroy {
   auth: any;
   loggedIn: boolean = false;
   loggedOut: boolean = true;
-  isAdmin: boolean;
+  isAdmin: boolean = false;
 
   constructor(private artistService: ArtistService, private appRouting : AppRoutingModule) {
     
@@ -43,8 +43,13 @@ export class HomePageComponent implements OnInit, OnDestroy {
       console.log(artistName);
 
       this.artistName = artistName;
-    
+       
+      const role = JSON.parse(localStorage.getItem('artistInfo')).artist.role;
 
+      if (role === 'admin') {
+        this.isAdmin = true;
+      }
+        
   }
 
   
