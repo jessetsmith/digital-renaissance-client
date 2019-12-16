@@ -4,6 +4,7 @@ import {Artist} from '../models/artist';
 import { Observable, of, Subject, Subscription, BehaviorSubject } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
 import { Router } from "@angular/router";
+import { APIURL } from '../environments/environment.prod';
 
 
 
@@ -12,7 +13,7 @@ import { Router } from "@angular/router";
 })
 export class ArtistService {
 //HEROKU URL
-private artistUrl = 'http://dr-server.herokuapp.com/artist';
+private artistUrl = `${APIURL}/artist`;
 private token: string;
 private artistInfo = [];
 private authStatusListener = new Subject<boolean>()
@@ -39,11 +40,12 @@ private authStatusListener = new Subject<boolean>()
 }
 
   createArtist(firstName: string, lastName: string, password: string, email: string, role: string){
-    const artist: Artist = { firstName: firstName, lastName: lastName,  password: password, email: email, role: role }
+    const artist: Artist = {firstName: firstName, lastName: lastName,  password: password, email: email, role: role }
     return this.http.post<any>(this.artistUrl+ '/register', artist)
     .subscribe(response => {
       const token = response.sessionToken;
       const artistInfo = response.artist;
+      console.log(artistInfo)
       this.token = token;
       this.artistInfo = artistInfo;
       console.log(token);

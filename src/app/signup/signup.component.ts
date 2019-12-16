@@ -23,6 +23,7 @@ export class SignupComponent{
     ngOnInit() {
     }
 
+
     onSignUp(form: NgForm) {
       if (form.invalid) {
         return;

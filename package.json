@@ -1,20 +1,25 @@
 {
   "name": "digital-renaissance",
   "version": "0.0.0",
+  "engines": {
+    "node": "12.13.0"
+  },
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "start": "serve -s dist/digital-renaissance"
   },
   "private": true,
   "dependencies": {
     "@angular/animations": "~8.2.14",
     "@angular/cdk": "~8.2.3",
+    "@angular/cli": "~8.3.19",
     "@angular/common": "~8.2.14",
     "@angular/compiler": "~8.2.14",
+    "@angular/compiler-cli": "~8.2.14",
     "@angular/core": "~8.2.14",
     "@angular/flex-layout": "^8.0.0-beta.27",
     "@angular/forms": "~8.2.14",
@@ -33,13 +38,12 @@
     "jwt-decode": "^2.2.0",
     "method-override": "^3.0.0",
     "rxjs": "~6.4.0",
+    "serve": "^11.2.0",
     "tslib": "^1.10.0",
     "zone.js": "~0.9.1"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.803.19",
-    "@angular/cli": "~8.3.19",
-    "@angular/compiler-cli": "~8.2.14",
     "@angular/language-service": "~8.2.14",
     "@types/node": "~8.9.4",
     "@types/jasmine": "~3.3.8",

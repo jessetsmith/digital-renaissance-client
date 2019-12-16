@@ -4,12 +4,13 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
 import { Router } from "@angular/router";
+import { APIURL } from '../environments/environment.prod';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FeedbackService {
-  private feedbackUrl = 'http://dr-server.herokuapp.com/feedback';
+  private feedbackUrl = `${APIURL}/feedback`;
 
   // private feedbackUrl = 'http://localhost:3000/feedback/';
 

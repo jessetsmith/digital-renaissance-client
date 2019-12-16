@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http
 import {Skill} from '../models/skill';
 import { Observable, of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
+import { APIURL } from '../environments/environment.prod';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,7 @@ import { catchError, map, tap } from 'rxjs/operators';
 export class SkillService {
   
   // token = localStorage.getItem('token');
-  private skillUrl = "http://dr-server.herokuapp.com/skill";
+  private skillUrl = `${APIURL}/skill`;
  
 
   constructor(private http: HttpClient) { }

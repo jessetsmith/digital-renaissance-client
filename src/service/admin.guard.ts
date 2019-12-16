@@ -3,6 +3,7 @@ import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree } fro
 import { Observable } from 'rxjs';
 import { ArtistService } from '../service/artist.service';
 
+
 @Injectable({
   providedIn: 'root'
 })
