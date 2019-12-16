@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-
 import { ArtistService } from '../../service/artist.service';
 
 @Component({
@@ -37,7 +36,6 @@ password="";
     }
     this.artistService.loginArtist(form.value.password, form.value.email)
     form.resetForm();
-    this.refresh();
   }
 
 }
