@@ -45,6 +45,7 @@ private authStatusListener = new Subject<boolean>()
     .subscribe(response => {
       const token = response.sessionToken;
       const artistInfo = response.artist;
+      console.log(artistInfo)
       this.token = token;
       this.artistInfo = artistInfo;
       console.log(token);

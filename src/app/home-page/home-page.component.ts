@@ -39,7 +39,7 @@ export class HomePageComponent implements OnInit, OnDestroy {
       }
 
       const name = JSON.parse(localStorage.getItem('artistInfo'));
-      const artistName = name.artist.firstName;
+      const artistName = name.firstName;
       console.log(artistName);
 
       this.artistName = artistName;
