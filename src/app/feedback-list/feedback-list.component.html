@@ -8,15 +8,12 @@
             <p> {{fb.rating}}</p>
             <h4>Comment:</h4>
             <p> {{fb.comment}}</p>
+            <br/>
+            <p> Comment made at: {{fb.updatedAt | date: 'mediumDate'}}</p>
         </div>
         <div *ngIf="artistId == fb.artistId">
                 <button mat-button (click)="deleteFeedback(fb.id)"> DELETE</button>
-
-                <a [routerLink]="['edit-feedback/', fb.id]">UPDATE</a>
-                <p> Comment made at: {{fb.updatedAt | date: 'mediumDate'}}</p>
-
                 <button mat-button [routerLink]="['edit-feedback/', fb.id]">UPDATE</button>
-
         </div>
     </mat-card-content>
 </mat-card>

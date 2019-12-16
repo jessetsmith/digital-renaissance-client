@@ -1,5 +1,5 @@
 mat-card {
-    
+    min-height: 275px;
     margin: 2em;
     width: 40%;
 }

@@ -20,12 +20,32 @@ export class SignupComponent{
     private artistService: ArtistService
     ) { }
 
-  onSignUp(form: NgForm) {
-    if (form.invalid) {
-      return;
+    ngOnInit() {
     }
-    this.artistService.createArtist( form.value.firstName, form.value.lastName, form.value.password, form.value.email, form.value.role)
-    form.resetForm();
-  }
+
+
+    onSignUp(form: NgForm) {
+      if (form.invalid) {
+        return;
+      }
+      this.artistService.createArtist(form.value.firstName, form.value.lastName, form.value.password, form.value.email, form.value.role)
+      form.resetForm();
+      this.refresh();
+    }
+  
+    refresh () {
+      this.resolveAfter3Seconds(30).then(reload => {
+        reload == location.reload();
+      })
+    }
+  
+    resolveAfter3Seconds(x) {
+      return new Promise(resolve => {
+        setTimeout(() => {
+          resolve(x);
+        }, 3000);
+      });
+    }
+  
 }
 

@@ -1,15 +1,16 @@
 
 
 
-<div>
+<div class='artist'>
+    <mat-card>
     <h3>{{artist.firstName}} {{artist.lastName}}</h3>
     <p> {{artist.email}} </p>
     <span><h3>Role:</h3> <p>{{artist.role}}</p></span>
-    <p>{{artist.id}}</p>
+    <!-- <p>{{artist.id}}</p> -->
+    <br/>
+    <button mat-button routerLink='artist/artist.id'> Artist Profile</button>
+    <button mat-button (click)="onDeleteArtist(artist.id)"> Delete</button>
+    </mat-card>
 </div>
 
-
-<!-- 
-<button mat-button (click)="onUpdateArtist(artist.id)"> UPDATE</button> -->
-<button mat-button (click)="onDeleteArtist(artist.id)"> DELETE</button>
 <!-- Show all Skills below -->
