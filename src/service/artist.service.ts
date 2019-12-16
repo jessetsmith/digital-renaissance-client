@@ -38,15 +38,8 @@ private authStatusListener = new Subject<boolean>()
     return this.authStatusListener.asObservable();
 }
 
-confirmAuth (){
-if(this.loggedIn = true){
-      this.artistIsAuthenticated = true;
-      }
-  else(this.artistIsAuthenticated = false) 
-}
-
   createArtist(firstName: string, lastName: string, password: string, email: string, role: string){
-    const artist: Artist = { firstName: firstName, lastName: lastName,  password: password, email: email, role: role}
+    const artist: Artist = { firstName: firstName, lastName: lastName,  password: password, email: email, role: role }
     return this.http.post<any>(this.artistUrl+ '/register', artist)
     .subscribe(response => {
       const token = response.sessionToken;
