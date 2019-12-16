@@ -22,6 +22,7 @@ export class OneSkillComponent implements OnInit {
     const id = +this.route.snapshot.paramMap.get('id');
     this.skillService.getOneSkill(id)
       .subscribe(oneSkill => this.oneSkill = oneSkill);
+
   }
 
 }

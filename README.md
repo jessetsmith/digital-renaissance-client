@@ -78,17 +78,15 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 --------------------------------------------------------------------------------------------------------------------------
 
-#Credits To
+#Credit To
 
-!Devon Mason!
+! Devon Mason !
 
-?Cory Hack?
+? Cory Hack ?
 
-!Jesse Smith!
+! Jesse Smith !
 
-?Connor Wolfford?
-
-!Google!
+? Connor Wolfford ?
 
 --------------------------------------------------------------------------------------------------------------------------
 
@@ -96,4 +94,6 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 - Our main source of inspiration for the concept of this project came from Fiverr,
 
--
+- Many thanks to our fellow classmates who came through Red Badge with is and helped collaborate,
+
+- Digital Renaissance is still under development and has more updates to come ... Stay tuned!
