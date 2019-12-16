@@ -15,9 +15,29 @@
         </mat-card-content>
         <mat-card-content>
             <h3>{{oneSkill.price}}</h3>
+            <h3>{{oneSkill.artistId}}</h3>
           </mat-card-content>
         <mat-card-actions>
-          <button mat-button>Confirm</button>
+          <form
+          action="https://formspree.io/xvogjdrv"
+          method="POST"
+        >
+          <label>
+            Your name:
+            <input type="text" name="name"></input>
+          </label>
+          <label>
+            Your email:
+            <input type="email" name="_replyto"></input>
+          </label>
+          <label>
+            submit
+            <input type="submit" value="send"></input>
+          </label>
+          <!-- your other form fields go here -->
+        
+          <!-- <button type="submit">Send</button> -->
+        </form>
         </mat-card-actions>
     </mat-card>
   </div>

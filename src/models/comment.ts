@@ -1,6 +1,5 @@
-export class Feedback {
+export class Comment {
     constructor(
-        public id: number,
         public rating: number,
         public comment: string,
         public type: string,

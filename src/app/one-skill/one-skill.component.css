@@ -13,3 +13,12 @@ mat-card {
 .card-header {
     text-align: center;
 }
+
+button {
+    background-color: lightgray;
+}
+button:hover {
+    opacity: 0.8;
+    background-color:#193153;
+    color: white;
+  }

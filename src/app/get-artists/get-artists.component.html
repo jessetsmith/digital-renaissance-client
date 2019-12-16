@@ -1,16 +1,18 @@
 <div class="bg">
 
 
-<div class="container bg" >
+<div class="container" >
         <h1> All Artists </h1>
 </div>
-<div>       
+<div class='admin'>       
     <div class="card-display">
-        <mat-card *ngFor='let artist of artists'>
+        <mat-card class='adminCard' *ngFor='let artist of artists'>
             <div class="profile-info">
-                <div>
+                <div class='image'>
                         Add Image here
                 </div>
+                <br/>
+                <br/>
                 <div>
                         <h3>{{artist.firstName}} {{artist.lastName}}</h3>
                         <p> {{artist.email}} </p>

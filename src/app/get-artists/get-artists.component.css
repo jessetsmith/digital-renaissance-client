@@ -1,6 +1,8 @@
 .bg{
     background-color: #3b6283;
+    background-size: 100%;
     min-height: 500px;
+    width: 100%;
 
 }
 h1{
@@ -12,16 +14,23 @@ h1{
 }
 .card-display {
     display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
 
 }
-
-.mat-card{
+/* .admin-card {
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
-    align-items: center;
-    width: 90%;
+} */
+
+mat-card{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    /* align-items: center; */
+    width: 60%;
     margin: 1rem;
 }
 
@@ -30,4 +39,7 @@ h1{
     
 }
 
+.image {
+    margin-left: 2em;
+}
 

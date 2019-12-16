@@ -1,17 +1,14 @@
-<div class='feedback'>
 <br>
 <mat-card>
-    <form [formGroup]="feedbackForm" (ngSubmit)="onFormSubmit()" >
+    <form [formGroup]="feedbackForm" (ngSubmit)="onFormSubmit()">
             <h1>Give your Feedback</h1>
             <div>
                 <mat-form-field>
-                    <mat-label class='rating'>Rating</mat-label>
-                    <br/>
+                    <mat-label>Rating</mat-label>
                     <p>Submit rating 1 - 5</p>
                     <input
                         matInput
                         rows="4"
-                        type="number"
                         name = "rating"
                         required
                         placeholder="Rating"
@@ -35,29 +32,8 @@
         </mat-form-field>
     </div>
      <button
-    mat-button
-    class='feedbackButton'
+    mat-raised-button
+    color="accent"
     type="submit">ADD FEEDBACK</button>
     </form>
 </mat-card>
-
-<mat-card class='comments' *ngFor='let fb of feedbacks'>
-    <mat-card-content>
-        <div>
-            <p>Rating: {{fb.rating}}</p>
-            <p>Comment: {{fb.comment}}</p>
-        </div>
-        <div>
-                <button mat-button class='deleteButton' (click)="onDeleteFeedback(fb.id)"> DELETE</button>
-        </div>
-        
-    </mat-card-content>
-</mat-card>
-</div>
-
-<br>
-
-<app-feedback-list></app-feedback-list>
-
-            
-

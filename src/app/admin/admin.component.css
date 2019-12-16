@@ -1,6 +1,18 @@
-:host{
-    display: block;
+.admin {
+    min-height: 500px;
+    min-width: 1150px;
+    display: flex;
+    justify-content: center;
 }
+
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+/* :host{
+    display: block;
+} */
 .container.bg {
     background-color: #3b6283;
 }
