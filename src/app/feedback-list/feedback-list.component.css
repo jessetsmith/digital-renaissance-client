@@ -1,0 +1,29 @@
+mat-card {
+    
+    margin: 2em;
+    width: 40%;
+}
+button {
+    background-color: lightgray;
+    margin-top: 2em;
+    margin: 1em;
+ }
+ 
+ button:hover {
+     opacity: 0.8;
+     background-color:#193153;
+     color: white;
+   }
+
+.feedbackList {
+    display: flex;
+    flex-wrap: wrap;
+    /* flex-direction: column; */
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+.title {
+    text-align: center;
+}
