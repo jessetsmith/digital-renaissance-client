@@ -10,7 +10,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "start": "serve -s dist/Digital-Renaissance"
+    "start": "serve -s dist/digital-renaissance"
   },
   "private": true,
   "dependencies": {
