@@ -2,27 +2,26 @@
 <header>
     <div class='container'>
         <a routerLink='/' class='logo'>Digital Renaissance</a>
+        <div class='navContainer'>
         <nav class='nav' id='nav'>
 
             <ul>
                 <li><button mat-button routerLink='/home' class='authButton'>Home</button></li>
                 <!-- <li><button mat-button routerLink='/about' class='authButton'>About</button></li> -->
                 <li><button mat-button routerLink='/artists' class='authButton'>Artists</button></li>
-                <li>
-                <button mat-button routerLink='/admin' class='authButton'>Admin</button>
-              </li>
-              <button mat-button 
-              [routerLink]="['/skill/getall']" class='authButton'>My Profile</button>
+                <li><button mat-button [routerLink]="['/skill/getall']" class='authButton'>My Profile</button></li>
+                <li><button mat-button *ngIf='isAdmin' routerLink='/admin' class='authButton'>Admin</button></li>
             </ul>
     
         </nav>
+      </div>
         <div class="header-page-authStatus">
-                <!-- <span *ngIf="artistIsAuthenticated">
-                        {{ artistInfo.firstName}}
-                        <span class="divider">|</span> -->
-                        <button mat-button *ngIf="artistIsAuthenticated" class='regButton'>Logout</button>
-                   
-                <button mat-button *ngIf="!artistIsAuthenticated" routerLink='/login' class='regButton'>Register/Login</button> 
+                <span>
+                       <span><button mat-button class='regButton' id='name' routerLink='/skill/getall'>{{ artistName }}</button></span>
+                        
+                        <span class="divider">|</span>
+                        <button mat-button *ngIf='loggedIn' class='regButton' (click)='logout()' (click)='refresh()'>Logout</button>    
+                <button mat-button *ngIf='!loggedIn' routerLink='/login' class='regButton'>Register/Login</button>
                 <!-- <span *ngIf="auth.loggingIn">Logging in...</span>
                 <ng-template [ngIf]="!auth.loggingIn">
                   <button mat-button *ngIf="!auth.loggedIn" class='authButton' (click)="auth.login()">Login/Register</button>
@@ -32,7 +31,8 @@
                     <button mat-button class='authButton' (click)="auth.logout()">Log Out</button>
                   </span>
                 </ng-template> -->
-              </div>
+                </span>
+        </div>
       
     </div>
 

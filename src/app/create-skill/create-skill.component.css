@@ -6,11 +6,14 @@ body {
     display: flex;
     justify-content: center;
     text-align: center;
+    align-items: center;
+
 }
 
 mat-card {
    text-align: center;
     width: 50%;
+    align-items: center;
 }
 .bg {
     background-color: #bda3a5;
@@ -20,6 +23,14 @@ h1 {
     text-align: center;
     color:black;
 }
+
+mat-form-field {
+    display:flex;
+    justify-content: center;
+    text-align: center;
+}
+
+
 
 .formDiv {
     /* margin-left: 10em;
@@ -40,13 +51,15 @@ h1 {
 } */
 
 input{
-    width: 35em;
-    padding: 2.5em;
+    width: 40em;
+    padding: 1em;
     text-align: center;
+
     /* margin-right: 3em;
     margin-left: 3em;
     margin-top: 3em; */
-    display: inline-block;
+    display: flex;
+    justify-content: center;
     /* border: 1px solid #00387b;
     box-sizing: border-box;
     background-color: #b87b7d; */
@@ -78,3 +91,14 @@ input{
     margin-top:1em;
     
 } */
+
+button {
+   background-color: lightgray;
+   margin-top: 2em;
+}
+
+button:hover {
+    opacity: 0.8;
+    background-color:#193153;
+    color: white;
+  }

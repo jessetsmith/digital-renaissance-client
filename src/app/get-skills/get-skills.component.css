@@ -4,7 +4,7 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-evenly;
     min-height: 500px;
 
 }
@@ -22,7 +22,7 @@
     text-shadow: 2px 2px 6px #000;
     color:white;
     text-align:center;
-    padding:1.5em;
+    padding:1em;
 
 }
 
@@ -33,26 +33,44 @@
 
 }
 
-.bannerItems{
+/* .bannerItems{
     padding:10px;
-}
+} */
 .cardHeader {
     text-align: center;
     justify-content: center;
 
 }
-.header {
+/* .header {
     justify-self: center;
     text-align: center;
-}
-.card {
+} */
+mat-card {
     width: 15em;
     height: fit-content;
     padding: 1em;
     margin: 1em;
     text-align: center;
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center; */
+    
+}
+.title {
+    margin-top: -1em;
 }
 
 mat-card {
     text-align: center;
 }
+
+.view {
+    background-color: lightgray;
+    margin: .5em;
+}
+
+button:hover {
+    opacity: 0.8;
+    background-color:#193153;
+    color: white;
+  }

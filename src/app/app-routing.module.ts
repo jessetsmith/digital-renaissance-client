@@ -14,6 +14,9 @@ import { AdminComponent } from './admin/admin.component';
 import { CreateSkillComponent } from './create-skill/create-skill.component';
 import { MyprofileComponent } from './myprofile/myprofile.component'
 import { HomeComponent } from './home/home.component';
+import { EditFeedbackComponent } from './feedback-edit/edit-feedback.component';
+// import { AuthGuardService as  AuthGuard 
+// } from '../service/auth-guard.service';
 import { AuthGuardService as  AuthGuard 
 } from '../service/auth.guard';
 import { AdminGuard } from '../service/admin.guard';
@@ -42,6 +45,7 @@ const routes: Routes = [
 },
   {path: 'skill/getall',component: MyprofileComponent},
   {path: 'skill/:id', component: OneSkillComponent},
+  {path: 'skill/:id/edit-feedback/:feedbackId', component: EditFeedbackComponent},
   {path: '**', redirectTo: ''}
 ];
 
@@ -49,4 +53,6 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+  
+ }

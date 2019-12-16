@@ -1,10 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import {MatTableModule} from '@angular/material/table';
 import { HttpClientModule, HTTP_INTERCEPTORS }    from '@angular/common/http';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatDialogModule, MatCardModule, MatIconModule, MatToolbarModule, MatButtonModule, MatFormFieldModule, MatInputModule } from '@angular/material';
+
 import { AuthService } from './auth/auth.service';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -32,10 +33,12 @@ import { OneSkillComponent } from './one-skill/one-skill.component';
 import {MatSelectModule} from '@angular/material/select';
 // import { JwtHelperService } from '@auth0/angular-jwt';
 import { HomeComponent } from './home/home.component';
-import { Feedback } from 'src/models/feedback';
 import { FeedbackComponent } from './feedback/feedback.component';
 // import {AuthInterceptor } from './auth-interceptor';
+import { EditFeedbackComponent } from './feedback-edit/edit-feedback.component';
+// import {AuthInterceptor } from './auth-interceptor';
 import { MyprofileComponent } from './myprofile/myprofile.component';
+import { FeedbackListComponent } from './feedback-list/feedback-list.component';
 
 
 
@@ -59,7 +62,9 @@ import { MyprofileComponent } from './myprofile/myprofile.component';
     OneSkillComponent,
     MyprofileComponent,
     HomeComponent,
-    FeedbackComponent
+    FeedbackComponent,
+    EditFeedbackComponent,
+    FeedbackListComponent
 
   ],
   imports: [
@@ -79,6 +84,7 @@ import { MyprofileComponent } from './myprofile/myprofile.component';
     HttpClientModule,
     FormsModule,
     MatSelectModule,
+    ReactiveFormsModule,
     MatTableModule
 
   ],

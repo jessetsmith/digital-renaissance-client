@@ -1,0 +1,13 @@
+<h2>Comments</h2>
+<mat-card *ngFor='let fb of data'>
+    <mat-card-content>
+        <div>
+            <p>Rating: {{fb.rating}}</p>
+            <p>Comment: {{fb.comment}}</p>
+        </div>
+        <div *ngIf="artistId == fb.artistId">
+                <button mat-button (click)="deleteFeedback(fb.id)"> DELETE</button>
+                <a [routerLink]="['edit-feedback/', fb.id]">UPDATE</a>
+        </div>
+    </mat-card-content>
+</mat-card>
