@@ -57,7 +57,7 @@ export class FeedbackComponent implements OnInit {
     this.api.getFeedback(id)
       .subscribe((data: any) => {
         this.feedback = data;
-        this.feedback.id = data._id;
+        // this.feedback.id = data._id;
         console.log(this.feedback);
         this.isLoadingResults = false;
       });
