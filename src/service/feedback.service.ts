@@ -57,7 +57,7 @@ export class FeedbackService {
   createFeedback(id, feedback: Feedback): Observable<Feedback> {
     const token = localStorage.getItem('token');
     return this.http.post<Feedback>(this.feedbackUrl + '/create' + `/${id}`, feedback, { headers: {'Authorization': token}}).pipe(
-      tap((prod: Feedback) => console.log(`added post w/ id=${feedback.id}`))
+      // tap((prod: Feedback) => console.log(`added post w/ id=${feedback.id}`))
     );
   }
 

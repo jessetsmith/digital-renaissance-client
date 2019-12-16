@@ -5,10 +5,9 @@
             <p>Rating: {{fb.rating}}</p>
             <p>Comment: {{fb.comment}}</p>
         </div>
-        <div *ngIf="">
+        <div *ngIf="artistId == fb.artistId">
                 <button mat-button (click)="deleteFeedback(fb.id)"> DELETE</button>
                 <a [routerLink]="['edit-feedback/', fb.id]">UPDATE</a>
         </div>
-        
     </mat-card-content>
 </mat-card>

@@ -1,36 +1,3 @@
-// import { Component, OnInit } from '@angular/core';
-// import { Feedback } from '../../models/feedback';
-// import { FeedbackService } from '../../service/feedback.service';
-// import { ActivatedRoute } from '@angular/router';
-// import { Observable } from 'rxjs';
-
-// @Component({
-//   selector: 'app-feedback-list',
-//   templateUrl: './feedback-list.component.html',
-//   styleUrls: ['./feedback-list.component.css']
-// })
-// export class FeedbackListComponent implements OnInit {
-//   feedbacks: Feedback[];
-
-//   constructor(private feedbackService: FeedbackService, private route: ActivatedRoute) { }
-
-//   ngOnInit() {
-//  this.onGetFeedback();
-//   }
-
-//   onGetFeedback(): void {
-//     const id = +this.route.snapshot.paramMap.get('id');
-//     this.feedbackService.getFeedback(id)
-//       .subscribe(feedbacks => {
-//         this.feedbacks = feedbacks;
-//         console.log(feedbacks);
-//       })
-//   }
-// }
-
-
-
-
 import { Component, OnInit } from '@angular/core';
 import { FeedbackService } from '../../service/feedback.service';
 import { Feedback } from '../../models/feedback';
@@ -45,16 +12,21 @@ export class FeedbackListComponent implements OnInit {
 
   displayedColumns: string[] = ['rating', 'comment'];
   data: Feedback[] = [];
-  token: string;
+
   isLoadingResults = true;
 
-  //if the logged in id is equal to the comment id than show the update and delete 
+  artistId = '';
+
+
+
   constructor(private route: ActivatedRoute, private api: FeedbackService, private router: Router) { }
 
   ngOnInit() {
+    this.getLoggedInUser();
     const skillid = +this.route.snapshot.paramMap.get('id')
     this.getAllFeedback(skillid);
-    this.getToken();
+    
+    
     // const id = +this.route.snapshot.paramMap.get('id')
     // this.api.getFeedback(id)
     //   .subscribe((res: any) => {
@@ -68,9 +40,9 @@ export class FeedbackListComponent implements OnInit {
     
   }
 
-  getToken() {
-    this.token = localStorage.getItem('token');
-    console.log(this.token);
+  getLoggedInUser() {
+    const id = JSON.parse(localStorage.getItem('artistInfo'));
+    this.artistId = id.artist.id;
   }
 
   deleteFeedback(id: any) {
