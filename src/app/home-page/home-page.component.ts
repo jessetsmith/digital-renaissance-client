@@ -2,8 +2,11 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { AuthComponent } from '../auth/auth.component';
 import { LoginComponent } from '../login/login.component';
-import { ArtistService } from '../../service/artist.service'
-import { Subscription } from 'rxjs'
+import { ArtistService } from '../../service/artist.service';
+import { Subscription } from 'rxjs';
+import { AppRoutingModule } from '../app-routing.module';
+import { RouterModule, Routes } from '@angular/router';
+
 
 
 @Component({
@@ -12,25 +15,70 @@ import { Subscription } from 'rxjs'
   styleUrls: ['./home-page.component.scss']
 })
 export class HomePageComponent implements OnInit, OnDestroy {
-  artistIsAuthenticated = false;
-  private authListenerSubs: Subscription
-  
-  constructor(private artistService: ArtistService) { }
+  // artistIsAuthenticated = false;
+  // private authListenerSubs: Subscription
+  // private artistId: number;
+  artistName: string;
+  profile: any;
+  auth: any;
+  loggedIn: boolean = false;
+  loggedOut: boolean = true;
+  isAdmin: boolean = false;
 
+  constructor(private artistService: ArtistService, private appRouting : AppRoutingModule) {
+    
+   }
+  
+ 
 
   ngOnInit() {
-    this.authListenerSubs = this.artistService.getAuthStatusListener()
-    .subscribe(
-      isAuthenticated =>{
-          this.artistIsAuthenticated = isAuthenticated;
+      const loggedIn = localStorage.getItem('token');
+
+      if (loggedIn != null ) {
+        this.loggedIn = true;
       }
-    );
+
+      const name = JSON.parse(localStorage.getItem('artistInfo'));
+      const artistName = name.artist.firstName;
+      console.log(artistName);
+
+      this.artistName = artistName;
+       
+      const role = JSON.parse(localStorage.getItem('artistInfo')).artist.role;
+
+      if (role === 'admin') {
+        this.isAdmin = true;
+      }
+        
+  }
+
+  
+  // setLoggedIn () {
+  //   if(localStorage.getItem('token')){
+  //    this.loggedIn = true;
+  //    }else {this.loggedIn = false};
+  // }
+
+  // setLoggedOut() {
+  //   if (localStorage.getItem('token')){
+  //      this.loggedOut = false;
+  //   }else{ this.loggedOut = true};
+  // }
+
+  refresh () {
+    location.reload();
+  }
+
+  logout(){
+    localStorage.clear();
+    
     
   }
-
   ngOnDestroy() {
-    this.authListenerSubs.unsubscribe();
+    // this.authListenerSubs.unsubscribe();
 
   }
+
+  
 
 }

@@ -34,8 +34,9 @@ import {MatSelectModule} from '@angular/material/select';
 // import { JwtHelperService } from '@auth0/angular-jwt';
 import { HomeComponent } from './home/home.component';
 import { FeedbackComponent } from './feedback/feedback.component';
-import {AuthInterceptor } from './auth-interceptor';
+// import {AuthInterceptor } from './auth-interceptor';
 import { EditFeedbackComponent } from './feedback-edit/edit-feedback.component';
+// import {AuthInterceptor } from './auth-interceptor';
 import { MyprofileComponent } from './myprofile/myprofile.component';
 import { FeedbackListComponent } from './feedback-list/feedback-list.component';
 

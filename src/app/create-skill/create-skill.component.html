@@ -40,23 +40,26 @@
     </div>
     <div>
             <mat-form-field>
-                    <input
+                    <textarea
                     matInput
                     rows="4"
                     name = "description"
+                    type="text"
                     required
                     ngModel 
                     placeholder="Description"
                     #title="ngModel">
-                    <mat-error *ngIf="description.invalid">Please enter a description for the type of service you offer.</mat-error>
+                    <mat-error *ngIf="description.invalid">Please enter a description for the type of service you offer.</mat-error></textarea>
             </mat-form-field>
         </div>
 
         <div>
                 <mat-form-field>
+                        <span matPrefix>$ &nbsp;</span>
                         <input
                         matInput
                         rows="4"
+                        type="number"
                         name = "price"
                         required
                         ngModel 
@@ -66,8 +69,7 @@
                 </mat-form-field>
             </div>
      <button
-    mat-raised-button
-    color="accent"
+    mat-button
     type="submit">Create Skill Profile</button>
     </form>
 </mat-card>

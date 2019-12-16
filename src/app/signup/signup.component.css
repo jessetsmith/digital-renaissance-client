@@ -22,6 +22,10 @@ mat-form-field {
 
 }
 
+.toggle {
+  width: 26%;
+}
+
 mat-card {
   width: 15em;
   margin-top: 2em;
@@ -42,6 +46,7 @@ mat-card {
   
   .signupButton {
     width: 80%;
+    
   }
   /* Set a style for all buttons */
   button {
@@ -52,7 +57,7 @@ mat-card {
     border: none;
     cursor: pointer;
     width: 50%;
-    height: 4.5em;
+    height: 4em;
     text-align: center;
     align-items: center;
   }

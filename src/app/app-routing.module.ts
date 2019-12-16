@@ -17,6 +17,9 @@ import { HomeComponent } from './home/home.component';
 import { EditFeedbackComponent } from './feedback-edit/edit-feedback.component';
 // import { AuthGuardService as  AuthGuard 
 // } from '../service/auth-guard.service';
+import { AuthGuardService as  AuthGuard 
+} from '../service/auth.guard';
+import { AdminGuard } from '../service/admin.guard';
 
 
 
@@ -34,8 +37,12 @@ const routes: Routes = [
   {path: 'get-artists', component: GetArtistsComponent},
   {path: 'get-skills', component: GetSkillsComponent},
   {path: 'artist/:id', component: ArtistComponent},
-  {path: 'admin', component: AdminComponent},
-  {path: 'create-skill', component: CreateSkillComponent},
+  {path: 'admin', component: AdminComponent,
+  canActivate: [AdminGuard] 
+ },
+  {path: 'create-skill', component: CreateSkillComponent,
+  canActivate: [AuthGuard] 
+},
   {path: 'skill/getall',component: MyprofileComponent},
   {path: 'skill/:id', component: OneSkillComponent},
   {path: 'skill/:id/edit-feedback/:feedbackId', component: EditFeedbackComponent},
@@ -46,4 +53,6 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+  
+ }

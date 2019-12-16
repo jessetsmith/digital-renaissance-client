@@ -92,6 +92,7 @@ export class FeedbackComponent implements OnInit {
       rating : [null, Validators.required],
       comment : [null, Validators.required]
     });
+    // this.onGetFeedback();
   }
 
   onFormSubmit() {

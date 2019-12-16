@@ -3,25 +3,26 @@
 
 <div class='container'>
 <mat-card class="card" *ngFor='let skill of skills'>
-        <mat-card-header class='header'>
           <div mat-card-avatar class="header-image"></div>
           <div class='cardHeader'>
-          <mat-card-title>{{skill.title}}</mat-card-title>
+          <h1 class='title'>{{skill.title}}</h1>
+          <!-- <br/> -->
           <mat-card-subtitle>{{skill.artist.firstName}} {{skill.artist.lastName}}</mat-card-subtitle>
         </div>
-        </mat-card-header>
+        <br/>
         <img mat-card-image alt="profile picture">
+        <br/>
+        <br/>
         <mat-card-content>
-        <h3>{{skill.skillType}}</h3>
-        <h2>Description:</h2>
+        <h2>{{skill.skillType}}</h2>
+        <h3>Description:</h3>
           <p>
                 {{skill.description}}
-                {{skill.id}}
           </p>
           <p>Price: ${{skill.price}}</p>
         </mat-card-content>
         <mat-card-actions>
-            <button mat-button routerLink ='/skill/{{skill.id}}'>View Skill</button>
+            <button mat-button class='view' routerLink ='/skill/{{skill.id}}'>View Skill</button>
         </mat-card-actions>
       </mat-card>
 </div>
