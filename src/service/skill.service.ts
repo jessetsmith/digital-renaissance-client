@@ -48,7 +48,8 @@ export class SkillService {
 
   updateSkill(id:any, skill: Skill): Observable<any> {
     const url = this.skillUrl+ `/updateskill/${id}`;
-    return this.http.put(url, skill).pipe(
+    const token = localStorage.getItem('token');
+    return this.http.put(url, skill,{ headers: {'Authorization': token}} ).pipe(
       tap(_=> console.log(`updated post id=${id}`))
     )
   }

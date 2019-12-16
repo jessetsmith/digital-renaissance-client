@@ -13,6 +13,7 @@ import { Skill } from '../../models/skill';
 })
 export class SkillEditComponent implements OnInit {
   skillForm: FormGroup;
+  token: string;
   skill= '';
   id = '';
   title = '';
@@ -59,13 +60,13 @@ export class SkillEditComponent implements OnInit {
       this.skillService.updateSkill(this.id, this.skillForm.value)
         .subscribe((res: any) => {
             const id = res.id;
-            this.router.navigate(['/skill/:id', id]);
+            this.router.navigate(['/skill/getall', id]);
           });
     };
   
-    showSkillProfile(){
-      this.router.navigate(['/skill/:id', this.id])
-    }
+    // showSkillProfile(){
+    //   this.router.navigate(['/skill/:id', this.id])
+    // }
 
 
   }
