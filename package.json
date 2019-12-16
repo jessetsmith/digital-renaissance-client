@@ -1,17 +1,16 @@
 {
-  "name": "digitalrenaissance",
+  "name": "digital-renaissance",
   "version": "0.0.0",
   "engines": {
     "node": "12.13.0"
   },
   "scripts": {
     "ng": "ng",
-    "build": "ng build",
+    "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "postinstall": "ng build --prod",
-    "start": "serve -s dist"
+    "start": "serve -s dist/Digital-Renaissance"
   },
   "private": true,
   "dependencies": {
