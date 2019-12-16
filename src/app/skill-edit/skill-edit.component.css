@@ -1,0 +1,40 @@
+.example-container {
+    display: flex;
+    justify-content: center;
+}
+
+mat-card {
+    padding: 2em;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 25%;
+    min-height: 500px;
+   text-align: center;
+}
+
+mat-form-field {
+    width: 90%;
+    padding: 1em;
+    text-align: center;
+
+}
+
+.cardContent{
+  margin-top: -2em;
+}
+
+
+button {
+    background-color: lightgray;
+    margin-top: 2em;
+    width: 50%;
+
+ }
+ 
+ button:hover {
+     opacity: 0.8;
+     background-color:#193153;
+     color: white;
+   }

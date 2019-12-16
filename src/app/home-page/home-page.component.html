@@ -17,7 +17,7 @@
       </div>
         <div class="header-page-authStatus">
                 <span>
-                       <span><button mat-button class='regButton' id='name' routerLink='/skill/getall'>{{ artistName }}</button></span>
+                       <span><button mat-button *ngIf='loggedIn' class='regButton' id='name' routerLink='/skill/getall'>{{ artistName }}</button></span>
                         
                         <span class="divider">|</span>
                         <button mat-button *ngIf='loggedIn' class='regButton' (click)='logout()' (click)='refresh()'>Logout</button>    

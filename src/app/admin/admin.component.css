@@ -1,8 +1,10 @@
 .admin {
     min-height: 500px;
-    min-width: 1150px;
+    width: 80%;
+    background-color: #3b6283;
     display: flex;
     justify-content: center;
+    padding: 2em;
 }
 
 .container {
@@ -13,9 +15,6 @@
 /* :host{
     display: block;
 } */
-.container.bg {
-    background-color: #3b6283;
-}
 
 h1{
     justify-content: center;

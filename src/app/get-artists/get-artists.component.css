@@ -7,6 +7,7 @@
 }
 h1{
     display: block;
+    color: white;
 }
 .container{
     display: flex;
@@ -28,6 +29,7 @@ h1{
 mat-card{
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
     /* align-items: center; */
     width: 60%;
@@ -40,6 +42,32 @@ mat-card{
 }
 
 .image {
-    margin-left: 2em;
+    margin: 2em;
+    padding: .5em;
 }
 
+.artist {
+    margin: 1em;
+    padding: .5em;
+}
+
+.buttons {
+    margin: 2em;
+    padding: .5em; 
+    display: flex;
+    flex-direction: column;
+}
+
+button {
+    background-color: lightgray;
+    /* margin-top: 2em; */
+    margin: 1em;
+    width: 7em;
+
+ }
+ 
+ button:hover {
+     opacity: 0.8;
+     background-color:#193153;
+     color: white;
+   }

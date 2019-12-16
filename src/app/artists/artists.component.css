@@ -42,7 +42,7 @@
     height: 8em;
     width: 60%;
     background-image: url("../../assets/bannerNew.jpg");
-    background-size: cover;
+    background-size: 70%;
     background-position: bottom left;
 }
 
@@ -50,17 +50,25 @@
     justify-self: center;
     display: flex;
     flex-direction: row;
-    text-align: center;
+    text-align: right;
     justify-content: space-evenly;
     align-content: center;
     flex-wrap: wrap;
 }
 
+.container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
 .bg {
+
     background-color: #3b6283;
     background-size: 100%;
     height:100%;
-    
+    min-height: 800px;
+    width: 80%;
 }
 
 h2 {
@@ -98,4 +106,19 @@ h2 {
     background-color:transparent;
     border:none;
     color: black;
+}
+
+mat-card {
+    background-color: transparent;
+    max-width: 300px;
+}
+
+.findTitle {
+    text-align: left;
+}
+
+p {
+    color: white;
+    text-align: center;
+
 }
