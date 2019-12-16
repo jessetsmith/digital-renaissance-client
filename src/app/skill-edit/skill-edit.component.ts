@@ -60,7 +60,7 @@ export class SkillEditComponent implements OnInit {
       this.skillService.updateSkill(this.id, this.skillForm.value)
         .subscribe((res: any) => {
             const id = res.id;
-            this.router.navigate(['/skill/getall', id]);
+            this.router.navigate(['/skill/getall']);
           });
     };
   
