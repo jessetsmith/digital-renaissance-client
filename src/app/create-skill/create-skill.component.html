@@ -2,15 +2,24 @@
 <mat-card>
     <form (submit)="onSubmit(skillForm)"
             #skillForm="ngForm" novalidate>
-            <h1>Create Skill Profile</h1>
+            <h1>Create Skill Profile: </h1>
             <div>
                 <mat-form-field>
                     <mat-label>Artist Category</mat-label>
-                    <mat-select>
-                        <mat-option *ngFor="let typeOfArtist of typeOfArtists" [value]="typeOfArtist">
-                        {{typeOfArtist}}
+                            <input
+                        matInput
+                        rows="4"
+                        name = "skillType"
+                        ngModel 
+                        required
+                        placeholder="Artist Category"
+                        #skillType="ngModel">
+                        <mat-error *ngIf="skillType.invalid">Please enter a title that defines your artistry.</mat-error>
+                    <!-- <mat-select>
+                        <mat-option *ngFor="let s of skillType" [value]="s.value">
+                        {{s.viewValue}}
                         </mat-option>
-                    </mat-select>
+                    </mat-select> -->
             </mat-form-field>
         </div>
 
@@ -24,7 +33,7 @@
                 required
                 placeholder="Title"
                 #title="ngModel">
-                <mat-error *ngIf="title.invalid">Please enter a title for the type of artist you are.</mat-error>
+                <mat-error *ngIf="title.invalid">Please enter a title that defines your artistry.</mat-error>
         </mat-form-field>
     </div>
     <div>

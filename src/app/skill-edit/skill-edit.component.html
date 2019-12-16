@@ -1,0 +1,43 @@
+<div class="example-container mat-elevation-z8">
+
+       
+       
+    <mat-card class="example-card">
+            <h1>Update Your Current Skill Profile</h1>
+          <form [formGroup]="skillForm" 
+          (ngSubmit)="onFormSubmit()">
+
+          <mat-form-field class="example-full-width">
+              <!-- <h4><u>Artist Category</u></h4> -->
+                <input matInput placeholder="Artist Category" formControlName="skillType">
+        </mat-form-field>
+
+            <mat-form-field class="example-full-width">
+                    <!-- <h4><u>Title</u></h4> -->
+                    <input matInput placeholder="Artist Title" formControlName="title">
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width">
+                    <!-- <h4><u>Description</u></h4> -->
+              <input matInput placeholder="Skill Description" formControlName="description">
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width">
+                    <!-- <h4><u>Images</u></h4> -->
+              <input matInput placeholder="Examples of Artwork" formControlName="image">
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width">
+                    <!-- <h4><u>Price</u></h4> -->
+              <input matInput placeholder="Price" formControlName="price">
+            </mat-form-field>
+
+  
+         <div class="button-row">
+                <button type="submit" mat-stroked-button color="primary">Save
+                </button>
+        </div>
+
+          </form>
+    </mat-card>
+</div>
