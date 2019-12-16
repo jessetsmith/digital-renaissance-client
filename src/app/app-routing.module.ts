@@ -14,6 +14,7 @@ import { AdminComponent } from './admin/admin.component';
 import { CreateSkillComponent } from './create-skill/create-skill.component';
 import { MyprofileComponent } from './myprofile/myprofile.component'
 import { HomeComponent } from './home/home.component';
+import { SkillEditComponent } from './skill-edit/skill-edit.component';
 // import { AuthGuardService as  AuthGuard 
 // } from '../service/auth-guard.service';
 
@@ -35,8 +36,11 @@ const routes: Routes = [
   {path: 'artist/:id', component: ArtistComponent},
   {path: 'admin', component: AdminComponent},
   {path: 'create-skill', component: CreateSkillComponent},
+  // {path: 'skill/:edit', component: CreateSkillComponent},
+  // {path: 'maxcreate', component: MaxCreateComponent},
   {path: 'skill/getall',component: MyprofileComponent},
   {path: 'skill/:id', component: OneSkillComponent},
+  {path: 'edit/:id', component: SkillEditComponent},
   {path: '**', redirectTo: ''}
 ];
 

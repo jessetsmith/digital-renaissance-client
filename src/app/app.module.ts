@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import {MatTableModule} from '@angular/material/table';
 import { HttpClientModule, HTTP_INTERCEPTORS }    from '@angular/common/http';
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -36,6 +36,9 @@ import { Feedback } from 'src/models/feedback';
 import { FeedbackComponent } from './feedback/feedback.component';
 import {AuthInterceptor } from './auth-interceptor';
 import { MyprofileComponent } from './myprofile/myprofile.component';
+import { SkillEditComponent } from './skill-edit/skill-edit.component';
+
+
 
 
 
@@ -59,7 +62,9 @@ import { MyprofileComponent } from './myprofile/myprofile.component';
     OneSkillComponent,
     MyprofileComponent,
     HomeComponent,
-    FeedbackComponent
+    FeedbackComponent,
+    SkillEditComponent
+
 
   ],
   imports: [
@@ -79,7 +84,8 @@ import { MyprofileComponent } from './myprofile/myprofile.component';
     HttpClientModule,
     FormsModule,
     MatSelectModule,
-    MatTableModule
+    MatTableModule,
+    ReactiveFormsModule
 
   ],
   entryComponents: [LoginComponent],
