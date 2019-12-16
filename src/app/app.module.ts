@@ -38,7 +38,9 @@ import { FeedbackComponent } from './feedback/feedback.component';
 import { EditFeedbackComponent } from './feedback-edit/edit-feedback.component';
 // import {AuthInterceptor } from './auth-interceptor';
 import { MyprofileComponent } from './myprofile/myprofile.component';
+import { SkillEditComponent } from './skill-edit/skill-edit.component';
 import { FeedbackListComponent } from './feedback-list/feedback-list.component';
+
 
 
 
@@ -63,8 +65,10 @@ import { FeedbackListComponent } from './feedback-list/feedback-list.component';
     MyprofileComponent,
     HomeComponent,
     FeedbackComponent,
+    SkillEditComponent,
     EditFeedbackComponent,
     FeedbackListComponent
+
 
   ],
   imports: [
@@ -84,8 +88,10 @@ import { FeedbackListComponent } from './feedback-list/feedback-list.component';
     HttpClientModule,
     FormsModule,
     MatSelectModule,
+    MatTableModule,
     ReactiveFormsModule,
     MatTableModule
+
 
   ],
   entryComponents: [LoginComponent],
