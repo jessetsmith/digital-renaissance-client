@@ -8,6 +8,7 @@
         <div *ngIf="artistId == fb.artistId">
                 <button mat-button (click)="deleteFeedback(fb.id)"> DELETE</button>
                 <a [routerLink]="['edit-feedback/', fb.id]">UPDATE</a>
+                <p> Comment made at: {{fb.updatedAt | date: 'mediumDate'}}</p>
         </div>
     </mat-card-content>
 </mat-card>
