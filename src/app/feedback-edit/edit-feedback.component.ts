@@ -33,6 +33,7 @@ export class EditFeedbackComponent implements OnInit {
   isLoadingResults = false;
 
   feedback: Feedback = {
+
     id: null,
     rating: null,
     comment: '',
@@ -85,6 +86,7 @@ export class EditFeedbackComponent implements OnInit {
       .subscribe((res: any) => {
           const id = res.id;
           this.isLoadingResults = false;
+          this.router.navigate(['artists']);
           this.router.navigate([`skill/${skillId}`]);
         }, (err: any) => {
           console.log(err);
