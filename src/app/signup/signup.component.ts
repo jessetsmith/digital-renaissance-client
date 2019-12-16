@@ -24,7 +24,7 @@ export class SignupComponent{
     if (form.invalid) {
       return;
     }
-    this.artistService.createArtist(form.value.firstName, form.value.lastName, form.value.password, form.value.email, form.value.role)
+    this.artistService.createArtist( form.value.firstName, form.value.lastName, form.value.password, form.value.email, form.value.role)
     form.resetForm();
   }
 }
