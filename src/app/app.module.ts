@@ -33,11 +33,11 @@ import { OneSkillComponent } from './one-skill/one-skill.component';
 import {MatSelectModule} from '@angular/material/select';
 // import { JwtHelperService } from '@auth0/angular-jwt';
 import { HomeComponent } from './home/home.component';
-import { Feedback } from 'src/models/feedback';
 import { FeedbackComponent } from './feedback/feedback.component';
 import {AuthInterceptor } from './auth-interceptor';
-import { EditFeedbackComponent } from './feedback/edit-feedback/edit-feedback.component';
+import { EditFeedbackComponent } from './feedback-edit/edit-feedback.component';
 import { MyprofileComponent } from './myprofile/myprofile.component';
+import { FeedbackListComponent } from './feedback-list/feedback-list.component';
 
 
 
@@ -62,7 +62,8 @@ import { MyprofileComponent } from './myprofile/myprofile.component';
     MyprofileComponent,
     HomeComponent,
     FeedbackComponent,
-    EditFeedbackComponent
+    EditFeedbackComponent,
+    FeedbackListComponent
 
   ],
   imports: [

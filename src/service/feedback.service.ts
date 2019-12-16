@@ -17,42 +17,56 @@ export class FeedbackService {
 
  
 
-  createFeedback(id,  rating: number, comment: string, type: string,  skillId: number ) {
+  // createFeedback(id,  rating: number, comment: string, type: string,  skillId: number ) {
     
-    const feedback: Feedback = { rating: rating, comment: comment,  type: type, skillId: skillId }
-    const token = localStorage.getItem('token');
-    return this.http.post<any>(this.feedbackUrl + '/create' + `/${id}`, feedback, { headers: {'Authorization': token}})
+  //   const feedback: Feedback = { rating: rating, comment: comment,  type: type, skillId: skillId }
+  //   const token = localStorage.getItem('token');
+  //   return this.http.post<any>(this.feedbackUrl + '/create' + `/${id}`, feedback, { headers: {'Authorization': token}})
 
-  }
+  // }
 
-  getFeedback(id): Observable<Feedback[]>{
+  getFeedback(id: any): Observable<Feedback[]>{
     return this.http.get<Feedback[]>(this.feedbackUrl + `/${id}`)
-    .pipe(map(data => data))
+    .pipe(tap(data => console.log(data, `fetched post by id=${id}`)))
   }
 
-  deleteFeedback(id){
+  deleteFeedback(id: any): Observable<Feedback> {
     const token = localStorage.getItem('token');
-     return this.http.delete<Feedback[]>(this.feedbackUrl + '/delete' + `/${id}`, { headers: {'Authorization': token}})
-    .subscribe(()=> {
-      // this.getArtists();
-      
-    })
+    const url = `${this.feedbackUrl}/delete/${id}`;
+    return this.http.delete<Feedback>(url, { headers: {'Authorization': token}}).pipe(
+      tap(_ => console.log(`deleted category id=${id}`))
+    );
   }
 
-  updateFeedback (id, feedback){
-    const token = localStorage.getItem('token');
-     return this.http.put(this.feedbackUrl + '/delete' + `/${id}`, feedback, { headers: {'Authorization': token}}).pipe(
-       tap(_=> console.log(`updated feedback ${id}`))
-     )
-  }
+  // updateFeedback (id, rating: number, comment: string, type: string,  skillId: number){
+  //   const feedback: Feedback = { rating: rating, comment: comment,  type: type, skillId: skillId }
+  //   const token = localStorage.getItem('token');
+  //    return this.http.put(this.feedbackUrl + '/delete' + `/${id}`, feedback, { headers: {'Authorization': token}}).pipe(
+  //      tap(_=> console.log(`updated feedback ${id}`))
+  //    )
+  // }
 
 
-
-  // updateTodo (id, todo): Observable<any> {
-  //   const url = `${apiUrl}/update.php?id=${id}`;
-  //   return this.http.put(url, todo, httpOptions).pipe(
-  //     tap(_ => console.log(`updated todo id=${id}`))
+  // getFeedback(id: any): Observable<Feedback> {
+  //   const url = `${this.feedbackUrl}/${id}`;
+  //   return this.http.get<Feedback>(url).pipe(
+  //     tap(_ => console.log(`fetched post by id=${id}`))
   //   );
   // }
+
+  createFeedback(id, feedback: Feedback): Observable<Feedback> {
+    const token = localStorage.getItem('token');
+    return this.http.post<Feedback>(this.feedbackUrl + '/create' + `/${id}`, feedback, { headers: {'Authorization': token}}).pipe(
+      tap((prod: Feedback) => console.log(`added post w/ id=${feedback.id}`))
+    );
+  }
+
+  updateFeedback(id: any, feedback: Feedback): Observable<any> {
+    const token = localStorage.getItem('token');
+    const url = `${this.feedbackUrl}/adminupdate/${id}`;
+    return this.http.put(url, feedback, { headers: {'Authorization': token}}).pipe(
+      tap(_ => console.log(`updated post id=${id}`))
+    );
+  }
 
 }
