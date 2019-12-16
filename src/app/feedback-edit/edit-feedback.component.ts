@@ -33,6 +33,8 @@ export class EditFeedbackComponent implements OnInit {
   isLoadingResults = false;
 
   feedback: Feedback = {
+
+    id: null,
     rating: null,
     comment: '',
     type: '',
@@ -78,12 +80,14 @@ export class EditFeedbackComponent implements OnInit {
   }
 
   onFormSubmit() {
+    const skillId = this.route.snapshot.paramMap.get('id');
     this.isLoadingResults = true;
     this.api.updateFeedback(this.id, this.feedbackForm.value)
       .subscribe((res: any) => {
           const id = res.id;
           this.isLoadingResults = false;
           this.router.navigate(['artists']);
+          this.router.navigate([`skill/${skillId}`]);
         }, (err: any) => {
           console.log(err);
           this.isLoadingResults = false;

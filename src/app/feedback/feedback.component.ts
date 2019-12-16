@@ -19,6 +19,7 @@ export class FeedbackComponent implements OnInit {
 
 
   feedback: Feedback = {
+    id: null,
     rating: null,
     comment: '',
     type: '',
@@ -45,12 +46,17 @@ export class FeedbackComponent implements OnInit {
           this.isLoadingResults = false;
           // const skillid = +this.route.snapshot.paramMap.get('id')
           this.getAllFeedback(skillId);
+          
           // this.router.navigate(['artist']);
         }, (err: any) => {
           console.log(err);
           this.isLoadingResults = false;
         });
         this.feedbackForm.reset();
+        
+        // console.log(this.getAllFeedback(skillId))
+        this.feedbackForm.reset();
+        this.api.getFeedback(skillId);
   }
 
   getFeedbackDetails(id: any) {
@@ -58,6 +64,7 @@ export class FeedbackComponent implements OnInit {
       .subscribe((data: any) => {
         this.feedback = data;
         // this.feedback.id = data._id;
+        this.feedback.id = data._id;
         console.log(this.feedback);
         this.isLoadingResults = false;
       });
