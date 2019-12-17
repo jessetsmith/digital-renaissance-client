@@ -5,7 +5,7 @@ import { LoginComponent } from '../login/login.component';
 import { ArtistService } from '../../service/artist.service';
 import { Subscription } from 'rxjs';
 import { AppRoutingModule } from '../app-routing.module';
-import { RouterModule, Routes } from '@angular/router';
+import { Router } from "@angular/router";
 
 
 
@@ -25,7 +25,8 @@ export class HomePageComponent implements OnInit, OnDestroy {
   loggedOut: boolean = true;
   isAdmin: boolean = false;
 
-  constructor(private artistService: ArtistService, private appRouting : AppRoutingModule) {
+  constructor(private artistService: ArtistService, private appRouting : AppRoutingModule, private router: Router,
+    ) {
     
    }
   
@@ -39,7 +40,7 @@ export class HomePageComponent implements OnInit, OnDestroy {
       }
 
       const name = JSON.parse(localStorage.getItem('artistInfo'));
-      const artistName = name.firstName;
+      const artistName = name.artist.firstName;
       console.log(artistName);
 
       this.artistName = artistName;
@@ -65,13 +66,33 @@ export class HomePageComponent implements OnInit, OnDestroy {
   //   }else{ this.loggedOut = true};
   // }
 
+  // refresh () {
+  //   location.reload();
+  // }
+
   refresh () {
-    location.reload();
+    this.resolveAfter1Second(10).then(reload => {
+      reload == location.reload();
+    })
+  }
+
+  resolveAfter1Second(x) {
+    return new Promise(resolve => {
+      setTimeout(() => {
+        resolve(x);
+      }, 1000);
+    });
+  }
+
+  redirect () {
+    this.router.navigate(["/login"])
   }
 
   logout(){
     localStorage.clear();
-    
+    this.refresh();
+    this.redirect();
+
     
   }
   ngOnDestroy() {
