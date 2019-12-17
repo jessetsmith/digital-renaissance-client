@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpClientModule} from '@angular/common/http';
 import {Artist} from '../models/artist';
 import { Observable, of, Subject, Subscription, BehaviorSubject } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
@@ -28,7 +28,7 @@ private authStatusListener = new Subject<boolean>()
   
   constructor(
     private http: HttpClient,
-    private router: Router,
+    private router: Router
     ) { }
 
   getToken() {
@@ -149,4 +149,24 @@ private authStatusListener = new Subject<boolean>()
   private clearAuthData(){
     localStorage.removeItem("token");
   }
+
+  
+
+  // public sendMail(){
+  //   console.log('send')
+  //   const headers = new HttpHeaders ({
+  //     'Content-Type': 'application/json'
+  //   });
+  //   return this.http.post('https://formspree.io/devon.devonmmason@gmail.com',
+  //   {
+  //       name: 'devon',
+  //       _replyto:'devonmmason@gmail.com',
+  //       message: "testMessage"
+  //   },
+  //   {
+  //     'headers': headers
+  //   }).subscribe(res => console.log(res.json()))
+  // }
+
+
 }
