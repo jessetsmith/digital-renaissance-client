@@ -23,14 +23,33 @@ mat-card{
     margin: 1em;
     padding: 1em;
     min-width: 15em;
+    text-align: center;
   
 }
 
 #btn{
-    text-align:center;
-    margin:0 auto;
-    display:block;
-    border: 3px solid white;
-    background-color:white;
-
+   
+    /* border: 3px solid white;
+    background-color:white; */
+    margin: 1em;
 }
+
+.button {
+    display: flex;
+    justify-content: center;
+}
+
+#btn {
+    background-color: white;
+    margin-top: 2em;
+    height: 5em;
+    width: 30em;
+    font-size: 15px;
+    margin-top: -1em;
+ }
+ 
+ #btn:hover {
+     opacity: 0.8;
+     background-color:#193153;
+     color: white;
+   }
