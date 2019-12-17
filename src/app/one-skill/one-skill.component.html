@@ -18,26 +18,56 @@
             <h3>{{oneSkill.artistId}}</h3>
           </mat-card-content>
         <mat-card-actions>
-          <form
-          action="https://formspree.io/xvogjdrv"
+          <hr />
+          <hr />
+          <div class= "book">
+          Email {{oneSkill.artist.firstName}} {{oneSkill.artist.LastName}} at 
+          <b>{{oneSkill.artist.email }}</b> to book his service now!
+        </div>
+            <!-- <form action="https://formspree.io/mzbdbabp" method="POST">
+              <input type="hidden" name="_subject" value="Devon" />
+              <label>Name</label> <input type="text" name="name" required />
+              <label>Email</label> <input type="email" name="_replyto" placeholder={{oneSkill.artist.email}} required />
+              <label>Message</label> <input type="text" name="message" />
+              <input type="submit" />
+              <input type="hidden" name="_next" value="http://localhost:4200/artists"/>
+              <input type="text" name="_gotcha" style="display:none" /> -->
+          <!-- <form id="contactForm" name="form" (submit)="onSubmit(contactForm)"
+          #contactForm="ngForm"
+          action="https://formspree.io/mzbdbabp"
           method="POST"
         >
-          <label>
-            Your name:
-            <input type="text" name="name"/>
-          </label>
-          <label>
-            Your email:
-            <input type="email" name="_replyto"/>
-          </label>
-          <label>
-            submit
-            <input type="submit" value="send"/>
-          </label>
+        <div class = "form-group">
+         <mat-form-field> -->
+          <!-- <label for="name">Your name: </label>
+          <input class="form-control" type="text" name="name" placeholder="Your Name"/> -->
+         <!-- </mat-form-field> -->
+
+        <!-- <mat-form-field> -->
+            <!-- <label for="_replyto">Email </label>
+            <input class="form-control"  type="email" name="_replyto" placeholder={{oneSkill.artist.email}}/> -->
+         
+        <!-- </mat-form-field>
+      <mat-form-field> -->
+          <!-- <label for="message">Let's start a conversation</label>
+          <textarea class="form-control"  name="message" id="" cols="20" rows="5"></textarea>  
+          <input type="hidden" name="_next" value="http://localhost:4200/get-skills" />
+          <input type="text" name="_gotcha" style="display:none" /> -->
+          <!-- <input type="submit" value="Submit"/> -->
+         
+        <!-- </mat-form-field> -->
           <!-- your other form fields go here -->
         
           <!-- <button type="submit">Send</button> -->
-        </form>
+        <!-- </div>  -->
+        <!-- </form> -->
+        <script>
+    //       let contactform =  document.getElementById('contactform');
+    // contactform.setAttribute('action', '//formspree.io/'+'mzbdbabp');
+
+        </script>
+        <!-- <script src="js/directives/angular-formspree.js">
+        </script> -->
         </mat-card-actions>
     </mat-card>
   </div>
