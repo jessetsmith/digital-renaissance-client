@@ -36,7 +36,7 @@ export class MyprofileComponent implements OnInit {
 
   getSkillsForOneArtist(): void {
     const id = JSON.parse(localStorage.getItem('artistInfo'));
-    const artistId = id.id;
+    const artistId = id.artist.id;
     console.log(id)
     this.skillService.getSkillsForOneArtist(artistId)
       .subscribe(oneArtistSkills => this.oneArtistSkills = oneArtistSkills)
