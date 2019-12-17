@@ -2,7 +2,7 @@ import { Component} from '@angular/core';
 import { Skill } from '../../models/skill';
 import { SkillService } from '../../service/skill.service';
 import { FormBuilder } from '@angular/forms'
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { NgForm } from '@angular/forms';
 import { TypeOfArtist } from '../type-of-artists'
@@ -53,9 +53,31 @@ onSubmit(form: NgForm) {
         data => console.log("Success!", data)
     )
     form.resetForm();
+    this.redirect();
 }
 
-  constructor(private route: ActivatedRoute, private skillService: SkillService) { }
+  constructor(private route: ActivatedRoute, private skillService: SkillService, private router: Router) { }
 
+  // refresh () {
+  //   this.resolveAfter1Second(10).then(reload => {
+  //     reload == location.reload();
+  //     this.redirect();
+  //   })
+  // }
+
+  resolveAfter1Second(x) {
+    return new Promise(resolve => {
+      setTimeout(() => {
+        resolve(x);
+      }, 1000);
+    });
+  }
+
+  redirect () {
+    this.resolveAfter1Second(10).then(redirect => {
+      redirect == this.router.navigate(['/skill/getall']);
+    })
+    
+  }
   
   }
