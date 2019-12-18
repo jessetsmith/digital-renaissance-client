@@ -10,7 +10,7 @@
           <mat-card-subtitle>{{skill.artist.firstName}} {{skill.artist.lastName}}</mat-card-subtitle>
         </div>
         <br/>
-        <img mat-card-image alt="profile picture" src='https://source.unsplash.com/random/?art/'>
+        <img mat-card-image alt="profile picture" src='https://source.unsplash.com/random/600x400/?art, artworks/'>
         <br/>
         <br/>
         <mat-card-content>
@@ -19,7 +19,7 @@
           <p>
                 {{skill.description}}
           </p>
-          <p>Price: ${{skill.price}}</p>
+          <h4>Price: ${{skill.price}}</h4>
         </mat-card-content>
         <mat-card-actions>
             <button mat-button class='view' routerLink ='/skill/{{skill.id}}'>View Skill</button>

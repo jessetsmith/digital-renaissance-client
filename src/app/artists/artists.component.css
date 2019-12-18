@@ -45,6 +45,7 @@
     background-size: 100%;
     background-repeat: no-repeat;
     background-position: bottom left;
+    margin: 2em;
 }
 
 .pics {
@@ -68,8 +69,9 @@
     background-color: #3b6283;
     background-size: 100%;
     height:100%;
-    min-height: 800px;
-    width: 80%;
+    min-height: 900px;
+    width: 85%;
+    margin: 2em;
 }
 
 h2 {
@@ -112,6 +114,16 @@ h2 {
 mat-card {
     background-color: transparent;
     max-width: 300px;
+    /* margin: 3em; */
+   
+}
+
+.overline {
+    margin-top: -2em;
+}
+
+.underline {
+    margin-top: -.01em;
 }
 
 .findTitle {
