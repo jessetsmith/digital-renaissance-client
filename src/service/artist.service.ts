@@ -56,7 +56,7 @@ private authStatusListener = new Subject<boolean>()
       console.log(token);
       console.log(response);
       this.setLoggedIn(true);
-      this.saveAuthData(token, artistInfo);
+      this.saveAuthData(token, response);
       this.artistInfo = artistInfo;
       this.authStatusListener.next(true);
       this.router.navigate(["/artists"])
