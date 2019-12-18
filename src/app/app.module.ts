@@ -1,10 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
-import {MatTableModule} from '@angular/material/table';
 import { HttpClientModule, HTTP_INTERCEPTORS }    from '@angular/common/http';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { MatDialogModule, MatCardModule, MatIconModule, MatToolbarModule, MatButtonModule, MatFormFieldModule, MatInputModule } from '@angular/material';
+import { MatDialogModule, MatCardModule, MatIconModule, MatToolbarModule, MatButtonModule, MatFormFieldModule, MatInputModule, MatTableModule, MatDividerModule } from '@angular/material';
 
 import { AuthService } from './auth/auth.service';
 import { AppRoutingModule } from './app-routing.module';
@@ -40,6 +39,7 @@ import { EditFeedbackComponent } from './feedback-edit/edit-feedback.component';
 import { MyprofileComponent } from './myprofile/myprofile.component';
 import { SkillEditComponent } from './skill-edit/skill-edit.component';
 import { FeedbackListComponent } from './feedback-list/feedback-list.component';
+import { ContactComponent } from './contact/contact.component';
 
 
 
@@ -67,7 +67,8 @@ import { FeedbackListComponent } from './feedback-list/feedback-list.component';
     FeedbackComponent,
     SkillEditComponent,
     EditFeedbackComponent,
-    FeedbackListComponent
+    FeedbackListComponent,
+    ContactComponent
 
 
   ],
@@ -90,7 +91,8 @@ import { FeedbackListComponent } from './feedback-list/feedback-list.component';
     MatSelectModule,
     MatTableModule,
     ReactiveFormsModule,
-    MatTableModule
+    MatTableModule,
+    MatDividerModule
 
 
   ],
