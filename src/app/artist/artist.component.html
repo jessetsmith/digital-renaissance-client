@@ -7,9 +7,22 @@
     <p> {{artist.email}} </p>
     <span><h3>Role:</h3> <p>{{artist.role}}</p></span>
     <!-- <p>{{artist.id}}</p> -->
+    <h3>Skill Profile(s):</h3>
+    <ul>
+        <li *ngFor = "let a of artist.skills">{{a.title}} is skill profile # {{a.id}}
+            <div>
+                <button mat-button (click)="onDeleteSkillProfile(a.id)">Delete Skill</button>
+            </div>
+
+        </li>
+    </ul>
+    <!-- <p>{{artist.skills[0].title}}</p> -->
+    <!-- <button mat-button (click)="onDeleteSkillProfile(artist.skill.id)"> Delete Skill #{{artist.skills[0].id}} </button> -->
     <br/>
     <button mat-button routerLink='artist/artist.id'> Artist Profile</button>
-    <button mat-button (click)="onDeleteArtist(artist.id)"> Delete</button>
+    <!-- <button mat-button (click)="onDeleteSkillProfile(artist.skill.id)"> Delete Skill </button> -->
+    <button mat-button (click)="onDeleteArtist(artist.id)"> Delete Artist</button>
+ 
     </mat-card>
 </div>
 

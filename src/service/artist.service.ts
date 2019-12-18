@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpClientModule} from '@angular/common/http';
 import {Artist} from '../models/artist';
+// import {logArtist} from '../models/logArtist';
 import { Observable, of, Subject, Subscription, BehaviorSubject } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
 import { Router } from "@angular/router";
@@ -16,6 +17,7 @@ export class ArtistService {
 private artistUrl = `${APIURL}/artist`;
 private token: string;
 private artistInfo = [];
+private skillInfo = [];
 private authStatusListener = new Subject<boolean>()
   artistProfile: any;
   artistProfile$: any;
@@ -40,14 +42,17 @@ private authStatusListener = new Subject<boolean>()
 }
 
   createArtist(firstName: string, lastName: string, password: string, email: string, role: string){
-    const artist: Artist = {firstName: firstName, lastName: lastName,  password: password, email: email, role: role }
+    const artist= {firstName: firstName, lastName: lastName,  password: password, email: email, role: role }
     return this.http.post<any>(this.artistUrl+ '/register', artist)
     .subscribe(response => {
       const token = response.sessionToken;
       const artistInfo = response.artist;
+      // const skillInfo= response.artist.skill;
+      // console.log(skillInfo)
       console.log(artistInfo)
       this.token = token;
       this.artistInfo = artistInfo;
+      // this.skillInfo = skillInfo;
       console.log(token);
       console.log(response);
       this.setLoggedIn(true);
@@ -59,15 +64,17 @@ private authStatusListener = new Subject<boolean>()
   }
 
   loginArtist(password: string, email: string){
-    const artist = { password: password, email: email }
+    const artist= { password: password, email: email }
     this.http.post<any>(this.artistUrl+ '/login', artist)
     .subscribe(response => {
       const token = response.sessionToken;
       const artistInfo = response.artist;
+      // const skillInfo= response.artist.skill;
       this.token = token;
       this.setLoggedIn(true);
       this.saveAuthData(token, artistInfo);
       this.artistInfo = artistInfo;
+      // this.skillInfo = skillInfo;
       // info = this.artistInfo;
       console.log(token)
       console.log(response)
