@@ -6,6 +6,7 @@ mat-card {
 .artist {
     display: flex;
     justify-content: center;
+    
 }
 
 button {
@@ -27,3 +28,4 @@ button {
 li{
     list-style: none;
    }
+

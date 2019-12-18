@@ -6,6 +6,8 @@ import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { Skill } from '../../models/skill';
 import { Router } from '@angular/router';
+import { FeedbackService } from '../../service/feedback.service';
+import { Feedback } from '../../models/feedback';
 
 
 @Component({
@@ -18,11 +20,15 @@ artist: any = {};
 skill: any ={};
 artists: Artist[]; 
 token: string;
+data: Feedback[] = [];
 // deleteArray = new Array(3);
 oneArtistSkills: Skill [];
 artistId: number;
+
+
+
   constructor( private artistService: ArtistService, private skillService: SkillService, 
-    private route: ActivatedRoute, private router: Router
+    private route: ActivatedRoute, private router: Router,private api: FeedbackService
 
     ) { }
 
@@ -84,5 +90,14 @@ artistId: number;
   // onUpdateArtist(id): void {
   //   this.artistService.updateArtist(id);
   // }
+}
+
+
+onAdminDeleteFeedback(feedbackId:number){
+  this.api.adminDeleteFeedback(feedbackId, this.token)
+  .subscribe( () => {console.log(
+    'feedback profile deleted'),
+    this.onGetArtist();
+  })
 }
 }

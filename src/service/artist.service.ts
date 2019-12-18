@@ -72,7 +72,6 @@ private authStatusListener = new Subject<boolean>()
       // const skillInfo= response.artist.skill;
       this.token = token;
       this.setLoggedIn(true);
-      this.saveAuthData(token, artistInfo);
       this.artistInfo = artistInfo;
       // this.skillInfo = skillInfo;
       // info = this.artistInfo;
