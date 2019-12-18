@@ -3,9 +3,9 @@ export const environment = {
 
 };
 
-export let APIURL = 'http://localhost:3000';
+// export let APIURL = 'http://localhost:3000';
 
-// export let APIURL = 'https://dr-server.herokuapp.com';
+export let APIURL = 'https://dr-server.herokuapp.com';
 
 
 // switch (window.location.hostname) {
