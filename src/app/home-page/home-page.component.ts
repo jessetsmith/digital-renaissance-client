@@ -5,7 +5,7 @@ import { LoginComponent } from '../login/login.component';
 import { ArtistService } from '../../service/artist.service';
 import { Subscription } from 'rxjs';
 import { AppRoutingModule } from '../app-routing.module';
-import { Router } from "@angular/router";
+import { RouterModule, Routes, Router } from '@angular/router';
 
 
 
@@ -25,8 +25,7 @@ export class HomePageComponent implements OnInit, OnDestroy {
   loggedOut: boolean = true;
   isAdmin: boolean = false;
 
-  constructor(private artistService: ArtistService, private appRouting : AppRoutingModule, private router: Router,
-    ) {
+  constructor(private artistService: ArtistService, private appRouting : AppRoutingModule, private router: Router ) {
     
    }
   
@@ -65,11 +64,6 @@ export class HomePageComponent implements OnInit, OnDestroy {
   //      this.loggedOut = false;
   //   }else{ this.loggedOut = true};
   // }
-
-  // refresh () {
-  //   location.reload();
-  // }
-
   refresh () {
     this.resolveAfter1Second(10).then(reload => {
       reload == location.reload();
@@ -103,3 +97,4 @@ export class HomePageComponent implements OnInit, OnDestroy {
   
 
 }
+ 

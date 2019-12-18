@@ -46,6 +46,13 @@ export class SkillService {
     return this.http.delete(this.skillUrl+`/delete/${deleteId}`,{ headers: new HttpHeaders( {'Authorization': localToken})})
   }
 
+  adminDeleteSkillProfile(deleteId, localToken):Observable<any>{
+    console.log(localToken);
+    console.log(deleteId);
+    console.log(this.skillUrl+`/admindelete/${deleteId}`)
+    return this.http.delete(this.skillUrl+`/admindelete/${deleteId}`,{ headers: new HttpHeaders( {'Authorization': localToken})})
+  }
+
 
   updateSkill(id:any, skill: Skill): Observable<any> {
     const url = this.skillUrl+ `/updateskill/${id}`;
