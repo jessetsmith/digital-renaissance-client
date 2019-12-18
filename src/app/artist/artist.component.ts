@@ -77,7 +77,8 @@ artistId: number;
     console.log(this.artist.skills[0].id)
     this.skillService.adminDeleteSkillProfile(profileId, this.token)
         .subscribe( () => {console.log(
-          'skill profile deleted')
+          'skill profile deleted'),
+          this.onGetArtist();
         })
 
   // onUpdateArtist(id): void {

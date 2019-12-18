@@ -2,7 +2,11 @@ export const environment = {
   production: true,
 
 };
+
+// export let APIURL = '';
+
 export let APIURL = 'https://dr-server.herokuapp.com';
+
 
 // switch (window.location.hostname) {
 //   // this is the deployed angular application
