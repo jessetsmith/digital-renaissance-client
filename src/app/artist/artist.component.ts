@@ -44,8 +44,8 @@ artistId: number;
       .subscribe(artists => this.artists = artists);
   }
 
-  goToArtist () {
-    this.router.navigate([`/skill/getall/${this.artistId}`]);
+  goToArtist (artistId) {
+    this.router.navigate([`/skill/${this.artistId}`]);
 
   }
 
