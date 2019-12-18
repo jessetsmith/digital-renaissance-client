@@ -2,20 +2,21 @@
 <div class='skillCard'>
 <mat-card class="oneSkill">
     <mat-card-header class='card-header'>
-        <div mat-card-avatar></div>
+        <div mat-card-avatar class='avatar'></div>
                 <mat-card-title>{{oneSkill.artist.firstName}}</mat-card-title>
                 <mat-card-subtitle>{{oneSkill.title}}</mat-card-subtitle>
         </mat-card-header>
-        <img mat-card-image src="./assets/" alt="Photo of Artist Work">
+        <img mat-card-image src="https://source.unsplash.com/1600x900/?art/2" alt="Photo of Artist Work">
         <mat-card-content>
             <h2>{{oneSkill.skillType}}</h2>
           </mat-card-content>
         <mat-card-content>
-          <p>{{oneSkill.description}}</p>
+          <h3>{{oneSkill.description}}</h3>
         </mat-card-content>
+        <br/>
         <mat-card-content>
-            <h3>{{oneSkill.price}}</h3>
-            <h3>{{oneSkill.artistId}}</h3>
+            <h2>$ {{oneSkill.price}}</h2>
+            <!-- <h3>{{oneSkill.artistId}}</h3> -->
           </mat-card-content>
         <mat-card-actions>
           <hr />

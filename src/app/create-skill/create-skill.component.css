@@ -95,6 +95,7 @@ input{
 button {
    background-color: lightgray;
    margin-top: 2em;
+   margin: 1em;
 }
 
 button:hover {
