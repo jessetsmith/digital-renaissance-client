@@ -5,7 +5,7 @@
     <mat-card>
     <h3>{{artist.firstName}} {{artist.lastName}}</h3>
     <p> {{artist.email}} </p>
-    <span><h3>Role:</h3> <p>{{artist.role}}</p></span>
+    <!-- <span><h3>Role:</h3> <p>{{artist.role}}</p></span> -->
     <!-- <p>{{artist.id}}</p> -->
     <h3>Skill Profile(s):</h3>
     <ul>
@@ -19,10 +19,11 @@
     <!-- <p>{{artist.skills[0].title}}</p> -->
     <!-- <button mat-button (click)="onDeleteSkillProfile(artist.skill.id)"> Delete Skill #{{artist.skills[0].id}} </button> -->
     <br/>
+
+    <button mat-button (click)='goToArtist()'> Artist Profile</button>
     <button mat-button routerLink='artist/artist.id'> Artist Profile</button>
     <!-- <button mat-button (click)="onDeleteSkillProfile(artist.skill.id)"> Delete Skill </button> -->
     <button mat-button (click)="onDeleteArtist(artist.id)"> Delete Artist</button>
- 
     </mat-card>
 </div>
 

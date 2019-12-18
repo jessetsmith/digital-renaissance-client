@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Skill } from '../../models/skill';
 import { SkillService } from '../../service/skill.service';
 import { ActivatedRoute } from '@angular/router';
+import { Url } from 'url';
 
 
 @Component({
@@ -11,6 +12,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class GetSkillsComponent implements OnInit {
   skills: Skill []; 
+  num: [];
 
   constructor(private skillService: SkillService, private route: ActivatedRoute) { }
 
@@ -23,5 +25,10 @@ export class GetSkillsComponent implements OnInit {
       .subscribe(skills => this.skills = skills);
   }
 
+  ranPhoto (i) {
+    for (i=1; i <=30; i ++ ) {
+      return this.num = i;
+    }
+  }
 
 }
