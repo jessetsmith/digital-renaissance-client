@@ -37,6 +37,13 @@ export class FeedbackService {
     return this.http.delete<Feedback>(url, { headers: {'Authorization': token}}).pipe(
       tap(_ => console.log(`deleted category id=${id}`))
     );
+
+  }
+  adminDeleteFeedback(deleteId, localToken):Observable<any>{
+    console.log(localToken);
+    console.log(deleteId);
+    console.log(this.feedbackUrl+`/admindelete/${deleteId}`)
+    return this.http.delete(this.feedbackUrl+`/admindelete/${deleteId}`,{ headers: new HttpHeaders( {'Authorization': localToken})})
   }
 
   // updateFeedback (id, rating: number, comment: string, type: string,  skillId: number){
