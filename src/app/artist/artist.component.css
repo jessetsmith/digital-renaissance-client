@@ -8,13 +8,57 @@ mat-card {
     justify-content: center;
 }
 
+.profile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-content: center;
+    width: 100%;
+}
+
+.skillList {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+mat-divider {
+    margin: 3em;
+}
+
+.list {
+    margin: 1em;
+    padding: 1em;
+}
+
+.delete {
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: center;
+    text-align: center;
+}
+.deleteButton {
+    margin-top: 2em;
+}
+
+/* .buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+} */
+
+
 button {
     background-color: lightgray;
     /* margin-top: 2em; */
     margin: 1em;
-    /* width: 30%; */
+    width: 15em;
     text-align: center;
     display:table-cell;
+
+    
     
  }
  

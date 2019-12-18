@@ -3,20 +3,29 @@
 
 header {
     background: #b87b7d;
-    
+    width: 100%;
+    // position: fixed;
+    // margin-bottom: 3em;
 }
 
 
 
 .navContainer {
   display: flex;
+  width: 100%;
   justify-content: center;
-  margin-left: -38%;
+  flex-direction: row;
+
+  // margin-left: -38%;
 
 }
 
 .mainContainer {
   size:100%; 
+}
+
+.container {
+  width: 100%;
 }
 
 section {
@@ -49,12 +58,15 @@ section {
 }
 
 nav {
-    justify-content: center;
-    // margin-left: -7em;
+    display:flex;
+    justify-content: left;
+    // float: left;
+    margin-left: -55%;
+    // position: relative;
     margin-top: 1.5em;
     height: 5px;
     font-weight: bold;
-
+    width: 100%;
     // margin: 1em;
 }
 
@@ -188,8 +200,9 @@ button:hover:before, button:focus:before, button:active:before {
 .header-page {
     color: black;
     height: 50px;
-    position: relative;
-    
+    position: static;
+    margin: 2em;
+
     &-authStatus {
       color: black;
       // font-size: .8em;
