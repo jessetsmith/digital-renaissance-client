@@ -15,7 +15,6 @@ import { NgForm } from '@angular/forms';
 })
 export class OneSkillComponent implements OnInit {
   oneSkill: any = {};
-
   constructor(private skillService: SkillService, private artistService: ArtistService, private route: ActivatedRoute) { }
 
   ngOnInit() {
@@ -27,6 +26,8 @@ export class OneSkillComponent implements OnInit {
     this.skillService.getOneSkill(id)
       .subscribe(oneSkill => this.oneSkill = oneSkill);
   }
+
+ 
 
 //  onSubmit(form: NgForm):void {
 //    this.artistService.formSpree(form.value.name, form.value.email, form.value.message)

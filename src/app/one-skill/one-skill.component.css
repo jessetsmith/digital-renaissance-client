@@ -23,3 +23,8 @@ button:hover {
     color: white;
   }
 
+  .avatar {
+    background-image: url('https://source.unsplash.com/1600x900/?art/1');
+    background-size: cover;
+
+  }

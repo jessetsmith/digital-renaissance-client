@@ -53,3 +53,20 @@ mat-card{
      background-color:#193153;
      color: white;
    }
+
+   a {
+       text-decoration: none;
+       color: black;
+   }
+
+   .getSkill {
+    background-color: lightgray;
+    margin-top: 2em;
+    margin: 1em;
+ }
+ 
+ .getSkill:hover {
+     opacity: 0.8;
+     background-color:#193153;
+     color: white;
+   }
