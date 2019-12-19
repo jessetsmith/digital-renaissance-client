@@ -1,43 +1,42 @@
 <div class='artist'>
-    <mat-card>
-    <h1>{{artist.firstName}} {{artist.lastName}}</h1>
-    <h4 type='email'> {{artist.email}} </h4>
-    <!-- <span><h3>Role:</h3> <p>{{artist.role}}</p></span> -->
-    <!-- <p>{{artist.id}}</p> -->
-    <div class='profile'>
-    <h3>Skill Profile(s):</h3>
-    <div class='skillList'>
-    <ul class='list'>
-        <li *ngFor = "let a of artist.skills">{{a.title}} is skill profile # {{a.id}}
-            <div class='delete'>
-                <button mat-button class='deleteButton' (click)="onDeleteSkillProfile(a.id)">Delete Skill</button>
-            </div>
-        </li>
-    </ul>
-
-    <h3>Feedback:</h3>
-        <div class="feedback">
-            <ul>
-                <li *ngFor = "let f of artist.buyerFeedbacks">{{f.comment}}
-                    <div>
-                    <button mat-button (click)="onAdminDeleteFeedback(f.id)">Delete Feedback</button>
+        <mat-card>
+        <h1>{{artist.firstName}} {{artist.lastName}}</h1>
+        <h4 type='email'> {{artist.email}} </h4>
+        <!-- <span><h3>Role:</h3> <p>{{artist.role}}</p></span> -->
+        <!-- <p>{{artist.id}}</p> -->
+        <div class='profile'>
+        <h3>Skill Profile(s):</h3>
+        <div class='skillList'>
+        <ul class='list'>
+            <li *ngFor = "let a of artist.skills">{{a.title}} is skill profile # {{a.id}}
+                <div class='delete'>
+                    <button mat-button class='deleteButton' (click)="onDeleteSkillProfile(a.id)">Delete Skill</button>
                 </div>
-                </li>
-            </ul>
-        </div>
-
-
+                <hr/>
+            </li>
+            
+        </ul>
     
-    <!-- <p>{{artist.skills[0].title}}</p> -->
-    <!-- <button mat-button (click)="onDeleteSkillProfile(artist.skill.id)"> Delete Skill #{{artist.skills[0].id}} </button> -->
-    <br/>
-    <div class='buttons'>
-    <button mat-button (click)='goToArtist(artist.id)'> Artist Profile</button>
-   
-    <button mat-button (click)="onDeleteArtist(artist.id)"> Delete Artist</button>
-    </div>
+        <h3>Feedback:</h3>
+            <!-- <div class="feedback"> -->
+                <ul class='list'>
+                    <li *ngFor = "let f of artist.buyerFeedbacks">{{f.comment}}
+                    <div class='delete'>
+                        <button mat-button class='otherButton' (click)="onAdminDeleteFeedback(f.id)">Delete Feedback</button>
+                    </div>
+                    <hr/>
+
+                    </li>
+                </ul>
+            <!-- </div> -->
+        <br/>
+        <div class='buttons'>
+        <button mat-button (click)='goToArtist(artist.id)'> Artist Profile</button>
+       
+        <button mat-button (click)="onDeleteArtist(artist.id)"> Delete Artist</button>
+        </div>
+        </div>
     </div>
     </mat-card>
+   
 </div>
-
-<!-- Show all Skills below -->

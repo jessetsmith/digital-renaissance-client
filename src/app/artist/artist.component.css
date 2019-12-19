@@ -1,6 +1,10 @@
 mat-card {
     width: 50%;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
 }
 
 .artist {
@@ -36,7 +40,8 @@ mat-divider {
 
 .delete {
     display: flex;
-    /* flex-direction: column; */
+    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
     text-align: center;
 }
@@ -44,6 +49,13 @@ mat-divider {
     margin-top: 2em;
 }
 
+.feedback {
+    display: flex;
+    width: 100%;
+    /* flex-direction: column; */
+    justify-content: center;
+    text-align: center;
+}
 /* .buttons {
     display: flex;
     flex-direction: column;
